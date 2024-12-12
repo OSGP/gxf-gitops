@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-init-sqls
+data:
+  init.sql: |
+    CREATE USER osp_admin WITH SUPERUSER INHERIT CREATEDB CREATEROLE
+        REPLICATION ENCRYPTED PASSWORD '1234';
+    CREATE USER osgp_core_db_api_user WITH ENCRYPTED PASSWORD '1234'
+        NOSUPERUSER;
+    CREATE USER osgp_read_only_ws_user WITH ENCRYPTED PASSWORD '1234'
+        NOSUPERUSER;
+    CREATE USER osgp_core_db_api_iec61850_user WITH ENCRYPTED PASSWORD '1234'
+        NOSUPERUSER;
+    CREATE DATABASE osgp_core;
+    GRANT ALL PRIVILEGES ON database osgp_core TO osp_admin;

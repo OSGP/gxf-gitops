@@ -1,0 +1,40 @@
+platform:
+  imageTag: pr-1473
+  containers:
+    osgpCore:
+      name: osgp-core
+#    osgpLogging:
+#      name: osgp-logging
+#    osgpAdapterDomainAdmin:
+#      name: osgp-adapter-domain-admin
+#    osgpAdapterDomainCore:
+#      name: osgp-adapter-domain-core
+#    osgpAdapterDomainPubliclighting:
+#      name: osgp-adapter-domain-publiclighting
+#    osgpAdapterDomainSmartmetering:
+#      name: osgp-adapter-domain-smartmetering
+#    osgpAdapterDomainTariffswitching:
+#      name: osgp-adapter-domain-tariffswitching
+#    osgpAdapterWsAdmin:
+#      name: osgp-adapter-ws-admin
+#    osgpAdapterWsCore:
+#      name: osgp-adapter-ws-core
+#    osgpAdapterWsPubliclighting:
+#      name: osgp-adapter-ws-publiclighting
+#    osgpAdapterWsSmartmetering:
+#      name: osgp-adapter-ws-smartmetering
+#    osgpAdapterWsTariffswitching:
+#      name: osgp-adapter-ws-tariffswitching
+#    osgpProtocolAdapterIec60870:
+#      name: osgp-protocol-adapter-iec60870
+#    osgpProtocolAdapterIec61850:
+#      name: osgp-protocol-adapter-iec61850
+#    osgpProtocolAdapterOslp:
+#      name: osgp-protocol-adapter-oslp
+#    osgpSigningServer:
+#      name: osgp-signing-server
+
+
+
+
+

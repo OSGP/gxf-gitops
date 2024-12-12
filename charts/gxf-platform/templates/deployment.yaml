@@ -1,0 +1,89 @@
+{{- range $container := .Values.platform.containers -}}
+{{- $name := $container.name }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $name }}
+  labels:
+    app: {{ $name }}
+spec:
+  replicas: {{ $container.replicas | default $.Values.platform.replicas | default 1 }}
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: {{ $name }}
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      name: {{ $name }}
+      labels:
+        app: {{ $name }}
+      annotations:
+        prometheus.io/port: '9404'
+        prometheus.io/scrape: 'true'
+    spec:
+      automountServiceAccountToken: false
+      serviceAccountName: {{ $name }}-sa
+      containers:
+        - name: {{ $name }}
+          image: {{ $container.imageRepository | default $.Values.platform.imageRepository | default "ghcr.io/osgp/" }}{{ $name }}:{{ $container.imageTag | default $.Values.platform.imageTag | default "development-latest" }}
+          imagePullPolicy: {{ $container.imagePullPolicy | default $.Values.platform.imagePullPolicy | default "Always" }}
+          env:
+            - name: JAVA_OPTS
+              value: "-XX:MaxRAMPercentage=80.0 -XX:InitialRAMPercentage=80.0"
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+          startupProbe:
+            {{- if $container.startupProbe }}
+              {{- toYaml $container.startupProbe | nindent 12 }}
+            {{- else if $.Values.platform.startupProbe}}
+              {{- toYaml $.Values.platform.startupProbe | nindent 12 }}
+            {{- else }}
+            failureThreshold: 30
+            periodSeconds: 5
+            httpGet:
+              port: 8080
+              path: /probe/probe.txt
+            {{- end }}
+          livenessProbe:
+            {{- if $container.livenessProbe }}
+              {{- toYaml $container.livenessProbe | nindent 12 }}
+            {{- else if $.Values.platform.livenessProbe}}
+              {{- toYaml $.Values.platform.livenessProbe | nindent 12 }}
+            {{- else }}
+            failureThreshold: 12
+            periodSeconds: 5
+            timeoutSeconds: 5
+            httpGet:
+              port: 9404
+              path: /metrics
+            {{- end }}
+          readinessProbe:
+            {{- if $container.readinessProbe }}
+              {{- toYaml $container.readinessProbe | nindent 12 }}
+            {{- else if $.Values.platform.readinessProbe}}
+              {{- toYaml $.Values.platform.readinessProbe | nindent 12 }}
+            {{- else }}
+            failureThreshold: 6
+            periodSeconds: 5
+            timeoutSeconds: 5
+            httpGet:
+              port: 9404
+              path: /metrics
+            {{- end }}
+          volumeMounts:
+            - name: gxf-platform-config
+              mountPath: /etc/osp/global.properties
+              subPath: global.properties
+            - name: gxf-platform-config
+              mountPath: /etc/osp/{{ $name }}.properties
+              subPath: global.properties
+      volumes:
+        - name: gxf-platform-config
+          configMap:
+            name: gxf-platform-config
+---
+{{- end -}}
