@@ -27,11 +27,21 @@ spec:
       serviceAccountName: {{ $name }}-sa
       containers:
         - name: {{ $name }}
-          image: {{ $container.imageRepository | default $.Values.platform.imageRepository | default "ghcr.io/osgp/" }}{{ $name }}:{{ $container.imageTag | default $.Values.platform.imageTag | default "development-latest" }}
+          image: {{ $container.imageRepository | default $.Values.platform.imageRepository | default "ghcr.io/osgp/" }}{{ $name }}:{{ $container.imageTag | default $.Values.platform.imageTag | default "latest" }}
           imagePullPolicy: {{ $container.imagePullPolicy | default $.Values.platform.imagePullPolicy | default "Always" }}
           env:
             - name: JAVA_OPTS
               value: "-XX:MaxRAMPercentage=80.0 -XX:InitialRAMPercentage=80.0"
+            - name: ACTIVEMQ_JMS_CLIENT_KEYSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: gxf-platform-jms-client-certs
+                  key: keyStorePassword
+            - name: ACTIVEMQ_JMS_CLIENT_TRUSTSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: gxf-platform-jms-client-certs
+                  key: trustStorePassword
           ports:
             - containerPort: 8080
               name: http
@@ -81,9 +91,14 @@ spec:
             - name: gxf-platform-config
               mountPath: /etc/osp/{{ $name }}.properties
               subPath: global.properties
+            - name: activemq-secrets
+              mountPath: /etc/ssl/certs/jms/gxf-platform/
       volumes:
         - name: gxf-platform-config
           configMap:
             name: gxf-platform-config
+        - name: activemq-secrets
+          secret:
+            secretName: gxf-platform-jms-client-certs
 ---
 {{- end -}}

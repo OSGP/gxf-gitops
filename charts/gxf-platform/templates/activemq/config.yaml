@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: activemq-config
+data:
+  broker.xml: |
+    <?xml version='1.0'?>
+    <configuration xmlns="urn:activemq">
+        <core xmlns="urn:activemq:core">
+            <connectors>
+                <connector name="netty-connector">
+                    tcp://0.0.0.0:61616?sslEnabled=true;
+                    keyStorePath=/var/lib/artemis-instance/ssl/broker.ks;keyStorePassword=${ACTIVEMQ_JMS_SERVER_KEYSTORE_PASSWORD};
+                    trustStorePath=/var/lib/artemis-instance/ssl/client.ts;trustStorePassword=${ACTIVEMQ_JMS_SERVER_TRUSTSTORE_PASSWORD};
+                    needClientAuth=true;enabledProtocols=TLSv1.
+                </connector>
+            </connectors>
+
+            <!-- Acceptors -->
+            <acceptors>
+                <acceptor name="netty-ssl-acceptor">
+                    tcp://0.0.0.0:61616?sslEnabled=true;
+                    keyStorePath=/var/lib/artemis-instance/ssl/broker.ks;keyStorePassword=${ACTIVEMQ_JMS_SERVER_KEYSTORE_PASSWORD};
+                    trustStorePath=/var/lib/artemis-instance/ssl/client.ts;trustStorePassword=${ACTIVEMQ_JMS_SERVER_TRUSTSTORE_PASSWORD};
+                    needClientAuth=true;enabledProtocols=TLSv1.2</acceptor>
+            </acceptors>
+        </core>
+    </configuration>

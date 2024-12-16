@@ -1,5 +1,4 @@
 platform:
-  imageTag: pr-1473
   containers:
     osgpCore:
       name: osgp-core

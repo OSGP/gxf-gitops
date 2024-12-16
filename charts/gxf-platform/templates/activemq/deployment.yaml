@@ -21,3 +21,26 @@ spec:
               containerPort: 61616
             - name: console
               containerPort: 8161
+          env:
+            - name: ACTIVEMQ_JMS_SERVER_KEYSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: gxf-platform-jms-server-certs
+                  key: keyStorePassword
+            - name: ACTIVEMQ_JMS_SERVER_TRUSTSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: gxf-platform-jms-server-certs
+                  key: trustStorePassword
+          volumeMounts:
+            - name: activemq-secrets
+              mountPath: /var/lib/artemis-instance/ssl/
+            - name: activemq-config
+              mountPath: /var/lib/artemis-instance/etc-override/
+      volumes:
+        - name: activemq-secrets
+          secret:
+            secretName: gxf-platform-jms-server-certs
+        - name: activemq-config
+          configMap:
+            name: activemq-config

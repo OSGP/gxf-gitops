@@ -4,8 +4,25 @@ metadata:
   name: gxf-platform-config
 data:
   global.properties: |
+    #Postgres
     db.host=postgres
     db.port=5432
     db.username=osp_admin
     db.password=1234
-    jms.domain.default.broker.url=failover:(tcp://activemq:61616)
+
+    # Activemq settings
+    jms.default.broker.url=failover:(ssl://activemq:61616)
+    jms.default.broker.client.key.store=/etc/ssl/certs/jms/gxf-platform/client.ks")
+    jms.default.broker.client.key.store.pwd=${ACTIVEMQ_JMS_CLIENT_KEYSTORE_PASSWORD}
+    jms.default.broker.client.trust.store=/etc/ssl/certs/jms/gxf-platform/broker.ts")
+    jms.default.broker.client.trust.store.pwd=${ACTIVEMQ_JMS_CLIENT_TRUSTSTORE_PASSWORD}
+    jms.domain.default.broker.url=failover:(ssl://activemq:61616)
+    jms.domain.default.broker.client.key.store=/etc/ssl/certs/jms/gxf-platform/client.ks")
+    jms.domain.default.broker.client.key.store.pwd=${ACTIVEMQ_JMS_CLIENT_KEYSTORE_PASSWORD}
+    jms.domain.default.broker.client.trust.store=/etc/ssl/certs/jms/gxf-platform/broker.ts")
+    jms.domain.default.broker.client.trust.store.pwd=${ACTIVEMQ_JMS_CLIENT_TRUSTSTORE_PASSWORD}
+    jms.protocol.default.broker.url=failover:(ssl://activemq:61616)
+    jms.protocol.default.broker.client.key.store=/etc/ssl/certs/jms/gxf-platform/client.ks")
+    jms.protocol.default.broker.client.key.store.pwd=${ACTIVEMQ_JMS_CLIENT_KEYSTORE_PASSWORD}
+    jms.protocol.default.broker.client.trust.store=/etc/ssl/certs/jms/gxf-platform/broker.ts")
+    jms.protocol.default.broker.client.trust.store.pwd=${ACTIVEMQ_JMS_CLIENT_TRUSTSTORE_PASSWORD}
