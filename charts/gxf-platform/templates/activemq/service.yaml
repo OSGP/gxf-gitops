@@ -10,7 +10,7 @@ spec:
       port: 8161
       targetPort: console
     - name: activemq
-      port: 61616
+      port: 61617
       targetPort: activemq
   selector:
     app: activemq

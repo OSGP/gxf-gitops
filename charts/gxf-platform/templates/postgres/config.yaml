@@ -4,6 +4,7 @@ metadata:
   name: postgres-init-sqls
 data:
   init.sql: |
+    -- Creating users
     CREATE USER osp_admin WITH SUPERUSER INHERIT CREATEDB CREATEROLE
         REPLICATION ENCRYPTED PASSWORD '1234';
     CREATE USER osgp_core_db_api_user WITH ENCRYPTED PASSWORD '1234'
@@ -12,5 +13,24 @@ data:
         NOSUPERUSER;
     CREATE USER osgp_core_db_api_iec61850_user WITH ENCRYPTED PASSWORD '1234'
         NOSUPERUSER;
+
+    -- Creating databases
     CREATE DATABASE osgp_core;
     GRANT ALL PRIVILEGES ON database osgp_core TO osp_admin;
+    CREATE DATABASE osgp_logging;
+    GRANT ALL PRIVILEGES ON database osgp_logging TO osp_admin;
+    CREATE DATABASE osgp_adapter_ws_core;
+    GRANT ALL PRIVILEGES ON database osgp_adapter_ws_core TO osp_admin;
+    CREATE DATABASE osgp_adapter_ws_publiclighting;
+    GRANT ALL PRIVILEGES ON database osgp_adapter_ws_publiclighting TO osp_admin;
+    CREATE DATABASE osgp_adapter_ws_smartmetering;
+    GRANT ALL PRIVILEGES ON database osgp_adapter_ws_smartmetering TO osp_admin;
+    CREATE DATABASE osgp_adapter_ws_tariffswitching;
+    GRANT ALL PRIVILEGES ON database osgp_adapter_ws_tariffswitching TO osp_admin;
+    CREATE DATABASE osgp_adapter_protocol_iec60870;
+    GRANT ALL PRIVILEGES ON database osgp_adapter_protocol_iec60870 TO osp_admin;
+    CREATE DATABASE osgp_adapter_protocol_iec61850;
+    GRANT ALL PRIVILEGES ON database osgp_adapter_protocol_iec61850 TO osp_admin;
+    CREATE DATABASE osgp_adapter_protocol_oslp;
+    GRANT ALL PRIVILEGES ON database osgp_adapter_protocol_oslp TO osp_admin;
+

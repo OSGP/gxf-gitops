@@ -100,6 +100,6 @@ function clean_up_files {
 
 clean_up_files
 generate_ca_cert
-generate_jms_keystore "client" "activemq" "gxf-platform"
-generate_jms_keystore "server" "activemq" "gxf-platform"
+generate_jms_keystore "client" "gxf-platform" "activemq"
+generate_jms_keystore "server" "gxf-platform" "activemq"
 clean_up_files

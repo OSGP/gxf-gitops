@@ -35,12 +35,12 @@ spec:
             - name: ACTIVEMQ_JMS_CLIENT_KEYSTORE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: gxf-platform-jms-client-certs
+                  name: activemq-jms-client-certs
                   key: keyStorePassword
             - name: ACTIVEMQ_JMS_CLIENT_TRUSTSTORE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: gxf-platform-jms-client-certs
+                  name: activemq-jms-client-certs
                   key: trustStorePassword
           ports:
             - containerPort: 8080
@@ -99,6 +99,6 @@ spec:
             name: gxf-platform-config
         - name: activemq-secrets
           secret:
-            secretName: gxf-platform-jms-client-certs
+            secretName: activemq-jms-client-certs
 ---
 {{- end -}}
