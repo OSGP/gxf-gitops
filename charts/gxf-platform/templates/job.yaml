@@ -1,34 +1,16 @@
-{{- range $container := .Values.platform.containers -}}
-{{- $name := $container.name }}
-apiVersion: apps/v1
-kind: Deployment
+{{- range $job := .Values.platform.jobs -}}
+{{- $name := $job.name }}
+apiVersion: batch/v1
+kind: Job
 metadata:
   name: {{ $name }}
-  labels:
-    app: {{ $name }}
 spec:
-  replicas: {{ $container.replicas | default $.Values.platform.replicas | default 1 }}
-  revisionHistoryLimit: 3
-  selector:
-    matchLabels:
-      app: {{ $name }}
-  strategy:
-    type: RollingUpdate
   template:
-    metadata:
-      name: {{ $name }}
-      labels:
-        app: {{ $name }}
-      annotations:
-        prometheus.io/port: '9404'
-        prometheus.io/scrape: 'true'
     spec:
-      automountServiceAccountToken: false
-      serviceAccountName: {{ $name }}-sa
       containers:
         - name: {{ $name }}
-          image: {{ $container.imageRepository | default $.Values.platform.imageRepository | default "ghcr.io/osgp/" }}{{ $name }}:{{ $container.imageTag | default $.Values.platform.imageTag | default "latest" }}
-          imagePullPolicy: {{ $container.imagePullPolicy | default $.Values.platform.imagePullPolicy | default "Always" }}
+          image: {{ $job.imageRepository | default $.Values.platform.imageRepository | default "ghcr.io/osgp/" }}{{ $name }}:{{ $job.imageTag | default $.Values.platform.imageTag | default "latest" }}
+          imagePullPolicy: {{ $job.imagePullPolicy | default $.Values.platform.imagePullPolicy | default "Always" }}
           env:
             - name: JAVA_OPTS
               value: "-XX:MaxRAMPercentage=80.0 -XX:InitialRAMPercentage=80.0"
@@ -42,13 +24,9 @@ spec:
                 secretKeyRef:
                   name: activemq-jms-client-certs
                   key: trustStorePassword
-          ports:
-            - containerPort: 8080
-              name: http
-              protocol: TCP
           startupProbe:
-            {{- if $container.startupProbe }}
-              {{- toYaml $container.startupProbe | nindent 12 }}
+            {{- if $job.startupProbe }}
+              {{- toYaml $job.startupProbe | nindent 12 }}
             {{- else if $.Values.platform.startupProbe}}
               {{- toYaml $.Values.platform.startupProbe | nindent 12 }}
             {{- else }}
@@ -59,8 +37,8 @@ spec:
               path: /probe/probe.txt
             {{- end }}
           livenessProbe:
-            {{- if $container.livenessProbe }}
-              {{- toYaml $container.livenessProbe | nindent 12 }}
+            {{- if $job.livenessProbe }}
+              {{- toYaml $job.livenessProbe | nindent 12 }}
             {{- else if $.Values.platform.livenessProbe}}
               {{- toYaml $.Values.platform.livenessProbe | nindent 12 }}
             {{- else }}
@@ -72,8 +50,8 @@ spec:
               path: /metrics
             {{- end }}
           readinessProbe:
-            {{- if $container.readinessProbe }}
-              {{- toYaml $container.readinessProbe | nindent 12 }}
+            {{- if $job.readinessProbe }}
+              {{- toYaml $job.readinessProbe | nindent 12 }}
             {{- else if $.Values.platform.readinessProbe}}
               {{- toYaml $.Values.platform.readinessProbe | nindent 12 }}
             {{- else }}
@@ -95,6 +73,8 @@ spec:
               mountPath: /etc/ssl/certs/jms/gxf-platform/
             - name: oslp-signing-keys
               mountPath: /etc/ssl/certs/oslp
+            - name: report-volume
+              mountPath: /target/output
       volumes:
         - name: gxf-platform-config
           configMap:
@@ -105,5 +85,8 @@ spec:
         - name: oslp-signing-keys
           secret:
             secretName: oslp-signing-keys
----
-{{- end -}}
+        - name: report-volume
+          persistentVolumeClaim:
+            claimName: report-volume
+      restartPolicy: Never
+{{- end }}

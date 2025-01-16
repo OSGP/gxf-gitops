@@ -15,6 +15,9 @@ data:
     db.host.core=postgres
     db.host.oslp=postgres
     db.host.iec61850=postgres
+    db.api.host.iec61850=postgres
+    db.api.host.oslp=postgres
+    db.hostname=postgres
 
     # Activemq settings
     jms.default.broker.url=failover:(ssl://activemq:61617)
@@ -35,3 +38,13 @@ data:
     jms.protocol.default.broker.client.key.store.pwd=${ACTIVEMQ_JMS_CLIENT_KEYSTORE_PASSWORD}
     jms.protocol.default.broker.client.trust.store=/etc/ssl/certs/jms/gxf-platform/broker.ts
     jms.protocol.default.broker.client.trust.store.pwd=${ACTIVEMQ_JMS_CLIENT_TRUSTSTORE_PASSWORD}
+
+    # OSLP
+    signing.server.security.signkey.path=/etc/ssl/certs/oslp/oslp_test_ecdsa_private.der
+    oslp.security.signkey.path=/etc/ssl/certs/oslp/oslp_test_ecdsa_private.der
+    oslp.security.verifykey.path=/etc/ssl/certs/oslp/oslp_test_ecdsa_public.der
+
+    # Cucumber
+    certificate.basepath=../certificates
+    web.service.keystore.basepath=${certificate.basepath}
+    web.service.truststore.location=${certificate.basepath}/trust.jks

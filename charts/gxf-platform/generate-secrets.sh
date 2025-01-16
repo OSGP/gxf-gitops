@@ -5,7 +5,7 @@ if [[ ! $(dirname "${BASH_SOURCE}") == "." ]]; then
 fi
 
 function generate_passphrase {
-    echo $(tr -cd '[:alnum:]' < /dev/urandom | fold -w30 | head -n1)
+    echo "$(tr -cd '[:alnum:]' < /dev/urandom | fold -w30 | head -n1)"
 }
 
 # Constants
@@ -95,11 +95,39 @@ function generate_ca_cert {
 
 function clean_up_files {
   echo "Cleaning up all created files"
-  find .. -type f \( -name \*.csr -o -name \*.key -o -name \*.p12 -o -name \*.jks -o -name \*.pem -o -name \*.pfx -o -name \*.cer -o -name \*.crt -o -name \*.srl \) | xargs rm
+  find .. -type f \( -name \*.csr -o -name \*.key -o -name \*.p12 -o -name \*.jks -o -name \*.pem -o -name \*.pfx -o -name \*.cer -o -name \*.crt -o -name \*.srl -o -name \*.der \) | xargs rm
+}
+
+function genereate_oslp_signing_keys {
+  PRIVATE_FILE=oslp_test_ecdsa_private
+  PUBLIC_FILE=oslp_test_ecdsa_public
+
+  echo "Generate keys ${PRIVATE_FILE}.pem/.der and ${PUBLIC_FILE}.pem/.der"
+  openssl ecparam -genkey -name prime256v1 -out ${PRIVATE_FILE}.pem
+  openssl ec -in ${PRIVATE_FILE}.pem -out ${PUBLIC_FILE}.pem -pubout
+
+  openssl pkcs8 -topk8 -in ${PRIVATE_FILE}.pem -out ${PRIVATE_FILE}.der -outform der -nocrypt
+  openssl ec -in ${PUBLIC_FILE}.pem -out ${PUBLIC_FILE}.der -outform der -pubin -pubout
+
+  echo "Generating secrets for oslp"
+
+  secret_name="oslp-signing-keys"
+  secret_directory="templates/secrets"
+  mkdir -p "${secret_directory}"
+
+  secret_file="${secret_directory}/${secret_name}.yaml"
+  echo "# yamllint disable rule:line-length" > "${secret_file}"
+
+
+  kubectl create secret generic "${secret_name}" \
+      --from-file=oslp_test_ecdsa_private.der="oslp_test_ecdsa_private.der" \
+      --from-file=oslp_test_ecdsa_public.der="oslp_test_ecdsa_public.der" \
+      --dry-run=client -o yaml >> "${secret_file}"
 }
 
 clean_up_files
 generate_ca_cert
 generate_jms_keystore "client" "gxf-platform" "activemq"
 generate_jms_keystore "server" "gxf-platform" "activemq"
+genereate_oslp_signing_keys
 clean_up_files

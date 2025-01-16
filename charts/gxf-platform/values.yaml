@@ -26,12 +26,15 @@ platform:
       name: osgp-adapter-ws-tariffswitching
     osgpProtocolAdapterIec60870:
       name: osgp-protocol-adapter-iec60870
-#    osgpProtocolAdapterIec61850:
-#      name: osgp-protocol-adapter-iec61850
-#    osgpProtocolAdapterOslp:
-#      name: osgp-protocol-adapter-oslp
-#    osgpSigningServer:
-#      name: osgp-signing-server
+    osgpProtocolAdapterIec61850:
+      name: osgp-protocol-adapter-iec61850
+    osgpProtocolAdapterOslp:
+      name: osgp-protocol-adapter-oslp
+    osgpSigningServer:
+      name: osgp-signing-server
+  jobs:
+    osgpCucumberTestsPlatformCommon:
+      name: osgp-cucumber-tests-platform-common
 
 
 
