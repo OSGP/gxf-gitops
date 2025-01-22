@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: activemq
+  name: apache
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: activemq
+      app: apache
   template:
     metadata:
       labels:
-        app: activemq
+        app: apache
     spec:
       containers:
-        - name: activemq
-          image: apache/activemq-artemis
+        - name: apache
+          image: apache/apache-artemis
           imagePullPolicy: IfNotPresent
           ports:
-            - name: activemq
+            - name: apache
               containerPort: 61617
             - name: console
               containerPort: 8161
@@ -25,27 +25,27 @@ spec:
             - name: ACTIVEMQ_JMS_SERVER_KEYSTORE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: activemq-jms-server-certs
+                  name: apache-jms-server-certs
                   key: keyStorePassword
             - name: ACTIVEMQ_JMS_SERVER_TRUSTSTORE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: activemq-jms-server-certs
+                  name: apache-jms-server-certs
                   key: trustStorePassword
           volumeMounts:
-            - name: activemq-secrets
+            - name: apache-secrets
               mountPath: /var/lib/artemis-instance/ssl/
-            - name: activemq-config
+            - name: apache-config
               mountPath: /var/lib/artemis-instance/etc-override/
             - name: report-volume
               mountPath: /target/output
       volumes:
-        - name: activemq-secrets
+        - name: apache-secrets
           secret:
-            secretName: activemq-jms-server-certs
-        - name: activemq-config
+            secretName: apache-jms-server-certs
+        - name: apache-config
           configMap:
-            name: activemq-config
+            name: apache-config
         - name: report-volume
           persistentVolumeClaim:
             claimName: report-volume

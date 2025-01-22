@@ -24,50 +24,12 @@ spec:
                 secretKeyRef:
                   name: activemq-jms-client-certs
                   key: trustStorePassword
-          startupProbe:
-            {{- if $job.startupProbe }}
-              {{- toYaml $job.startupProbe | nindent 12 }}
-            {{- else if $.Values.platform.startupProbe}}
-              {{- toYaml $.Values.platform.startupProbe | nindent 12 }}
-            {{- else }}
-            failureThreshold: 30
-            periodSeconds: 5
-            httpGet:
-              port: 8080
-              path: /probe/probe.txt
-            {{- end }}
-          livenessProbe:
-            {{- if $job.livenessProbe }}
-              {{- toYaml $job.livenessProbe | nindent 12 }}
-            {{- else if $.Values.platform.livenessProbe}}
-              {{- toYaml $.Values.platform.livenessProbe | nindent 12 }}
-            {{- else }}
-            failureThreshold: 12
-            periodSeconds: 5
-            timeoutSeconds: 5
-            httpGet:
-              port: 9404
-              path: /metrics
-            {{- end }}
-          readinessProbe:
-            {{- if $job.readinessProbe }}
-              {{- toYaml $job.readinessProbe | nindent 12 }}
-            {{- else if $.Values.platform.readinessProbe}}
-              {{- toYaml $.Values.platform.readinessProbe | nindent 12 }}
-            {{- else }}
-            failureThreshold: 6
-            periodSeconds: 5
-            timeoutSeconds: 5
-            httpGet:
-              port: 9404
-              path: /metrics
-            {{- end }}
           volumeMounts:
             - name: gxf-platform-config
-              mountPath: /etc/osp/global.properties
+              mountPath: /etc/osp/test/global-cucumber.properties
               subPath: global.properties
             - name: gxf-platform-config
-              mountPath: /etc/osp/{{ $name }}.properties
+              mountPath: /etc/osp/test/{{ $name }}.properties
               subPath: global.properties
             - name: activemq-secrets
               mountPath: /etc/ssl/certs/jms/gxf-platform/

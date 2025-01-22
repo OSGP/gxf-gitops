@@ -35,6 +35,7 @@ platform:
   jobs:
     osgpCucumberTestsPlatformCommon:
       name: osgp-cucumber-tests-platform-common
+      imageTag: pr-1516
 
 
 
