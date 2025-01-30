@@ -24,6 +24,16 @@ spec:
                 secretKeyRef:
                   name: activemq-jms-client-certs
                   key: trustStorePassword
+            - name: ORGANISATION_TRUSTSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: organisations-ws-client-certs
+                  key: truststore-password
+            - name: ORGANISATION_KEYSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: organisations-ws-client-certs
+                  key: keystore-password
           volumeMounts:
             - name: gxf-platform-config
               mountPath: /etc/osp/test/global-cucumber.properties
@@ -37,6 +47,8 @@ spec:
               mountPath: /etc/ssl/certs/oslp
             - name: report-volume
               mountPath: /target/output
+            - name: organisations-certs-volume
+              mountPath: /etc/ssl/certs/organizations/
       volumes:
         - name: gxf-platform-config
           configMap:
@@ -50,5 +62,16 @@ spec:
         - name: report-volume
           persistentVolumeClaim:
             claimName: report-volume
+        - name: organisations-certs-volume
+          projected:
+            sources:
+              - secret:
+                  name: organisations-ws-client-certs
+              - secret:
+                  name: liandernetmanagement-cert
+              - secret:
+                  name: test-org-cert
+              - secret:
+                  name: unknown-organization-cert
       restartPolicy: Never
 {{- end }}

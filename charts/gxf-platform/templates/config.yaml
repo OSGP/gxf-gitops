@@ -45,6 +45,8 @@ data:
     oslp.security.verifykey.path=/etc/ssl/certs/oslp/oslp_test_ecdsa_public.der
 
     # Cucumber
-    certificate.basepath=/etc/ssl/certs/organisations/
-    firmware.domain=localhost
-    firmware.port=443
+    certificate.basepath=/etc/ssl/certs/organizations/
+    web.service.keystore.password=${ORGANISATION_TRUSTSTORE_PASSWORD}
+    web.service.truststore.password=${ORGANISATION_KEYSTORE_PASSWORD}
+    server=httpd
+    domain=:443

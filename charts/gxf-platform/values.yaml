@@ -10,8 +10,8 @@ platform:
       name: osgp-adapter-domain-core
     osgpAdapterDomainPubliclighting:
       name: osgp-adapter-domain-publiclighting
-    osgpAdapterDomainSmartmetering:
-      name: osgp-adapter-domain-smartmetering
+#    osgpAdapterDomainSmartmetering:
+#      name: osgp-adapter-domain-smartmetering
     osgpAdapterDomainTariffswitching:
       name: osgp-adapter-domain-tariffswitching
     osgpAdapterWsAdmin:
