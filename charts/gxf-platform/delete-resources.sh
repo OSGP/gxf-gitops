@@ -1,2 +1,2 @@
 #!/bin/bash
-kubectl delete -f helm-template.yaml
+kubectl --namespace=default delete -f helm-template.yaml

@@ -35,18 +35,12 @@ echo ${key_passphrase}
 EOF
 
   secret_name=apache-httpd-certs
-  secret_directory="templates/httpd"
-  mkdir -p "${secret_directory}"
-
-  secret_file=${secret_directory}/${secret_name}.yaml
-  echo "# yamllint disable rule:line-length" > "${secret_file}"
 
   kubectl create secret generic ${secret_name}\
   --from-file=root.crt="${CA_CERT}" \
   --from-file=server.crt="${filename}.pem" \
   --from-file=server.key="${filename}.key" \
-  --from-file=server-key-password="${filename}.generated.sh" \
-  --dry-run=client -o yaml >> "${secret_file}"
+  --from-file=server-key-password="${filename}.generated.sh"
 
 }
 
@@ -106,19 +100,12 @@ function generate_jms_keystore {
   fi
 
   secret_name="${CN,,}-jms-${keystore_type,,}-certs"
-  secret_directory="templates/activemq"
-  mkdir -p "${secret_directory}"
-
-  secret_file="${secret_directory}/${secret_name}.yaml"
-  echo "# yamllint disable rule:line-length" > "${secret_file}"
-
 
   kubectl create secret generic "${secret_name}" \
       --from-file=${keystore_name}="${filename}".keystore.jks \
       --from-file=${truststore_name}="${filename}".truststore.jks \
       --from-literal=keyStorePassword="${keystore_passphrase}" \
-      --from-literal=trustStorePassword="${truststore_passphrase}" \
-      --dry-run=client -o yaml >> "${secret_file}"
+      --from-literal=trustStorePassword="${truststore_passphrase}"
 
 }
 
@@ -127,16 +114,13 @@ function generate_ws_client_certs {
     keystore_passphrase=$(generate_passphrase)
     truststore_passphrase=$(generate_passphrase)
 
-    secret_directory="templates/organisations"
-    mkdir -p ${secret_directory}
-
     clients_file="test-organisations"
     echo "Getting organisations from $clients_file"
 
     for client in $(cat $clients_file) ;
     do
         echo "Generating files for ${client}"
-        filename="${secret_directory}/${client}"
+        filename="${client}"
 
         # create certificate signing request
         openssl req -new -newkey rsa:4096 -passout pass:"${keystore_passphrase}" \
@@ -151,23 +135,21 @@ function generate_ws_client_certs {
             -passin pass:${CA_PASS}
 
         # generate pfx
-        pfx_file="${secret_directory}/${client}.pfx"
+        pfx_file="${client}.pfx"
         openssl pkcs12 -export \
-            -inkey ${filename}.key \
-            -in ${filename}.pem \
+            -inkey "${filename}.key" \
+            -in "${filename}.pem" \
             -certfile ${CA_CERT} \
-            -out ${pfx_file} \
+            -out "${pfx_file}" \
             -passin pass:"${keystore_passphrase}" \
             -passout pass:"${keystore_passphrase}"
 
         # generate sealed secret
         client_helmproof="$(echo "${client//_/-}" | tr '[:upper:]' '[:lower:]')"
         secret_name="${client_helmproof}-cert"
-        secret_file="${secret_directory}/${secret_name}.yaml"
 
         kubectl create secret generic ${secret_name} \
-            --from-file=${pfx_file} \
-            --dry-run=client -o yaml > "${secret_file}"
+            --from-file=${pfx_file}
     done
 
     keytool -import -keystore organisations-truststore.jks -file ${CA_CERT} \
@@ -175,13 +157,10 @@ function generate_ws_client_certs {
 
     secret_name=organisations-ws-client-certs
 
-    secret_file="${secret_directory}/${secret_name}.yaml"
-
     kubectl create secret generic ${secret_name} \
         --from-file=trust.jks="organisations-truststore.jks" \
         --from-literal=keystore-password="${keystore_passphrase}" \
-        --from-literal=truststore-password="${truststore_passphrase}" \
-        --dry-run=client -o yaml  > "${secret_file}"
+        --from-literal=truststore-password="${truststore_passphrase}"
 }
 
 function generate_ca_cert {
@@ -211,20 +190,15 @@ function generate_oslp_signing_keys {
   echo "Generating secrets for oslp"
 
   secret_name="oslp-signing-keys"
-  secret_directory="templates/secrets"
-  mkdir -p "${secret_directory}"
-
-  secret_file="${secret_directory}/${secret_name}.yaml"
-  echo "# yamllint disable rule:line-length" > "${secret_file}"
-
 
   kubectl create secret generic "${secret_name}" \
       --from-file=oslp_test_ecdsa_private.der="oslp_test_ecdsa_private.der" \
-      --from-file=oslp_test_ecdsa_public.der="oslp_test_ecdsa_public.der" \
-      --dry-run=client -o yaml >> "${secret_file}"
+      --from-file=oslp_test_ecdsa_public.der="oslp_test_ecdsa_public.der"
 }
 
 clean_up_files
+echo "Deleting created secrets"
+kubectl delete --all secrets
 generate_ca_cert
 generate_jms_keystore "client" "gxf-platform" "activemq"
 generate_jms_keystore "server" "gxf-platform" "activemq"

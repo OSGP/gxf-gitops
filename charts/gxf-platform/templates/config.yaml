@@ -46,7 +46,7 @@ data:
 
     # Cucumber
     certificate.basepath=/etc/ssl/certs/organizations/
-    web.service.keystore.password=${ORGANISATION_TRUSTSTORE_PASSWORD}
-    web.service.truststore.password=${ORGANISATION_KEYSTORE_PASSWORD}
+    web.service.keystore.password=${ORGANISATION_KEYSTORE_PASSWORD}
+    web.service.truststore.password=${ORGANISATION_TRUSTSTORE_PASSWORD}
     server=httpd
     domain=:443

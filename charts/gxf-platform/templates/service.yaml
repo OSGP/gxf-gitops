@@ -10,6 +10,9 @@ spec:
     - name: http
       port: 80
       targetPort: http
+    - name: ajp
+      port: 8009
+      targetPort: ajp
   selector:
     app: {{ $name }}
 ---

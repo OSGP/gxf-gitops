@@ -80,7 +80,6 @@ data:
     <IfModule ssl_module>
       Listen 9443
       <VirtualHost *:9443>
-        ServerName httpd
         ErrorLog /dev/stderr
         LogLevel info
         CustomLog /dev/stdout combined

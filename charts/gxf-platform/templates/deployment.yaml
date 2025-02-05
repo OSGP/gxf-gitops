@@ -46,6 +46,9 @@ spec:
             - containerPort: 8080
               name: http
               protocol: TCP
+            - containerPort: 8009
+              name: ajp
+              protocol: TCP
           startupProbe:
             {{- if $container.startupProbe }}
               {{- toYaml $container.startupProbe | nindent 12 }}
