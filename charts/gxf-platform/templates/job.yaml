@@ -9,8 +9,12 @@ spec:
     spec:
       containers:
         - name: {{ $name }}
-          image: {{ $job.imageRepository | default $.Values.platform.imageRepository | default "ghcr.io/osgp/" }}{{ $name }}:{{ $job.imageTag | default $.Values.platform.imageTag | default "latest" }}
+          image: {{ $job.imageRepository | default $.Values.platform.imageRepository | default "ghcr.io/osgp/" }}{{ $job.imageName | default $name }}:{{ $job.imageTag | default $.Values.platform.imageTag | default "latest" }}
           imagePullPolicy: {{ $job.imagePullPolicy | default $.Values.platform.imagePullPolicy | default "Always" }}
+          ports:
+            - containerPort: 8188
+              name: notification
+              protocol: TCP
           env:
             - name: JAVA_OPTS
               value: "-XX:MaxRAMPercentage=80.0 -XX:InitialRAMPercentage=80.0"
@@ -41,6 +45,9 @@ spec:
             - name: gxf-platform-config
               mountPath: /etc/osp/test/{{ $name }}.properties
               subPath: global.properties
+            - name: gxf-platform-config
+              mountPath: /usr/local/tomcat/conf/server.xml
+              subPath: server.xml
             - name: activemq-secrets
               mountPath: /etc/ssl/certs/jms/gxf-platform/
             - name: oslp-signing-keys

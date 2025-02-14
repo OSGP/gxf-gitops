@@ -42,6 +42,16 @@ spec:
                 secretKeyRef:
                   name: activemq-jms-client-certs
                   key: trustStorePassword
+            - name: ORGANISATION_TRUSTSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: organisations-ws-client-certs
+                  key: truststore-password
+            - name: ORGANISATION_KEYSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: organisations-ws-client-certs
+                  key: keystore-password
           ports:
             - containerPort: 8080
               name: http
@@ -98,6 +108,11 @@ spec:
               mountPath: /etc/ssl/certs/jms/gxf-platform/
             - name: oslp-signing-keys
               mountPath: /etc/ssl/certs/oslp
+            - name: gxf-platform-config
+              mountPath: /usr/local/tomcat/conf/server.xml
+              subPath: server.xml
+            - name: organisations-certs-volume
+              mountPath: /etc/ssl/certs/organizations/
       volumes:
         - name: gxf-platform-config
           configMap:
@@ -108,5 +123,16 @@ spec:
         - name: oslp-signing-keys
           secret:
             secretName: oslp-signing-keys
+        - name: organisations-certs-volume
+          projected:
+            sources:
+              - secret:
+                  name: organisations-ws-client-certs
+              - secret:
+                  name: liandernetmanagement-cert
+              - secret:
+                  name: test-org-cert
+              - secret:
+                  name: unknown-organization-cert
 ---
 {{- end -}}

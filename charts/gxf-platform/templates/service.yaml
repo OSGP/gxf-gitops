@@ -17,3 +17,19 @@ spec:
     app: {{ $name }}
 ---
 {{- end -}}
+{{- range $job := .Values.platform.jobs -}}
+{{- $name := $job.name }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $name }}
+spec:
+  ports:
+    - name: notification
+      port: 8188
+      targetPort: notification
+  selector:
+    app: {{ $name }}
+---
+{{- end -}}

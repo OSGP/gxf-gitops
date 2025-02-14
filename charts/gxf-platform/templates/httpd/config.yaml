@@ -116,7 +116,7 @@ data:
             ProxyPass /osgp-adapter-ws-admin ajp://osgp-adapter-ws-admin:8009/osgp-adapter-ws-admin
             ProxyPassReverse /osgp-adapter-ws-admin /osgp-adapter-ws-admin
 
-            ProxyPass /osgp-adapter-ws-core ajp://osgp-adapter-ws-core:8009/osgp-adapter-ws-core
+            ProxyPass /osgp-adapter-ws-core ajp://osgp-adapter-ws-core:8009
             ProxyPassReverse /osgp-adapter-ws-core /osgp-adapter-ws-core
 
             ProxyPass /web-device-simulator ajp://web-device-simulator:8009/web-device-simulator

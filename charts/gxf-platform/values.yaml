@@ -34,9 +34,10 @@ platform:
       name: osgp-signing-server
   jobs:
     osgpCucumberTestsPlatformCommon:
-      name: osgp-cucumber-tests-platform-common
-      imageTag: pr-1516
-
+      name: cucumber-tests-platform-common
+      imageName: osgp-cucumber-tests-platform-common
+      imageTag: local4
+      imageRepository: test-registry:5000/
 
 
 
