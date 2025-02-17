@@ -1,4 +1,4 @@
-# bin/bash
+#!/bin/bash
 if [[ ! $(dirname "${BASH_SOURCE}") == "." ]]; then
   echo Please run this script from wihtin the gxf-platform folder
   exit 1

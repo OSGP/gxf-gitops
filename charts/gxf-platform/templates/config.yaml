@@ -100,7 +100,7 @@ data:
                    keepAliveTimeout="10000"
                    prestartminSpareThreads="true"
                    secretRequired="false" />
-        <Connector port="8081"
+        <Connector port="8188"
                    protocol="HTTP/1.1"
                    maxThreads="800"
                    minSpareThreads="10"
