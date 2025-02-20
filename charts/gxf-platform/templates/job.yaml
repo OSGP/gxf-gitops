@@ -7,6 +7,16 @@ metadata:
 spec:
   template:
     spec:
+      initContainers:
+        - name: removal-of-test-files
+          image: alpine
+          command:
+            - rm
+            - -rf
+            - /target/output/*
+          volumeMounts:
+            - name: report-volume
+              mountPath: /target/output
       containers:
         - name: {{ $name }}
           image: {{ $job.imageRepository | default $.Values.platform.imageRepository | default "ghcr.io/osgp/" }}{{ $job.imageName | default $name }}:{{ $job.imageTag | default $.Values.platform.imageTag | default "latest" }}
