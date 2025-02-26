@@ -10,11 +10,11 @@ spec:
       initContainers:
         - name: removal-of-test-files
           image: alpine
-          command:
-            - rm
-            - -rf
-            - /target/output/*
+          command: ['sh', './usr/bin/remove-old-test-files.sh']
           volumeMounts:
+            - name: gxf-platform-config
+              mountPath: /usr/bin/remove-old-test-files.sh
+              subPath: remove-old-test-files.sh
             - name: report-volume
               mountPath: /target/output
       containers:

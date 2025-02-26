@@ -90,6 +90,7 @@ data:
                    minSpareThreads="10"
                    connectionTimeout="10000"
                    keepAliveTimeout="10000"
+                   address="0.0.0.0"
                    prestartminSpareThreads="true"
                    secretRequired="false" />
         <Connector port="8080"
@@ -98,6 +99,7 @@ data:
                    minSpareThreads="10"
                    connectionTimeout="10000"
                    keepAliveTimeout="10000"
+                   address="0.0.0.0"
                    prestartminSpareThreads="true"
                    secretRequired="false" />
         <Connector port="8188"
@@ -106,6 +108,7 @@ data:
                    minSpareThreads="10"
                    connectionTimeout="10000"
                    keepAliveTimeout="10000"
+                   address="0.0.0.0"
                    prestartminSpareThreads="true"
                    secretRequired="false" />
 
@@ -129,3 +132,10 @@ data:
         </Engine>
       </Service>
     </Server>
+  remove-old-test-files.sh: |
+    #!/bin/sh
+    echo "Current files in /target/output/"
+    ls /target/output/
+    rm -rf /target/output/*
+    echo "Current files after removal in /target/output/"
+    ls /target/output/

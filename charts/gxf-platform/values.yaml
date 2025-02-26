@@ -36,7 +36,7 @@ platform:
     osgpCucumberTestsPlatformCommon:
       name: cucumber-tests-platform-common
       imageName: osgp-cucumber-tests-platform-common
-      imageTag: local4
+      imageTag: local15
       imageRepository: test-registry:5000/
 
 
