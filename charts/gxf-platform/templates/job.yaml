@@ -6,6 +6,9 @@ metadata:
   name: {{ $name }}
 spec:
   template:
+    metadata:
+      labels:
+        app: {{ $name }}
     spec:
       initContainers:
         - name: removal-of-test-files

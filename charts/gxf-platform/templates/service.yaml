@@ -31,5 +31,7 @@ spec:
       targetPort: notification
   selector:
     app: {{ $name }}
+  # Headless service for direct Job pod access
+  clusterIP: None
 ---
 {{- end -}}
