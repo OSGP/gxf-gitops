@@ -71,19 +71,6 @@ spec:
               port: 8080
               path: /probe/probe.txt
             {{- end }}
-          livenessProbe:
-            {{- if $container.livenessProbe }}
-              {{- toYaml $container.livenessProbe | nindent 12 }}
-            {{- else if $.Values.platform.livenessProbe}}
-              {{- toYaml $.Values.platform.livenessProbe | nindent 12 }}
-            {{- else }}
-            failureThreshold: 12
-            periodSeconds: 5
-            timeoutSeconds: 5
-            httpGet:
-              port: 9404
-              path: /metrics
-            {{- end }}
           readinessProbe:
             {{- if $container.readinessProbe }}
               {{- toYaml $container.readinessProbe | nindent 12 }}
@@ -97,6 +84,11 @@ spec:
               port: 9404
               path: /metrics
             {{- end }}
+          resources:
+            requests:
+              memory: 512Mi
+            limits:
+              memory: 512Mi
           volumeMounts:
             - name: gxf-platform-config
               mountPath: /etc/osp/global.properties
