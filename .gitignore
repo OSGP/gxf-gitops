@@ -9,3 +9,4 @@
 /.idea
 *.iml
 *.log
+charts/gxf-platform/helm-template.yaml
