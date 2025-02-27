@@ -59,18 +59,6 @@ spec:
             - containerPort: 8009
               name: ajp
               protocol: TCP
-          startupProbe:
-            {{- if $container.startupProbe }}
-              {{- toYaml $container.startupProbe | nindent 12 }}
-            {{- else if $.Values.platform.startupProbe}}
-              {{- toYaml $.Values.platform.startupProbe | nindent 12 }}
-            {{- else }}
-            failureThreshold: 30
-            periodSeconds: 5
-            httpGet:
-              port: 8080
-              path: /probe/probe.txt
-            {{- end }}
           readinessProbe:
             {{- if $container.readinessProbe }}
               {{- toYaml $container.readinessProbe | nindent 12 }}
