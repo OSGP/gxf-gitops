@@ -1,4 +1,4 @@
-{{- range $job := .Values.platform.jobs -}}
+{{- range $job := .Values.jobs -}}
 {{- $name := $job.name }}
 apiVersion: batch/v1
 kind: Job
@@ -22,8 +22,9 @@ spec:
               mountPath: /target/output
       containers:
         - name: {{ $name }}
-          image: {{ $job.imageRepository | default $.Values.platform.imageRepository | default "ghcr.io/osgp/" }}{{ $job.imageName | default $name }}:{{ $job.imageTag | default $.Values.platform.imageTag | default "latest" }}
-          imagePullPolicy: {{ $job.imagePullPolicy | default $.Values.platform.imagePullPolicy | default "Always" }}
+          image:
+            {{ $job.imageRepository | default $.Values.imageRepository | default "ghcr.io/osgp/" }}{{ $job.imageName | default $name }}:{{ $job.imageTag | default $.Values.imageTag | default "latest" }}
+          imagePullPolicy: {{ $job.imagePullPolicy | default $.Values.imagePullPolicy | default "Always" }}
           ports:
             - containerPort: 8188
               name: notification
@@ -56,7 +57,8 @@ spec:
               mountPath: /etc/osp/test/global-cucumber.properties
               subPath: global.properties
             - name: gxf-platform-config
-              mountPath: /etc/osp/test/{{ $name }}.properties
+              mountPath:
+                /etc/osp/test/{{ $name }}.properties
               subPath: global.properties
             - name: gxf-platform-config
               mountPath: /usr/local/tomcat/conf/server.xml
@@ -94,4 +96,5 @@ spec:
               - secret:
                   name: unknown-organization-cert
       restartPolicy: Never
+---
 {{- end }}

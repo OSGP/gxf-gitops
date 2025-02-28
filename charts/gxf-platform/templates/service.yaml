@@ -1,4 +1,4 @@
-{{- range $container := .Values.platform.containers -}}
+{{- range $container := .Values.containers -}}
 {{- $name := $container.name }}
 ---
 apiVersion: v1
@@ -15,23 +15,5 @@ spec:
       targetPort: ajp
   selector:
     app: {{ $name }}
----
-{{- end -}}
-{{- range $job := .Values.platform.jobs -}}
-{{- $name := $job.name }}
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: {{ $name }}
-spec:
-  ports:
-    - name: notification
-      port: 8188
-      targetPort: notification
-  selector:
-    app: {{ $name }}
-  # Headless service for direct Job pod access
-  clusterIP: None
 ---
 {{- end -}}

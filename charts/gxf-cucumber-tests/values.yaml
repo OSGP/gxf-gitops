@@ -1,0 +1,5 @@
+imageTag: pr-1523
+jobs:
+  osgpCucumberTestsPlatformCommon:
+    name: cucumber-tests-platform-common
+    imageName: osgp-cucumber-tests-platform-common

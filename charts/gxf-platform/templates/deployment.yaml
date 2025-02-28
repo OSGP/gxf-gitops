@@ -1,4 +1,4 @@
-{{- range $container := .Values.platform.containers -}}
+{{- range $container := .Values.containers -}}
 {{- $name := $container.name }}
 apiVersion: apps/v1
 kind: Deployment
@@ -7,7 +7,7 @@ metadata:
   labels:
     app: {{ $name }}
 spec:
-  replicas: {{ $container.replicas | default $.Values.platform.replicas | default 1 }}
+  replicas: {{ $container.replicas | default $.Values.replicas | default 1 }}
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -27,8 +27,8 @@ spec:
       serviceAccountName: {{ $name }}-sa
       containers:
         - name: {{ $name }}
-          image: {{ $container.imageRepository | default $.Values.platform.imageRepository | default "ghcr.io/osgp/" }}{{ $name }}:{{ $container.imageTag | default $.Values.platform.imageTag | default "latest" }}
-          imagePullPolicy: {{ $container.imagePullPolicy | default $.Values.platform.imagePullPolicy | default "Always" }}
+          image: {{ $container.imageRepository | default $.Values.imageRepository | default "ghcr.io/osgp/" }}{{ $name }}:{{ $container.imageTag | default $.Values.imageTag | default "latest" }}
+          imagePullPolicy: {{ $container.imagePullPolicy | default $.Values.imagePullPolicy | default "Always" }}
           env:
             - name: JAVA_OPTS
               value: "-XX:MaxRAMPercentage=80.0 -XX:InitialRAMPercentage=80.0"
@@ -62,8 +62,8 @@ spec:
           readinessProbe:
             {{- if $container.readinessProbe }}
               {{- toYaml $container.readinessProbe | nindent 12 }}
-            {{- else if $.Values.platform.readinessProbe}}
-              {{- toYaml $.Values.platform.readinessProbe | nindent 12 }}
+            {{- else if $.Values.readinessProbe}}
+              {{- toYaml $.Values.readinessProbe | nindent 12 }}
             {{- else }}
             failureThreshold: 6
             periodSeconds: 5
