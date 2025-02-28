@@ -10,3 +10,4 @@
 *.iml
 *.log
 charts/gxf-platform/helm-template.yaml
+charts/gxf-platform/cucumber-out
