@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gxf-cucumber-config
+data:
+  remove-old-test-files.sh: |
+    #!/bin/sh
+    OUTPUT_PATH=/target/output
+    JOB_NAME=$1
+    echo "Current files in ${OUTPUT_PATH}"
+    ls $OUTPUT_PATH
+    rm -rf $OUTPUT_PATH/$JOB_NAME
+    echo "Current files after removal in ${OUTPUT_PATH}"
+    ls $OUTPUT_PATH

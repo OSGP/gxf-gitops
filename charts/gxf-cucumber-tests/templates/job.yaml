@@ -13,13 +13,16 @@ spec:
       initContainers:
         - name: removal-of-test-files
           image: alpine
-          command: ['sh', './usr/bin/remove-old-test-files.sh']
+          command:
+            - sh
+            - ./usr/bin/remove-old-test-files.sh
+            - {{ $name }}
           volumeMounts:
-            - name: gxf-platform-config
+            - name: gxf-cucumber-config
               mountPath: /usr/bin/remove-old-test-files.sh
               subPath: remove-old-test-files.sh
             - name: report-volume
-              mountPath: /target/output
+              mountPath: /target/output/
       containers:
         - name: {{ $name }}
           image:
@@ -75,6 +78,9 @@ spec:
         - name: gxf-platform-config
           configMap:
             name: gxf-platform-config
+        - name: gxf-cucumber-config
+          configMap:
+            name: gxf-cucumber-config
         - name: activemq-secrets
           secret:
             secretName: activemq-jms-client-certs

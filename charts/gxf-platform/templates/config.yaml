@@ -132,10 +132,3 @@ data:
         </Engine>
       </Service>
     </Server>
-  remove-old-test-files.sh: |
-    #!/bin/sh
-    echo "Current files in /target/output/"
-    ls /target/output/
-    rm -rf /target/output/*
-    echo "Current files after removal in /target/output/"
-    ls /target/output/
