@@ -74,9 +74,9 @@ spec:
             {{- end }}
           resources:
             requests:
-              memory: 512Mi
+              memory: 700Mi
             limits:
-              memory: 512Mi
+              memory: 700Mi
           volumeMounts:
             - name: gxf-platform-config
               mountPath: /etc/osp/global.properties
@@ -93,6 +93,8 @@ spec:
               subPath: server.xml
             - name: organisations-certs-volume
               mountPath: /etc/ssl/certs/organizations/
+            - name: firmwares
+              mountPath: /etc/osp/firmwarefiles
       volumes:
         - name: gxf-platform-config
           configMap:
@@ -114,5 +116,7 @@ spec:
                   name: test-org-cert
               - secret:
                   name: unknown-organization-cert
+        - name: firmwares
+          emptyDir: {}
 ---
 {{- end -}}
