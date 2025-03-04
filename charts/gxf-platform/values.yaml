@@ -7,10 +7,13 @@ containers:
     dependsOn: postgres
   - name: osgp-adapter-domain-admin
     memory: 512Mi
+    dependsOn: osgp-core
   - name: osgp-adapter-domain-core
     memory: 512Mi
+    dependsOn: osgp-core
   - name: osgp-adapter-domain-publiclighting
     memory: 512Mi
+    dependsOn: osgp-core
 #    osgpAdapterDomainSmartmetering:
 #      name: osgp-adapter-domain-smartmetering
   - name: osgp-adapter-domain-tariffswitching
