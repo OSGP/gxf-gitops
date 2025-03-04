@@ -23,11 +23,21 @@ spec:
         prometheus.io/port: '9404'
         prometheus.io/scrape: 'true'
     spec:
-      automountServiceAccountToken: false
-      serviceAccountName: {{ $name }}-sa
+      serviceAccountName: initcontainer-admin-sa
+      {{- if $container.dependsOn }}
+      initContainers:
+        - name: wait-for-dependencies
+          image: bitnami/kubectl:latest
+          command:
+            - kubectl
+            - rollout
+            - status
+            - deployment
+            - {{ $container.dependsOn }}
+      {{- end }}
       containers:
         - name: {{ $name }}
-          image: {{ $container.imageRepository | default $.Values.imageRepository | default "ghcr.io/osgp/" }}{{ $name }}:{{ $container.imageTag | default $.Values.imageTag | default "latest" }}
+          image: {{ $container.imageRepository | default $.Values.imageRepository | default "ghcr.io/osgp/" }}{{ $container.name }}:{{ $container.imageTag | default $.Values.imageTag | default "latest" }}
           imagePullPolicy: {{ $container.imagePullPolicy | default $.Values.imagePullPolicy | default "Always" }}
           env:
             - name: JAVA_OPTS
@@ -62,7 +72,7 @@ spec:
           readinessProbe:
             {{- if $container.readinessProbe }}
               {{- toYaml $container.readinessProbe | nindent 12 }}
-            {{- else if $.Values.readinessProbe}}
+            {{- else if $.Values.readinessProbe }}
               {{- toYaml $.Values.readinessProbe | nindent 12 }}
             {{- else }}
             failureThreshold: 6
@@ -74,9 +84,9 @@ spec:
             {{- end }}
           resources:
             requests:
-              memory: 700Mi
+              memory: {{ $container.memory | default "400Mi" }}
             limits:
-              memory: 700Mi
+              memory: {{ $container.memory | default "400Mi" }}
           volumeMounts:
             - name: gxf-platform-config
               mountPath: /etc/osp/global.properties

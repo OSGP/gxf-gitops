@@ -13,3 +13,5 @@ helm upgrade --install kubernetes-dashboard kubernetes-dashboard/kubernetes-dash
 docker ps -f name=test-registry
 # Setting kubernetes dashboard yamls
 kubectl apply -R -f kubernetes-dashboard/
+# Create service accounts needed for running the GXF environment
+kubectl apply -R -f service-accounts/

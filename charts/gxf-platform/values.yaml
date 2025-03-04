@@ -1,34 +1,30 @@
 imageTag: pr-1523
 containers:
-  osgpCore:
-    name: osgp-core
-  osgpLogging:
-    name: osgp-logging
-  osgpAdapterDomainAdmin:
-    name: osgp-adapter-domain-admin
-  osgpAdapterDomainCore:
-    name: osgp-adapter-domain-core
-  osgpAdapterDomainPubliclighting:
-    name: osgp-adapter-domain-publiclighting
+  - name: osgp-core
+    memory: 768Mi
+  - name: osgp-logging
+  - name: osgp-adapter-domain-admin
+    memory: 512Mi
+  - name: osgp-adapter-domain-core
+    memory: 512Mi
+  - name: osgp-adapter-domain-publiclighting
+    memory: 512Mi
 #    osgpAdapterDomainSmartmetering:
 #      name: osgp-adapter-domain-smartmetering
-  osgpAdapterDomainTariffswitching:
-    name: osgp-adapter-domain-tariffswitching
-  osgpAdapterWsAdmin:
-    name: osgp-adapter-ws-admin
-  osgpAdapterWsCore:
-    name: osgp-adapter-ws-core
-  osgpAdapterWsPubliclighting:
-    name: osgp-adapter-ws-publiclighting
+  - name: osgp-adapter-domain-tariffswitching
+    memory: 512Mi
+  - name: osgp-adapter-ws-admin
+    memory: 512Mi
+  - name: osgp-adapter-ws-core
+    memory: 600Mi
+  - name: osgp-adapter-ws-publiclighting
+    memory: 600Mi
 #    osgpAdapterWsSmartmetering:
 #      name: osgp-adapter-ws-smartmetering
-  osgpAdapterWsTariffswitching:
-    name: osgp-adapter-ws-tariffswitching
-  osgpProtocolAdapterIec60870:
-    name: osgp-protocol-adapter-iec60870
-  osgpProtocolAdapterIec61850:
-    name: osgp-protocol-adapter-iec61850
-  osgpProtocolAdapterOslp:
-    name: osgp-protocol-adapter-oslp
-  osgpSigningServer:
-    name: osgp-signing-server
+  - name: osgp-adapter-ws-tariffswitching
+    memory: 600Mi
+  - name: osgp-protocol-adapter-iec60870
+  - name: osgp-protocol-adapter-iec61850
+    dependsOn: osgp-core
+  - name: osgp-protocol-adapter-oslp
+  - name: osgp-signing-server
