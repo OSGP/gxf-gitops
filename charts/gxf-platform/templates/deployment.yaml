@@ -94,6 +94,9 @@ spec:
             - name: gxf-platform-config
               mountPath: /etc/osp/{{ $name }}.properties
               subPath: global.properties
+            - name: gxf-platform-config
+              mountPath: /etc/osp/{{ $name | trimPrefix "osgp-" }}.properties
+              subPath: global.properties
             - name: activemq-secrets
               mountPath: /etc/ssl/certs/jms/gxf-platform/
             - name: oslp-signing-keys

@@ -57,6 +57,10 @@ data:
 
     server=httpd
     domain=:443
+
+    # Web-device-simulator
+
+    oslp.address.client=osgp-protocol-adapter-oslp
   server.xml: |
     <?xml version="1.0" encoding="UTF-8"?>
 
