@@ -10,6 +10,7 @@ spec:
       labels:
         app: {{ $name }}
     spec:
+      serviceAccountName: initcontainer-admin-sa
       initContainers:
         - name: removal-of-test-files
           image: alpine
@@ -23,10 +24,21 @@ spec:
               subPath: remove-old-test-files.sh
             - name: report-volume
               mountPath: /target/output/
+        - name: wait-for-dependencies
+          image: bitnami/kubectl:latest
+          command:
+            - kubectl
+            - rollout
+            - status
+            - deployment
+            - postgres
+            {{- if $job.dependsOn }}
+              {{- $job.dependsOn | toYaml | nindent 12 }}
+            {{- end }}
       containers:
         - name: {{ $name }}
           image:
-            {{ $job.imageRepository | default $.Values.imageRepository | default "ghcr.io/osgp/" }}{{ $job.imageName | default $name }}:{{ $job.imageTag | default $.Values.imageTag | default "latest" }}
+            {{ $job.imageRepository | default $.Values.imageRepository | default "ghcr.io/osgp/" }}{{ $job.name }}:{{ $job.imageTag | default $.Values.imageTag | default "latest" }}
           imagePullPolicy: {{ $job.imagePullPolicy | default $.Values.imagePullPolicy | default "Always" }}
           ports:
             - containerPort: 8188

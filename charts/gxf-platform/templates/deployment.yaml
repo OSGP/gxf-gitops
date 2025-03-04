@@ -24,7 +24,6 @@ spec:
         prometheus.io/scrape: 'true'
     spec:
       serviceAccountName: initcontainer-admin-sa
-      {{- if $container.dependsOn }}
       initContainers:
         - name: wait-for-dependencies
           image: bitnami/kubectl:latest
@@ -33,8 +32,11 @@ spec:
             - rollout
             - status
             - deployment
-            - {{ $container.dependsOn }}
-      {{- end }}
+            - postgres
+            - activemq
+            {{- if $container.dependsOn }}
+              {{- $container.dependsOn | toYaml | nindent 12 }}
+            {{- end }}
       containers:
         - name: {{ $name }}
           image: {{ $container.imageRepository | default $.Values.imageRepository | default "ghcr.io/osgp/" }}{{ $container.name }}:{{ $container.imageTag | default $.Values.imageTag | default "latest" }}

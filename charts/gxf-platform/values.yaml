@@ -2,41 +2,49 @@ imageTag: pr-1523
 containers:
   - name: osgp-core
     memory: 768Mi
-    dependsOn: osgp-logging
+    dependsOn:
+      - osgp-logging
   - name: osgp-logging
-    dependsOn: postgres
   - name: osgp-adapter-domain-admin
     memory: 512Mi
-    dependsOn: osgp-core
+    dependsOn:
+      - osgp-core
   - name: osgp-adapter-domain-core
     memory: 512Mi
-    dependsOn: osgp-core
+    dependsOn:
+      - osgp-core
   - name: osgp-adapter-domain-publiclighting
     memory: 512Mi
-    dependsOn: osgp-core
+    dependsOn:
+      - osgp-core
 #    osgpAdapterDomainSmartmetering:
 #      name: osgp-adapter-domain-smartmetering
   - name: osgp-adapter-domain-tariffswitching
     memory: 512Mi
   - name: osgp-adapter-ws-admin
     memory: 512Mi
-    dependsOn: osgp-core
+    dependsOn:
+      - osgp-core
   - name: osgp-adapter-ws-core
     memory: 600Mi
-    dependsOn: osgp-core
+    dependsOn:
+      - osgp-core
   - name: osgp-adapter-ws-publiclighting
     memory: 600Mi
-    dependsOn: osgp-core
+    dependsOn:
+      - osgp-core
 #    osgpAdapterWsSmartmetering:
 #      name: osgp-adapter-ws-smartmetering
   - name: osgp-adapter-ws-tariffswitching
     memory: 600Mi
-    dependsOn: osgp-core
+    dependsOn:
+      - osgp-core
   - name: osgp-protocol-adapter-iec60870
   - name: osgp-protocol-simulator-iec60870
     dependsOn: osgp-protocol-adapter-iec60870
   - name: osgp-protocol-adapter-iec61850
-    dependsOn: osgp-core
+    dependsOn:
+      - osgp-core
   - name: osgp-protocol-simulator-iec61850
     dependsOn: osgp-protocol-adapter-iec61850
   - name: osgp-protocol-adapter-oslp
