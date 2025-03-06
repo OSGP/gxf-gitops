@@ -43,13 +43,16 @@ containers:
   - name: osgp-protocol-simulator-iec60870
     dependsOn:
       - osgp-protocol-adapter-iec60870
+    readinessPath: /actuator/health
+    readinessPort: 8080
   - name: osgp-protocol-adapter-iec61850
     dependsOn:
       - osgp-core
   - name: osgp-protocol-simulator-iec61850
     dependsOn:
       - osgp-protocol-adapter-iec61850
+    readinessPath: /actuator/health
+    readinessPort: 8080
   - name: osgp-protocol-adapter-oslp
   - name: osgp-signing-server
   - name: osgp-web-device-simulator
-

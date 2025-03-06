@@ -72,18 +72,12 @@ spec:
               name: ajp
               protocol: TCP
           readinessProbe:
-            {{- if $container.readinessProbe }}
-              {{- toYaml $container.readinessProbe | nindent 12 }}
-            {{- else if $.Values.readinessProbe }}
-              {{- toYaml $.Values.readinessProbe | nindent 12 }}
-            {{- else }}
             failureThreshold: 6
             periodSeconds: 5
             timeoutSeconds: 5
             httpGet:
-              port: 9404
-              path: /metrics
-            {{- end }}
+              port: {{ $container.readinessPort | default "9404"}}
+              path: {{ $container.readinessPath | default "/metrics"}}
           resources:
             requests:
               memory: {{ $container.memory | default "400Mi" }}
