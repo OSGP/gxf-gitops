@@ -73,7 +73,7 @@ spec:
               subPath: global.properties
             - name: gxf-platform-config
               mountPath:
-                /etc/osp/test/{{ $name }}.properties
+                /etc/osp/test/{{ trimPrefix "osgp-" $name }}.properties
               subPath: global.properties
             - name: gxf-platform-config
               mountPath: /usr/local/tomcat/conf/server.xml

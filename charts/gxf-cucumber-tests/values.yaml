@@ -4,5 +4,3 @@ jobs:
     dependsOn:
       - osgp-adapter-ws-core
       - osgp-adapter-ws-admin
-  - name: osgp-cucumber-tests-platform-publiclighting
-  - name: osgp-cucumber-tests-platform-smartmetering

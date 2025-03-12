@@ -52,8 +52,8 @@ data:
     web.service.truststore.password=${ORGANISATION_TRUSTSTORE_PASSWORD}
     web.service.notification.enabled=true
     web.service.notification.security.enabled=true
-    web.service.core.notification.address=cucumber-tests-platform-common
-    response.url.notification.address=cucumber-tests-platform-common
+    web.service.core.notification.address=osgp-cucumber-tests-platform-common
+    response.url.notification.address=osgp-cucumber-tests-platform-common
 
     server=httpd
     domain=:443
