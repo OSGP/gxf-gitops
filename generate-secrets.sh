@@ -173,7 +173,7 @@ function generate_ca_cert {
 
 function clean_up_files {
   echo "Cleaning up all created files"
-  find .. -type f \( -name \*.csr -o -name \*.key -o -name \*.p12 -o -name \*.jks -o -name \*.pem -o -name \*.pfx -o -name \*.cer -o -name \*.crt -o -name \*.srl -o -name \*.der -o -name \*.generated.sh \) | xargs rm
+  find . -type f \( -name \*.csr -o -name \*.key -o -name \*.p12 -o -name \*.jks -o -name \*.pem -o -name \*.pfx -o -name \*.cer -o -name \*.crt -o -name \*.srl -o -name \*.der -o -name \*.generated.sh \) | xargs rm
 }
 
 function generate_oslp_signing_keys {
@@ -196,8 +196,8 @@ function generate_oslp_signing_keys {
       --from-file=oslp_test_ecdsa_public.der="oslp_test_ecdsa_public.der"
 }
 
+echo "Generating app secrets"
 clean_up_files
-echo "Deleting created secrets"
 kubectl delete --all secrets
 generate_ca_cert
 generate_jms_keystore "client" "gxf-platform" "activemq"
@@ -206,3 +206,4 @@ generate_oslp_signing_keys
 generate_httpd_certs
 generate_ws_client_certs
 clean_up_files
+echo "App secrets created"

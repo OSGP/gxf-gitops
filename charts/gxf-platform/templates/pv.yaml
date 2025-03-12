@@ -9,14 +9,6 @@ spec:
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Delete
-  storageClassName: local-storage
-  local:
-    path: /tmp
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - k3d-test-server-0
+  storageClassName: manual
+  hostPath:
+    path: /k3d/pv
