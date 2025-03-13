@@ -35,6 +35,7 @@ SPDX-License-Identifier: Apache-2.0
                             <jsonFiles>
                                 <param>**/*.json</param>
                             </jsonFiles>
+                            <checkBuildResult>true</checkBuildResult>
                         </configuration>
                     </execution>
                 </executions>
