@@ -31,8 +31,9 @@ SPDX-License-Identifier: Apache-2.0
                         <configuration>
                             <projectName>Cucumber Report</projectName>
                             <outputDirectory>cucumber-output</outputDirectory>
+                            <inputDirectory>/tmp/k3dvolume</inputDirectory>
                             <jsonFiles>
-                                <param>/tmp/k3dvolume/**/*.json</param>
+                                <param>**/*.json</param>
                             </jsonFiles>
                         </configuration>
                     </execution>
