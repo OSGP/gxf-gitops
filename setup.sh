@@ -29,3 +29,5 @@ if [[ -n "$installDevTools" ]]; then
   # Get correct port for test registry, this port is needed to push local images
   docker ps -f name=test-registry
 fi
+
+kubectl cluster-info
