@@ -31,3 +31,5 @@ if [[ -n "$installDevTools" ]]; then
 fi
 
 kubectl cluster-info
+
+./generate-secrets.sh
