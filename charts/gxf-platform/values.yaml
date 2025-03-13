@@ -5,14 +5,14 @@ containers:
     dependsOn:
       - osgp-logging
   - name: osgp-logging
-  - name: osgp-adapter-domain-admin
-    memory: 512Mi
-    dependsOn:
-      - osgp-core
-  - name: osgp-adapter-domain-core
-    memory: 512Mi
-    dependsOn:
-      - osgp-core
+#  - name: osgp-adapter-domain-admin
+#    memory: 512Mi
+#    dependsOn:
+#      - osgp-core
+#  - name: osgp-adapter-domain-core
+#    memory: 512Mi
+#    dependsOn:
+#      - osgp-core
   - name: osgp-adapter-domain-publiclighting
     memory: 512Mi
     dependsOn:
