@@ -5,7 +5,7 @@ if [[ ! $(dirname "${BASH_SOURCE}") == "." ]]; then
 fi
 
 function generate_passphrase {
-    echo "$(tr -cd '[:alnum:]' < /dev/urandom | fold -w30 | head -n1)"
+  echo "$(tr -cd '[:alnum:]' < /dev/urandom | fold -w30 | head -n1)"
 }
 
 # Constants
