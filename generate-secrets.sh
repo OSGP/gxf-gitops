@@ -114,10 +114,9 @@ function generate_ws_client_certs {
     keystore_passphrase=$(generate_passphrase)
     truststore_passphrase=$(generate_passphrase)
 
-    clients_file="test-organisations"
-    echo "Getting organisations from $clients_file"
+    clients=("LianderNetManagement" "test-org" "unknown-organization")
 
-    for client in $(cat $clients_file) ;
+    for client in "${clients[@]}" ;
     do
         echo "Generating files for ${client}"
         filename="${client}"
@@ -173,7 +172,7 @@ function generate_ca_cert {
 
 function clean_up_files {
   echo "Cleaning up all created files"
-  find . -type f \( -name \*.csr -o -name \*.key -o -name \*.p12 -o -name \*.jks -o -name \*.pem -o -name \*.pfx -o -name \*.cer -o -name \*.crt -o -name \*.srl -o -name \*.der -o -name \*.generated.sh \) | xargs rm
+  find . -type f \( -name \*.csr -o -name \*.key -o -name \*.p12 -o -name \*.jks -o -name \*.pem -o -name \*.pfx -o -name \*.cer -o -name \*.crt -o -name \*.srl -o -name \*.der -o -name \*.generated.sh \) | xargs rm -f
 }
 
 function generate_oslp_signing_keys {
