@@ -1,0 +1,15 @@
+---
+name: Yamllint check files
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  yamllint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v4
+      - name: Check yaml files
+        run: yamllint .
