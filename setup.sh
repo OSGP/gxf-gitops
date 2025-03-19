@@ -23,11 +23,10 @@ if [[ -n "$installDevTools" ]]; then
   helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
   # Deploy a Helm Release named "kubernetes-dashboard" using the kubernetes-dashboard chart
   helm upgrade --install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --create-namespace --namespace kubernetes-dashboard
-  # Setting kubernetes dashboard yamls
-  kubectl apply -R -f charts/dev/kubernetes-dashboard/
+  # Installing dev chart yaml
+  helm install dev charts/dev -f charts/dev/values.yaml
   echo "Kubernetes dashboard token: "
   kubectl -n kubernetes-dashboard create token admin-user
-  kubectl apply -R -f charts/dev/pgweb/
   # Get correct port for test registry, this port is needed to push local images
   echo "Your test registry port:"
   docker ps -f name=test-registry

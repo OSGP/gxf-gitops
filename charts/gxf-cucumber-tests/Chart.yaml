@@ -3,6 +3,6 @@ description: GXF cucumber tests Helm chart
 name: gxf-cucumber-tests
 version: 0.0.1
 maintainers:
-  - name: GXF developers
+  - name: developers
     email: gxf@lists.lfenergy.org
-    url: https://www.lfenergy.org/projects/gxf/
+    url: https://github.com/orgs/OSGP/teams/developers

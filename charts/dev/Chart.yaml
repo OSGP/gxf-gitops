@@ -1,6 +1,6 @@
 apiVersion: v2
-description: GXF platform Helm chart
-name: gxf-platform
+description: GXF local development Helm chart
+name: gxf-local-dev
 version: 0.0.1
 maintainers:
   - name: developers
