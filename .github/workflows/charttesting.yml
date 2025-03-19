@@ -10,6 +10,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+      - run: find .
       - name: Set up chart-testing
         uses: helm/chart-testing-action@v2.7.0
       - name: Run chart-testing (list-changed)
