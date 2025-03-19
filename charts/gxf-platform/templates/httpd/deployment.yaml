@@ -52,4 +52,3 @@ spec:
         - name: httpd-config
           configMap:
             name: httpd-config
-

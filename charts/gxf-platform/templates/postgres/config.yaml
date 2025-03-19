@@ -35,4 +35,3 @@ data:
     GRANT ALL PRIVILEGES ON database osgp_adapter_protocol_oslp TO osp_admin;
     CREATE DATABASE osp_devicesimulator_web;
     GRANT ALL PRIVILEGES ON database osp_devicesimulator_web TO osp_admin;
-
