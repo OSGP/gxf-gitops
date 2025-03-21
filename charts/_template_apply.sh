@@ -14,7 +14,7 @@ if [[ -z "$image_tag" ]]; then
   image_tag="latest"
 fi
 
-if [[ $(helm get metadata $helm_name) ]]; then
+if [[ $(helm get manifest $helm_name) ]]; then
   verb=upgrade
 else
   verb=install
