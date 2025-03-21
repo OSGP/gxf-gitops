@@ -17,8 +17,6 @@ containers:
     memory: 512Mi
     dependsOn:
       - osgp-core
-#    osgpAdapterDomainSmartmetering:
-#      name: osgp-adapter-domain-smartmetering
   - name: osgp-adapter-domain-tariffswitching
     memory: 512Mi
   - name: osgp-adapter-ws-admin
@@ -33,26 +31,13 @@ containers:
     memory: 600Mi
     dependsOn:
       - osgp-core
-#    osgpAdapterWsSmartmetering:
-#      name: osgp-adapter-ws-smartmetering
   - name: osgp-adapter-ws-tariffswitching
     memory: 600Mi
     dependsOn:
       - osgp-core
   - name: osgp-protocol-adapter-iec60870
-#  - name: osgp-protocol-simulator-iec60870
-#    dependsOn:
-#      - osgp-protocol-adapter-iec60870
-#    readinessPath: /actuator/health
-#    readinessPort: 8080
   - name: osgp-protocol-adapter-iec61850
     dependsOn:
       - osgp-core
-#  - name: osgp-protocol-simulator-iec61850
-#    dependsOn:
-#      - osgp-protocol-adapter-iec61850
-#    readinessPath: /actuator/health
-#    readinessPort: 8080
   - name: osgp-protocol-adapter-oslp
   - name: osgp-signing-server
-#  - name: osgp-web-device-simulator
