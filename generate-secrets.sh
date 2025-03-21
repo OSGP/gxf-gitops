@@ -21,7 +21,7 @@ function generate_httpd_certs {
   filename=./httpd-certs
 
   echo "Creating csr and key file for httpd"
-  openssl req -new -newkey rsa:4096 -passout pass:"${key_passphrase}" \
+  openssl req -new -newkey ed25519 -passout pass:"${key_passphrase}" \
   -keyout "${filename}.key" -out "${filename}.csr" \
   -subj "/C=NL/ST=Gelderland/L=Arnhem/O=Alliander/OU=IT/CN=httpd"
 
@@ -122,7 +122,7 @@ function generate_ws_client_certs {
         filename="${client}"
 
         # create certificate signing request
-        openssl req -new -newkey rsa:4096 -passout pass:"${keystore_passphrase}" \
+        openssl req -new -newkey ed25519 -passout pass:"${keystore_passphrase}" \
             -keyout "${filename}.key" -out "${filename}.csr" \
             -subj /commonName="${client}"
 
