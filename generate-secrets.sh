@@ -5,7 +5,7 @@ if [[ ! $(dirname "${BASH_SOURCE}") == "." ]]; then
 fi
 
 function generate_passphrase {
-  echo "sup3r_s3cr3t"
+  dd bs=512 if=/dev/urandom count=1 2>/dev/null | LC_ALL=C tr -dc "a-zA-Z0-9" | head -c 10
 }
 
 # Constants
