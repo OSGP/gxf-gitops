@@ -1,0 +1,131 @@
+{{- range $container := .Values.containers -}}
+{{- $name := $container.name }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $name }}
+  labels:
+    app: {{ $name }}
+spec:
+  replicas: {{ $container.replicas | default $.Values.replicas | default 1 }}
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: {{ $name }}
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      name: {{ $name }}
+      labels:
+        app: {{ $name }}
+      annotations:
+        prometheus.io/port: '9404'
+        prometheus.io/scrape: 'true'
+    spec:
+      serviceAccountName: initcontainer-admin-sa
+      initContainers:
+        - name: wait-for-dependencies
+          image: bitnami/kubectl:latest
+          command:
+            - kubectl
+            - rollout
+            - status
+            - deployment
+            - postgres
+            - activemq
+            {{- if $container.dependsOn }}
+              {{- $container.dependsOn | toYaml | nindent 12 }}
+            {{- end }}
+      containers:
+        - name: {{ $name }}
+          image: {{ $container.imageRepository | default $.Values.imageRepository | default "ghcr.io/osgp/" }}{{ $container.name }}:{{ $container.imageTag | default $.Values.imageTag | default "latest" }}
+          imagePullPolicy: {{ $container.imagePullPolicy | default $.Values.imagePullPolicy | default "Always" }}
+          env:
+            - name: JAVA_OPTS
+              value: "-XX:MaxRAMPercentage=80.0 -XX:InitialRAMPercentage=80.0"
+            - name: ACTIVEMQ_JMS_CLIENT_KEYSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: activemq-jms-client-certs
+                  key: keyStorePassword
+            - name: ACTIVEMQ_JMS_CLIENT_TRUSTSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: activemq-jms-client-certs
+                  key: trustStorePassword
+            - name: ORGANISATION_TRUSTSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: organisations-ws-client-certs
+                  key: truststore-password
+            - name: ORGANISATION_KEYSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: organisations-ws-client-certs
+                  key: keystore-password
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+            - containerPort: 8009
+              name: ajp
+              protocol: TCP
+          readinessProbe:
+            failureThreshold: 6
+            periodSeconds: 5
+            timeoutSeconds: 5
+            httpGet:
+              port: {{ $container.readinessPort | default "9404"}}
+              path: {{ $container.readinessPath | default "/metrics"}}
+          resources:
+            requests:
+              memory: {{ $container.memory | default "400Mi" }}
+            limits:
+              memory: {{ $container.memory | default "400Mi" }}
+          volumeMounts:
+            - name: gxf-platform-config
+              mountPath: /etc/osp/global.properties
+              subPath: global.properties
+            - name: gxf-platform-config
+              mountPath: /etc/osp/{{ $name }}.properties
+              subPath: global.properties
+            - name: gxf-platform-config
+              mountPath: /etc/osp/{{ $name | trimPrefix "osgp-" }}.properties
+              subPath: global.properties
+            - name: activemq-secrets
+              mountPath: /etc/ssl/certs/jms/gxf-platform/
+            - name: oslp-signing-keys
+              mountPath: /etc/ssl/certs/oslp
+            - name: gxf-platform-config
+              mountPath: /usr/local/tomcat/conf/server.xml
+              subPath: server.xml
+            - name: organisations-certs-volume
+              mountPath: /etc/ssl/certs/organizations/
+            - name: firmwares
+              mountPath: /etc/osp/firmwarefiles
+      volumes:
+        - name: gxf-platform-config
+          configMap:
+            name: gxf-platform-config
+        - name: activemq-secrets
+          secret:
+            secretName: activemq-jms-client-certs
+        - name: oslp-signing-keys
+          secret:
+            secretName: oslp-signing-keys
+        - name: organisations-certs-volume
+          projected:
+            sources:
+              - secret:
+                  name: organisations-ws-client-certs
+              - secret:
+                  name: liandernetmanagement-cert
+              - secret:
+                  name: test-org-cert
+              - secret:
+                  name: unknown-organization-cert
+        - name: firmwares
+          emptyDir: {}
+---
+{{- end -}}

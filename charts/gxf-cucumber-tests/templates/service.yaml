@@ -1,0 +1,18 @@
+{{- range $job := .Values.jobs -}}
+{{- $name := $job.name }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $name }}
+spec:
+  ports:
+    - name: notification
+      port: 8188
+      targetPort: notification
+  selector:
+    app: {{ $name }}
+  # Headless service for direct Job pod access
+  clusterIP: None
+---
+{{- end -}}

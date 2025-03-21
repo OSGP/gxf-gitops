@@ -1,0 +1,118 @@
+{{- range $job := .Values.jobs -}}
+{{- $name := $job.name }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ $name }}
+spec:
+  template:
+    metadata:
+      labels:
+        app: {{ $name }}
+    spec:
+      serviceAccountName: initcontainer-admin-sa
+      initContainers:
+        - name: removal-of-test-files
+          image: alpine
+          command:
+            - sh
+            - ./usr/bin/remove-old-test-files.sh
+            - {{ $name }}
+          volumeMounts:
+            - name: gxf-cucumber-config
+              mountPath: /usr/bin/remove-old-test-files.sh
+              subPath: remove-old-test-files.sh
+            - name: report-volume
+              mountPath: /target/output/
+        - name: wait-for-dependencies
+          image: bitnami/kubectl:latest
+          command:
+            - kubectl
+            - rollout
+            - status
+            - deployment
+            - postgres
+            {{- if $job.dependsOn }}
+              {{- $job.dependsOn | toYaml | nindent 12 }}
+            {{- end }}
+      containers:
+        - name: {{ $name }}
+          image:
+            {{ $job.imageRepository | default $.Values.imageRepository | default "ghcr.io/osgp/" }}{{ $job.name }}:{{ $job.imageTag | default $.Values.imageTag | default "latest" }}
+          imagePullPolicy: {{ $job.imagePullPolicy | default $.Values.imagePullPolicy | default "Always" }}
+          ports:
+            - containerPort: 8188
+              name: notification
+              protocol: TCP
+          env:
+            - name: JAVA_OPTS
+              value: "-XX:MaxRAMPercentage=80.0 -XX:InitialRAMPercentage=80.0"
+            - name: ACTIVEMQ_JMS_CLIENT_KEYSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: activemq-jms-client-certs
+                  key: keyStorePassword
+            - name: ACTIVEMQ_JMS_CLIENT_TRUSTSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: activemq-jms-client-certs
+                  key: trustStorePassword
+            - name: ORGANISATION_TRUSTSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: organisations-ws-client-certs
+                  key: truststore-password
+            - name: ORGANISATION_KEYSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: organisations-ws-client-certs
+                  key: keystore-password
+          volumeMounts:
+            - name: gxf-platform-config
+              mountPath: /etc/osp/test/global-cucumber.properties
+              subPath: global.properties
+            - name: gxf-platform-config
+              mountPath:
+                /etc/osp/test/{{ trimPrefix "osgp-" $name }}.properties
+              subPath: global.properties
+            - name: gxf-platform-config
+              mountPath: /usr/local/tomcat/conf/server.xml
+              subPath: server.xml
+            - name: activemq-secrets
+              mountPath: /etc/ssl/certs/jms/gxf-platform/
+            - name: oslp-signing-keys
+              mountPath: /etc/ssl/certs/oslp
+            - name: report-volume
+              mountPath: /target/output
+            - name: organisations-certs-volume
+              mountPath: /etc/ssl/certs/organizations/
+      volumes:
+        - name: gxf-platform-config
+          configMap:
+            name: gxf-platform-config
+        - name: gxf-cucumber-config
+          configMap:
+            name: gxf-cucumber-config
+        - name: activemq-secrets
+          secret:
+            secretName: activemq-jms-client-certs
+        - name: oslp-signing-keys
+          secret:
+            secretName: oslp-signing-keys
+        - name: report-volume
+          persistentVolumeClaim:
+            claimName: report-volume
+        - name: organisations-certs-volume
+          projected:
+            sources:
+              - secret:
+                  name: organisations-ws-client-certs
+              - secret:
+                  name: liandernetmanagement-cert
+              - secret:
+                  name: test-org-cert
+              - secret:
+                  name: unknown-organization-cert
+      restartPolicy: Never
+---
+{{- end }}

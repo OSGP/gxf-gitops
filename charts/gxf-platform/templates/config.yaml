@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gxf-platform-config
+data:
+  global.properties: |
+    # Metrics
+    metrics.prometheus.enabled=true
+    metrics.prometheus.port=9404
+    metrics.prometheus.path=/metrics
+
+    # Postgres
+    db.host=postgres
+    db.host.domain_logging=postgres
+    db.host.core=postgres
+    db.host.oslp=postgres
+    db.host.iec61850=postgres
+    db.api.host.iec61850=postgres
+    db.api.host.oslp=postgres
+    db.hostname=postgres
+
+    # Activemq settings
+    jms.default.broker.url=failover:(ssl://activemq:61617)
+    jms.default.broker.username=artemis
+    jms.default.broker.client.key.store=/etc/ssl/certs/jms/gxf-platform/client.ks
+    jms.default.broker.client.key.store.pwd=${ACTIVEMQ_JMS_CLIENT_KEYSTORE_PASSWORD}
+    jms.default.broker.client.trust.store=/etc/ssl/certs/jms/gxf-platform/broker.ts
+    jms.default.broker.client.trust.store.pwd=${ACTIVEMQ_JMS_CLIENT_TRUSTSTORE_PASSWORD}
+    jms.domain.default.broker.url=failover:(ssl://activemq:61617)
+    jms.domain.default.broker.username=artemis
+    jms.domain.default.broker.client.key.store=/etc/ssl/certs/jms/gxf-platform/client.ks
+    jms.domain.default.broker.client.key.store.pwd=${ACTIVEMQ_JMS_CLIENT_KEYSTORE_PASSWORD}
+    jms.domain.default.broker.client.trust.store=/etc/ssl/certs/jms/gxf-platform/broker.ts
+    jms.domain.default.broker.client.trust.store.pwd=${ACTIVEMQ_JMS_CLIENT_TRUSTSTORE_PASSWORD}
+    jms.protocol.default.broker.url=failover:(ssl://activemq:61617)
+    jms.protocol.default.broker.username=artemis
+    jms.protocol.default.broker.client.key.store=/etc/ssl/certs/jms/gxf-platform/client.ks
+    jms.protocol.default.broker.client.key.store.pwd=${ACTIVEMQ_JMS_CLIENT_KEYSTORE_PASSWORD}
+    jms.protocol.default.broker.client.trust.store=/etc/ssl/certs/jms/gxf-platform/broker.ts
+    jms.protocol.default.broker.client.trust.store.pwd=${ACTIVEMQ_JMS_CLIENT_TRUSTSTORE_PASSWORD}
+
+    # OSLP
+    signing.server.security.signkey.path=/etc/ssl/certs/oslp/oslp_test_ecdsa_private.der
+    oslp.security.signkey.path=/etc/ssl/certs/oslp/oslp_test_ecdsa_private.der
+    oslp.security.verifykey.path=/etc/ssl/certs/oslp/oslp_test_ecdsa_public.der
+
+    # Cucumber
+    certificate.basepath=/etc/ssl/certs/organizations/
+    web.service.truststore.location=/etc/ssl/certs/organizations/trust.jks
+    web.service.keystore.location=/etc/ssl/certs/organizations
+    web.service.keystore.password=${ORGANISATION_KEYSTORE_PASSWORD}
+    web.service.truststore.password=${ORGANISATION_TRUSTSTORE_PASSWORD}
+    web.service.notification.enabled=true
+    web.service.notification.security.enabled=true
+    web.service.core.notification.address=osgp-cucumber-tests-platform-common
+    response.url.notification.address=osgp-cucumber-tests-platform-common
+
+    server=httpd
+    domain=:443
+
+    # Web-device-simulator
+
+    oslp.address.client=osgp-protocol-adapter-oslp
+  server.xml: |
+{{ .Files.Get "config/tomcat/server.xml" | indent 4 }}

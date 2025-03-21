@@ -1,0 +1,8 @@
+apiVersion: v2
+description: GXF platform Helm chart
+name: gxf-platform
+version: 0.0.1
+maintainers:
+  - name: developers
+    email: gxf@lists.lfenergy.org
+    url: https://github.com/orgs/OSGP/teams/developers

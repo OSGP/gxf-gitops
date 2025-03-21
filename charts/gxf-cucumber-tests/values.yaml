@@ -1,0 +1,6 @@
+imageTag: pr-1523
+jobs:
+  - name: osgp-cucumber-tests-platform-common
+    dependsOn:
+      - osgp-adapter-ws-core
+      - osgp-adapter-ws-admin

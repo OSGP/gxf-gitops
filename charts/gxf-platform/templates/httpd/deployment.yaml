@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: httpd
+  template:
+    metadata:
+      labels:
+        app: httpd
+    spec:
+      containers:
+        - name: httpd
+          image: httpd:alpine
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: https
+              containerPort: 9443
+              protocol: TCP
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          volumeMounts:
+            - name: httpd-config
+              mountPath: /usr/local/apache2/conf/httpd.conf
+              subPath: httpd.conf
+            - name: httpd-config
+              mountPath: /usr/local/apache2/conf/vhosts.conf
+              subPath: vhosts.conf
+            - name: server-certs
+              mountPath: /certs
+          livenessProbe:
+            httpGet:
+              path: /server-status
+              port: http
+          startupProbe:
+            httpGet:
+              path: /server-status
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /server-status
+              port: http
+      volumes:
+        - name: server-certs
+          secret:
+            defaultMode: 365
+            secretName: apache-httpd-certs
+        - name: httpd-config
+          configMap:
+            name: httpd-config

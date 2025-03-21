@@ -1,0 +1,19 @@
+{{- range $container := .Values.containers -}}
+{{- $name := $container.name }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $name }}
+spec:
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+    - name: ajp
+      port: 8009
+      targetPort: ajp
+  selector:
+    app: {{ $name }}
+---
+{{- end -}}
