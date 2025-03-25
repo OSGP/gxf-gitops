@@ -41,7 +41,3 @@ containers:
       - osgp-core
   - name: osgp-protocol-adapter-oslp
   - name: osgp-signing-server
-#  - name: osgp-web-device-simulator
-#    extraPorts:
-#      - name: oslp
-#        port: 12122

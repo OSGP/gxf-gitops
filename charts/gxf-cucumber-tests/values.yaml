@@ -1,9 +1,12 @@
 imageTag: pr-1523
 jobs:
-  - name: osgp-cucumber-tests-platform-publiclighting
+  - name: osgp-cucumber-tests-platform-common
     dependsOn:
       - osgp-adapter-ws-core
       - osgp-adapter-ws-admin
+  - name: osgp-cucumber-tests-platform-publiclighting
+    dependsOn:
+      - osgp-adapter-ws-publiclighting
     extraPorts:
       - name: oslp
         port: 12122
