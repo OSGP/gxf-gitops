@@ -13,6 +13,11 @@ spec:
     - name: ajp
       port: 8009
       targetPort: ajp
+    {{- range $extraPort := $container.extraPorts }}
+    - name: {{ $extraPort.name }}
+      port: {{ $extraPort.port }}
+      targetPort: {{ $extraPort.port }}
+    {{- end }}
   selector:
     app: {{ $name }}
 ---

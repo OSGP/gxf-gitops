@@ -44,6 +44,11 @@ spec:
             - containerPort: 8188
               name: notification
               protocol: TCP
+            {{- range $extraPort := $job.extraPorts }}
+            - containerPort: {{ $extraPort.port }}
+              name: {{ $extraPort.name }}
+              protocol: TCP
+            {{- end }}
           env:
             - name: JAVA_OPTS
               value: "-XX:MaxRAMPercentage=80.0 -XX:InitialRAMPercentage=80.0"

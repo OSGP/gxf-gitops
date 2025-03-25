@@ -4,3 +4,9 @@ jobs:
     dependsOn:
       - osgp-adapter-ws-core
       - osgp-adapter-ws-admin
+  - name: osgp-cucumber-tests-platform-publiclighting
+    dependsOn:
+      - osgp-adapter-ws-publiclighting
+    extraPorts:
+      - name: oslp
+        port: 12122
