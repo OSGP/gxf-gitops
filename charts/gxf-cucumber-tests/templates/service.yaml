@@ -10,6 +10,11 @@ spec:
     - name: notification
       port: 8188
       targetPort: notification
+    {{- range $extraPort := $job.extraPorts }}
+    - name: {{ $extraPort.name }}
+      port: {{ $extraPort.port }}
+      targetPort: {{ $extraPort.port }}
+    {{- end }}
   selector:
     app: {{ $name }}
   # Headless service for direct Job pod access

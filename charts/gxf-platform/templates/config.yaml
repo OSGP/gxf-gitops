@@ -56,10 +56,9 @@ data:
     response.url.notification.address=osgp-cucumber-tests-platform-common
 
     server=httpd
-    domain=:443
+    device.networkaddress=osgp-cucumber-tests-platform-publiclighting
 
     # Web-device-simulator
-
     oslp.address.client=osgp-protocol-adapter-oslp
   server.xml: |
 {{ .Files.Get "config/tomcat/server.xml" | indent 4 }}
