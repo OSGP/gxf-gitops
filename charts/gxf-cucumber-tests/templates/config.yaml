@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: gxf-cucumber-config
+  name: gxf-initcontainer-config
 data:
   remove-old-test-files.sh: |
     #!/bin/sh
@@ -12,3 +12,35 @@ data:
     rm -rf $OUTPUT_PATH/$JOB_NAME
     echo "Current files after removal in ${OUTPUT_PATH}"
     ls $OUTPUT_PATH
+---
+{{- range $job := .Values.jobs -}}
+{{- $name := $job.name }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $name }}-config
+data:
+  global-cucumber.properties: |
+    # Postgres
+    db.hostname=postgres
+
+    # OSLP
+    oslp.security.signkey.path=/etc/ssl/certs/oslp/oslp_test_ecdsa_private.der
+    oslp.security.verifykey.path=/etc/ssl/certs/oslp/oslp_test_ecdsa_public.der
+
+    # Cucumber
+    certificate.basepath=/etc/ssl/certs/organizations/
+    web.service.truststore.location=/etc/ssl/certs/organizations/trust.jks
+    web.service.keystore.password=${ORGANISATION_KEYSTORE_PASSWORD}
+    web.service.truststore.password=${ORGANISATION_TRUSTSTORE_PASSWORD}
+    web.service.core.notification.address=jelle
+    web.service.publiclighting.notification.address=osgp-cucumber-tests-platform-publiclighting
+    web.service.smartmetering.notification.address=osgp-cucumber-tests-platform-smartmetering
+
+    server=httpd
+    domain=:443
+
+    response.url.notification.address={{ $name }}
+    device.networkaddress={{ $name }}
+---
+{{- end }}

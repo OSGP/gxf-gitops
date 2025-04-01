@@ -1,12 +1,17 @@
 imageTag: pr-1523
 jobs:
   - name: osgp-cucumber-tests-platform-common
+#    imageRepository: test-registry:5000/
+#    imageTag: local
     dependsOn:
       - osgp-adapter-ws-core
       - osgp-adapter-ws-admin
-  - name: osgp-cucumber-tests-platform-publiclighting
-    dependsOn:
-      - osgp-adapter-ws-publiclighting
-    extraPorts:
-      - name: oslp
-        port: 12122
+#  - name: osgp-cucumber-tests-platform-publiclighting
+#    dependsOn:
+#      - osgp-adapter-ws-core
+#      - osgp-adapter-ws-admin
+#      - osgp-adapter-ws-publiclighting
+#      - osgp-adapter-ws-tariffswitching
+#    extraPorts:
+#      - name: oslp
+#        port: 12122

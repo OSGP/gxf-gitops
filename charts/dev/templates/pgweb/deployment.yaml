@@ -14,15 +14,21 @@ spec:
       labels:
         app: pgweb
     spec:
+      serviceAccountName: initcontainer-admin-sa
+      initContainers:
+        - name: wait-for-dependencies
+          image: bitnami/kubectl:latest
+          command:
+            - kubectl
+            - rollout
+            - status
+            - deployment
+            - postgres
       containers:
         - image: sosedoff/pgweb
           name: pgweb
           env:
-            - name: PGWEB_SESSIONS
-              value: "true"
             - name: PGWEB_DATABASE_URL
-              value: postgres://postgres:psql123!@postgres:5432/postgres?sslmode=disable
-            - name: DATABASE_URL
               value: postgres://postgres:psql123!@postgres:5432/postgres?sslmode=disable
           ports:
             - containerPort: 8081

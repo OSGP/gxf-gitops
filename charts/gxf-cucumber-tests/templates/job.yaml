@@ -19,9 +19,8 @@ spec:
             - ./usr/bin/remove-old-test-files.sh
             - {{ $name }}
           volumeMounts:
-            - name: gxf-cucumber-config
-              mountPath: /usr/bin/remove-old-test-files.sh
-              subPath: remove-old-test-files.sh
+            - name: gxf-initcontainer-config
+              mountPath: /usr/bin/
             - name: report-volume
               mountPath: /target/output/
         - name: wait-for-dependencies
@@ -73,13 +72,12 @@ spec:
                   name: organisations-ws-client-certs
                   key: keystore-password
           volumeMounts:
-            - name: gxf-platform-config
+            - name: {{ $name }}-config
               mountPath: /etc/osp/test/global-cucumber.properties
-              subPath: global.properties
-            - name: gxf-platform-config
-              mountPath:
-                /etc/osp/test/{{ trimPrefix "osgp-" $name }}.properties
-              subPath: global.properties
+              subPath: global-cucumber.properties
+            - name: {{ $name }}-config
+              mountPath: /etc/osp/test/{{ trimPrefix "osgp-" $name }}.properties
+              subPath: global-cucumber.properties
             - name: gxf-platform-config
               mountPath: /usr/local/tomcat/conf/server.xml
               subPath: server.xml
@@ -92,12 +90,15 @@ spec:
             - name: organisations-certs-volume
               mountPath: /etc/ssl/certs/organizations/
       volumes:
+        - name: {{ $name }}-config
+          configMap:
+            name: {{ $name }}-config
         - name: gxf-platform-config
           configMap:
             name: gxf-platform-config
-        - name: gxf-cucumber-config
+        - name: gxf-initcontainer-config
           configMap:
-            name: gxf-cucumber-config
+            name: gxf-initcontainer-config
         - name: activemq-secrets
           secret:
             secretName: activemq-jms-client-certs
