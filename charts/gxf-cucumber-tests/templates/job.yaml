@@ -40,12 +40,9 @@ spec:
             {{ $job.imageRepository | default $.Values.imageRepository | default "ghcr.io/osgp/" }}{{ $job.name }}:{{ $job.imageTag | default $.Values.imageTag | default "latest" }}
           imagePullPolicy: {{ $job.imagePullPolicy | default $.Values.imagePullPolicy | default "Always" }}
           ports:
-            - containerPort: 8188
-              name: notification
-              protocol: TCP
-            {{- range $extraPort := $job.extraPorts }}
-            - containerPort: {{ $extraPort.port }}
-              name: {{ $extraPort.name }}
+            {{- range $port := $job.ports }}
+            - containerPort: {{ $port.port }}
+              name: {{ $port.name }}
               protocol: TCP
             {{- end }}
           env:

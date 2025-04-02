@@ -33,7 +33,7 @@ data:
     web.service.truststore.location=/etc/ssl/certs/organizations/trust.jks
     web.service.keystore.password=${ORGANISATION_KEYSTORE_PASSWORD}
     web.service.truststore.password=${ORGANISATION_TRUSTSTORE_PASSWORD}
-    web.service.core.notification.address=jelle
+    web.service.core.notification.address=osgp-cucumber-tests-platform-common
     web.service.publiclighting.notification.address=osgp-cucumber-tests-platform-publiclighting
     web.service.smartmetering.notification.address=osgp-cucumber-tests-platform-smartmetering
 

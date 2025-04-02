@@ -1,0 +1,8 @@
+jobs:
+  - name: osgp-cucumber-tests-platform-common
+    dependsOn:
+      - osgp-adapter-ws-core
+      - osgp-adapter-ws-admin
+    ports:
+      - name: notification
+        port: 8188

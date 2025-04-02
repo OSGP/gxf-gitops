@@ -7,13 +7,10 @@ metadata:
   name: {{ $name }}
 spec:
   ports:
-    - name: notification
-      port: 8188
-      targetPort: notification
-    {{- range $extraPort := $job.extraPorts }}
-    - name: {{ $extraPort.name }}
-      port: {{ $extraPort.port }}
-      targetPort: {{ $extraPort.port }}
+    {{- range $port := $job.ports }}
+    - name: {{ $port.name }}
+      port: {{ $port.port }}
+      targetPort: {{ $port.port }}
     {{- end }}
   selector:
     app: {{ $name }}

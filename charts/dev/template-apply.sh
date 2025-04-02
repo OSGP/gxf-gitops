@@ -9,7 +9,7 @@ helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
 # Deploy a Helm Release named "kubernetes-dashboard" using the kubernetes-dashboard chart
 helm upgrade --install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --create-namespace --namespace kubernetes-dashboard
 
-"$CHART_DIR"/_template_apply.sh "$DIR" dev "$*"
+"$CHART_DIR"/_template_apply.sh --workingDir "$DIR" --helmName dev "$@"
 
 echo "Kubernetes dashboard token: "
 kubectl -n kubernetes-dashboard create token admin-user
