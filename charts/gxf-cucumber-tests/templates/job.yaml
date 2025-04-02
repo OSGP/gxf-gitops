@@ -19,9 +19,8 @@ spec:
             - ./usr/bin/remove-old-test-files.sh
             - {{ $name }}
           volumeMounts:
-            - name: gxf-cucumber-config
-              mountPath: /usr/bin/remove-old-test-files.sh
-              subPath: remove-old-test-files.sh
+            - name: gxf-initcontainer-config
+              mountPath: /usr/bin/
             - name: report-volume
               mountPath: /target/output/
         - name: wait-for-dependencies
@@ -41,9 +40,11 @@ spec:
             {{ $job.imageRepository | default $.Values.imageRepository | default "ghcr.io/osgp/" }}{{ $job.name }}:{{ $job.imageTag | default $.Values.imageTag | default "latest" }}
           imagePullPolicy: {{ $job.imagePullPolicy | default $.Values.imagePullPolicy | default "Always" }}
           ports:
-            - containerPort: 8188
-              name: notification
+            {{- range $port := $job.ports }}
+            - containerPort: {{ $port.port }}
+              name: {{ $port.name }}
               protocol: TCP
+            {{- end }}
           env:
             - name: JAVA_OPTS
               value: "-XX:MaxRAMPercentage=80.0 -XX:InitialRAMPercentage=80.0"
@@ -68,13 +69,12 @@ spec:
                   name: organisations-ws-client-certs
                   key: keystore-password
           volumeMounts:
-            - name: gxf-platform-config
+            - name: {{ $name }}-config
               mountPath: /etc/osp/test/global-cucumber.properties
-              subPath: global.properties
-            - name: gxf-platform-config
-              mountPath:
-                /etc/osp/test/{{ trimPrefix "osgp-" $name }}.properties
-              subPath: global.properties
+              subPath: global-cucumber.properties
+            - name: {{ $name }}-config
+              mountPath: /etc/osp/test/{{ trimPrefix "osgp-" $name }}.properties
+              subPath: global-cucumber.properties
             - name: gxf-platform-config
               mountPath: /usr/local/tomcat/conf/server.xml
               subPath: server.xml
@@ -87,12 +87,15 @@ spec:
             - name: organisations-certs-volume
               mountPath: /etc/ssl/certs/organizations/
       volumes:
+        - name: {{ $name }}-config
+          configMap:
+            name: {{ $name }}-config
         - name: gxf-platform-config
           configMap:
             name: gxf-platform-config
-        - name: gxf-cucumber-config
+        - name: gxf-initcontainer-config
           configMap:
-            name: gxf-cucumber-config
+            name: gxf-initcontainer-config
         - name: activemq-secrets
           secret:
             secretName: activemq-jms-client-certs

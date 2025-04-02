@@ -3,4 +3,4 @@
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CHART_DIR="$(dirname -- "$DIR")"
 
-"$CHART_DIR"/_template_apply.sh "$DIR" osgp-cucumber "$*"
+"$CHART_DIR"/_template_apply.sh --workingDir "$DIR" --helmName osgp-cucumber "$@"

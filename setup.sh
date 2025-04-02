@@ -18,18 +18,12 @@ k3d cluster create test \
   --volume $pvpath:/k3d/pv
 
 if [[ -n "$installDevTools" ]]; then
-  echo "Installing Kubernetes dashboard & PGWeb"
-  # Add kubernetes-dashboard repository
-  helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
-  # Deploy a Helm Release named "kubernetes-dashboard" using the kubernetes-dashboard chart
-  helm upgrade --install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --create-namespace --namespace kubernetes-dashboard
-  # Installing dev chart yaml
-  helm install dev charts/dev -f charts/dev/values.yaml
-  echo "Kubernetes dashboard token: "
-  kubectl -n kubernetes-dashboard create token admin-user
   # Get correct port for test registry, this port is needed to push local images
   echo "Your test registry port:"
   docker ps -f name=test-registry
+
+  # Installing dev chart
+  ./charts/dev/template-apply.sh
 fi
 
 kubectl cluster-info

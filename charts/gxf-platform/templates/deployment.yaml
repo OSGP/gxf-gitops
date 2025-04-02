@@ -71,13 +71,18 @@ spec:
             - containerPort: 8009
               name: ajp
               protocol: TCP
+            {{- range $extraPort := $container.extraPorts }}
+            - containerPort: {{ $extraPort.port }}
+              name: {{ $extraPort.name }}
+              protocol: TCP
+            {{- end }}
           readinessProbe:
             failureThreshold: 6
             periodSeconds: 5
             timeoutSeconds: 5
             httpGet:
-              port: {{ $container.readinessPort | default "9404"}}
-              path: {{ $container.readinessPath | default "/metrics"}}
+              port: {{ $container.readinessPort | default "9404" }}
+              path: {{ $container.readinessPath | default "/metrics" }}
           resources:
             requests:
               memory: {{ $container.memory | default "400Mi" }}

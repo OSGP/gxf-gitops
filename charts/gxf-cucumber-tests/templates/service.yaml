@@ -7,9 +7,11 @@ metadata:
   name: {{ $name }}
 spec:
   ports:
-    - name: notification
-      port: 8188
-      targetPort: notification
+    {{- range $port := $job.ports }}
+    - name: {{ $port.name }}
+      port: {{ $port.port }}
+      targetPort: {{ $port.port }}
+    {{- end }}
   selector:
     app: {{ $name }}
   # Headless service for direct Job pod access

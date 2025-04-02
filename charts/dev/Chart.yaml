@@ -1,7 +1,7 @@
 apiVersion: v2
 description: GXF local development Helm chart
 name: gxf-local-dev
-version: 0.0.1
+version: 0.0.2
 maintainers:
   - name: developers
     email: gxf@lists.lfenergy.org
