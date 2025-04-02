@@ -1,0 +1,19 @@
+jobs:
+  - name: osgp-cucumber-tests-platform-common
+    dependsOn:
+      - osgp-adapter-ws-core
+      - osgp-adapter-ws-admin
+    ports:
+      - name: notification
+        port: 8188
+  - name: osgp-cucumber-tests-platform-publiclighting
+    dependsOn:
+      - osgp-adapter-ws-core
+      - osgp-adapter-ws-admin
+      - osgp-adapter-ws-publiclighting
+      - osgp-adapter-ws-tariffswitching
+    ports:
+      - name: notification
+        port: 8190
+      - name: oslp
+        port: 12122
