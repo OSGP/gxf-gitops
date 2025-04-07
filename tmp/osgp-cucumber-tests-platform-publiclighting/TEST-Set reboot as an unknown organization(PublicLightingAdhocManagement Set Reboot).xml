@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="osgp-cucumber-tests-platform-publiclighting-7x89j" name="Set reboot as an unknown organization(PublicLightingAdhocManagement Set Reboot)" skipped="0" tests="1" time="0.081" timestamp="2025-04-04T12:50:24">
+  <properties />
+  <system-out><![CDATA[[2025-04-04 12:50:24.007] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@batchDeleteAll:131 - Starting batchDeleteAll()
+[2025-04-04 12:50:24.023] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@normalDeleteAll:154 - Starting normalDeleteAll()
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+  <testcase classname="org.opensmartgridplatform.cucumber.execution.DescriptionAsTest" name="Set reboot as an unknown organization(PublicLightingAdhocManagement Set Reboot)" time="0.081" />
+</testsuite>

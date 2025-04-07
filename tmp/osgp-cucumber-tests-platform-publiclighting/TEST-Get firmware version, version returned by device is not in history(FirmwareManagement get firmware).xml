@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="1" hostname="osgp-cucumber-tests-platform-publiclighting-7x89j" name="Get firmware version, version returned by device is not in history(FirmwareManagement get firmware)" skipped="0" tests="1" time="0.081" timestamp="2025-04-04T12:25:39">
+  <properties />
+  <testcase classname="org.opensmartgridplatform.cucumber.execution.DescriptionAsTest" name="Get firmware version, version returned by device is not in history(FirmwareManagement get firmware)" time="0.081">
+    <error message="Service Unavailable [503]" type="org.springframework.ws.client.WebServiceTransportException">org.springframework.ws.client.WebServiceTransportException: Service Unavailable [503]
+	at org.springframework.ws.client.core.WebServiceTemplate.handleError(WebServiceTemplate.java:666)
+	at org.springframework.ws.client.core.WebServiceTemplate.doSendAndReceive(WebServiceTemplate.java:588)
+	at org.springframework.ws.client.core.WebServiceTemplate.sendAndReceive(WebServiceTemplate.java:539)
+	at org.springframework.ws.client.core.WebServiceTemplate.marshalSendAndReceive(WebServiceTemplate.java:391)
+	at org.springframework.ws.client.core.WebServiceTemplate.marshalSendAndReceive(WebServiceTemplate.java:385)
+	at org.springframework.ws.client.core.WebServiceTemplate.marshalSendAndReceive(WebServiceTemplate.java:375)
+	at org.opensmartgridplatform.cucumber.platform.common.support.ws.core.CoreFirmwareManagementClient.getFirmwareVersion(CoreFirmwareManagementClient.java:48)
+	at org.opensmartgridplatform.cucumber.platform.common.glue.steps.ws.core.firmwaremanagement.GetFirmwareVersionSteps.receivingAGetFirmwareVersionRequest(GetFirmwareVersionSteps.java:58)
+	at ✽.receiving a get firmware version request(classpath:features/publiclighting/osgp-adapter-ws-core/Firmwaremanagement/GetFirmware.feature:28)
+</error>
+  </testcase>
+  <system-out><![CDATA[[2025-04-04 12:25:39.740] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@batchDeleteAll:131 - Starting batchDeleteAll()
+[2025-04-04 12:25:39.753] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@normalDeleteAll:154 - Starting normalDeleteAll()
+[2025-04-04 12:25:39.806] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@mockGetFirmwareVersionResponse:432 - Mocking response for device dGVzdDEyMzQ1Njc4 of message type: GET_FIRMWARE_VERSION
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

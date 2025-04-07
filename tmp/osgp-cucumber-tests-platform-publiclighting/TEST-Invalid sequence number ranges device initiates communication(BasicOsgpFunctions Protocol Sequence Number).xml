@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="1" hostname="osgp-cucumber-tests-platform-publiclighting-7x89j" name="Invalid sequence number ranges device initiates communication(BasicOsgpFunctions Protocol Sequence Number)" skipped="0" tests="1" time="0.061" timestamp="2025-04-04T11:59:39">
+  <properties />
+  <testcase classname="org.opensmartgridplatform.cucumber.execution.DescriptionAsTest" name="Invalid sequence number ranges device initiates communication(BasicOsgpFunctions Protocol Sequence Number)" time="0.061">
+    <error message="Unable to connect" type="java.io.IOException">java.io.IOException: Unable to connect
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.mocks.oslpdevice.MockOslpChannelHandler.send(MockOslpChannelHandler.java:342)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.mocks.oslpdevice.MockOslpServer.send(MockOslpServer.java:224)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.mocks.OslpDeviceSteps.send(OslpDeviceSteps.java:1473)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.mocks.OslpDeviceSteps.theDeviceSendsAnEventNotificationRequestToThePlatform(OslpDeviceSteps.java:1329)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.mocks.OslpDeviceSteps.theDeviceSendsAStartDeviceResponseOver(OslpDeviceSteps.java:1408)
+	at ✽.the device sends an event notification request with sequencenumber &quot;9&quot; to the platform over &quot;OSLP ELSTER&quot;(classpath:features/publiclighting/basic-osgp-functions/ProtocolSequenceNumber.feature:111)
+</error>
+  </testcase>
+  <system-out><![CDATA[[2025-04-04 11:59:39.580] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@batchDeleteAll:131 - Starting batchDeleteAll()
+[2025-04-04 11:59:39.588] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@normalDeleteAll:154 - Starting normalDeleteAll()
+[2025-04-04 11:59:39.635] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] WARN o.o.c.p.p.m.o.MockOslpChannelHandler@send:341 - Unable to connect to: httpd:443/<unresolved>:12122
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

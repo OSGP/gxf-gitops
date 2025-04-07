@@ -1,0 +1,7828 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports (no 1) - Feature: TariffSwitchingScheduleManagement Set Reverse Tariff Schedule</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+        <th>Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Cucumber Report</td>
+        <td>1</td>
+      <td>04 Apr 2025, 15:42</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Feature Report</h2>
+  </div>
+</div>
+
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table class="stats-table">
+
+
+<thead>
+  <tr class="header dont-sort">
+      <th></th>
+    <th colspan="6">Steps</th>
+    <th colspan="3">Scenarios</th>
+    <th colspan="2">Features</th>
+  </tr>
+  <tr>
+    <th>Feature</th>
+    <th class="passed">Passed</th>
+    <th class="failed">Failed</th>
+    <th class="skipped">Skipped</th>
+    <th class="pending">Pending</th>
+    <th class="undefined">Undefined</th>
+    <th class="total">Total</th>
+
+    <th class="passed">Passed</th>
+    <th class="failed">Failed</th>
+    <th class="total">Total</th>
+
+    <th>Duration</th>
+    <th>Status</th>
+  </tr>
+</thead>
+
+
+        <tbody>
+        <tr>
+          <td class="tagname">TariffSwitchingScheduleManagement Set Reverse Tariff Schedule</td>
+          <td      class="passed"    >76</td>
+          <td      class="failed"    >8</td>
+          <td >0</td>
+          <td >0</td>
+          <td >0</td>
+          <td class="total">84</td>
+
+          <td  class="passed"    >11</td>
+          <td  class="failed"    >8</td>
+          <td class="total">19</td>
+
+          <td class="duration" data-value="192181446268">3:12.181</td>
+          <td class="failed">Failed</td>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 col-md-offset-10">
+      <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
+      <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="feature">
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+</div>
+
+
+<div class="brief failed">
+  <span class="keyword indention">Feature</span>
+  <span class="name">TariffSwitchingScheduleManagement Set Reverse Tariff Schedule</span>
+
+
+</div>
+
+        <div class="description indention">  In order to ... 
+  As a platform 
+  I want to ...</div>
+
+        <div class="elements inner-level">
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+       <a href="report-tag_3516993108.html">@OslpMockServer</a>
+</div>
+
+
+  <span class="lead-duration duration">31.321</span>
+
+
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
+
+<div class="brief failed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Set reverse tariff schedule</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-1" class="collapse collapsable-details  in ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-2">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-2" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.014</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.004</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.004</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.OslpMockServerHooks.resetServer()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-3">
+
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-3" class="inner-level collapse collapsable-details  in ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld oslp device</span>
+
+  <span class="lead-duration duration">0.011</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>RelayType</td>
+                  <td>TARIFF_REVERSED</td>
+              </tr>
+              <tr>
+                  <td>Protocol</td>
+                  <td>OSLP ELSTER</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">the device returns a set reverse tariff schedule response &quot;<span class="argument">OK</span>&quot; over &quot;<span class="argument">OSLP ELSTER</span>&quot;</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request</span>
+
+  <span class="lead-duration duration">0.138</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>MONDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>08:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>1,true</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule async response contains</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">a set reverse tariff schedule &quot;<span class="argument">OSLP ELSTER</span>&quot; message is sent to device &quot;<span class="argument">TEST1024000000001</span>&quot;</span>
+
+  <span class="lead-duration duration">1.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>WeekDay</td>
+                  <td>MONDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>08:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>1,false</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And failed">
+  <span class="keyword indention">And</span>
+  <span class="name">the platform buffers a set reverse tariff schedule response message for device &quot;<span class="argument">TEST1024000000001</span>&quot;</span>
+
+  <span class="lead-duration duration">30.170</span>
+
+</div>
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
+          <a>org.opentest4j.AssertionFailedError:</a>
+      </div>
+      <div id="msg-4" class="collapse collapsable-details  in ">
+        <pre>org.opentest4j.AssertionFailedError: Timeout after [30] seconds.
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.Assertions.fail(Assertions.java:138)
+	at org.opensmartgridplatform.cucumber.core.Wait.untilAndReturn(Wait.java:53)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.tariffswitching.schedulemanagement.SetTariffScheduleSteps.thePlatformBuffersASetTariffScheduleResponseMessageForDevice(SetTariffScheduleSteps.java:236)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.tariffswitching.schedulemanagement.SetReverseTariffScheduleSteps.thePlatformBuffersASetReverseTariffScheduleResponseMessageForDevice(SetReverseTariffScheduleSteps.java:62)
+	at ✽.the platform buffers a set reverse tariff schedule response message for device &quot;TEST1024000000001&quot;(classpath:features/publiclighting/osgp-adapter-ws-tariffswitching/ScheduleManagement/SetReverseTariffSchedule.feature:33)
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>Result</td>
+                  <td>OK</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-5">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-5" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+       <a href="report-tag_3516993108.html">@OslpMockServer</a>
+</div>
+
+
+  <span class="lead-duration duration">31.148</span>
+
+
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-6">
+
+<div class="brief failed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Set reverse tariff schedule</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-6" class="collapse collapsable-details  in ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-7">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-7" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.020</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.005</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.007</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.OslpMockServerHooks.resetServer()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-8">
+
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-8" class="inner-level collapse collapsable-details  in ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld oslp device</span>
+
+  <span class="lead-duration duration">0.010</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>RelayType</td>
+                  <td>TARIFF_REVERSED</td>
+              </tr>
+              <tr>
+                  <td>Protocol</td>
+                  <td>OSLP ELSTER</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">the device returns a set reverse tariff schedule response &quot;<span class="argument">OK</span>&quot; over &quot;<span class="argument">OSLP ELSTER</span>&quot;</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request</span>
+
+  <span class="lead-duration duration">0.108</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>WEEKDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>21:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>1,false</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule async response contains</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">a set reverse tariff schedule &quot;<span class="argument">OSLP ELSTER</span>&quot; message is sent to device &quot;<span class="argument">TEST1024000000001</span>&quot;</span>
+
+  <span class="lead-duration duration">1.001</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>WeekDay</td>
+                  <td>WEEKDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>21:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>1,true</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And failed">
+  <span class="keyword indention">And</span>
+  <span class="name">the platform buffers a set reverse tariff schedule response message for device &quot;<span class="argument">TEST1024000000001</span>&quot;</span>
+
+  <span class="lead-duration duration">30.027</span>
+
+</div>
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-9">
+          <a>org.opentest4j.AssertionFailedError:</a>
+      </div>
+      <div id="msg-9" class="collapse collapsable-details  in ">
+        <pre>org.opentest4j.AssertionFailedError: Timeout after [30] seconds.
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.Assertions.fail(Assertions.java:138)
+	at org.opensmartgridplatform.cucumber.core.Wait.untilAndReturn(Wait.java:53)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.tariffswitching.schedulemanagement.SetTariffScheduleSteps.thePlatformBuffersASetTariffScheduleResponseMessageForDevice(SetTariffScheduleSteps.java:236)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.tariffswitching.schedulemanagement.SetReverseTariffScheduleSteps.thePlatformBuffersASetReverseTariffScheduleResponseMessageForDevice(SetReverseTariffScheduleSteps.java:62)
+	at ✽.the platform buffers a set reverse tariff schedule response message for device &quot;TEST1024000000001&quot;(classpath:features/publiclighting/osgp-adapter-ws-tariffswitching/ScheduleManagement/SetReverseTariffSchedule.feature:33)
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>Result</td>
+                  <td>OK</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-10">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-10" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+       <a href="report-tag_3516993108.html">@OslpMockServer</a>
+</div>
+
+
+  <span class="lead-duration duration">31.217</span>
+
+
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-11">
+
+<div class="brief failed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Set reverse tariff schedule</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-11" class="collapse collapsable-details  in ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-12">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-12" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.018</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.004</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.008</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.OslpMockServerHooks.resetServer()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-13">
+
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-13" class="inner-level collapse collapsable-details  in ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld oslp device</span>
+
+  <span class="lead-duration duration">0.013</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>RelayType</td>
+                  <td>TARIFF_REVERSED</td>
+              </tr>
+              <tr>
+                  <td>Protocol</td>
+                  <td>OSLP ELSTER</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">the device returns a set reverse tariff schedule response &quot;<span class="argument">OK</span>&quot; over &quot;<span class="argument">OSLP ELSTER</span>&quot;</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request</span>
+
+  <span class="lead-duration duration">0.083</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>MONDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>1,true</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule async response contains</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">a set reverse tariff schedule &quot;<span class="argument">OSLP ELSTER</span>&quot; message is sent to device &quot;<span class="argument">TEST1024000000001</span>&quot;</span>
+
+  <span class="lead-duration duration">1.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>WeekDay</td>
+                  <td>MONDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>1,false</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And failed">
+  <span class="keyword indention">And</span>
+  <span class="name">the platform buffers a set reverse tariff schedule response message for device &quot;<span class="argument">TEST1024000000001</span>&quot;</span>
+
+  <span class="lead-duration duration">30.118</span>
+
+</div>
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-14">
+          <a>org.opentest4j.AssertionFailedError:</a>
+      </div>
+      <div id="msg-14" class="collapse collapsable-details  in ">
+        <pre>org.opentest4j.AssertionFailedError: Timeout after [30] seconds.
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.Assertions.fail(Assertions.java:138)
+	at org.opensmartgridplatform.cucumber.core.Wait.untilAndReturn(Wait.java:53)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.tariffswitching.schedulemanagement.SetTariffScheduleSteps.thePlatformBuffersASetTariffScheduleResponseMessageForDevice(SetTariffScheduleSteps.java:236)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.tariffswitching.schedulemanagement.SetReverseTariffScheduleSteps.thePlatformBuffersASetReverseTariffScheduleResponseMessageForDevice(SetReverseTariffScheduleSteps.java:62)
+	at ✽.the platform buffers a set reverse tariff schedule response message for device &quot;TEST1024000000001&quot;(classpath:features/publiclighting/osgp-adapter-ws-tariffswitching/ScheduleManagement/SetReverseTariffSchedule.feature:33)
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>Result</td>
+                  <td>OK</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-15">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-15" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+       <a href="report-tag_3516993108.html">@OslpMockServer</a>
+</div>
+
+
+  <span class="lead-duration duration">31.630</span>
+
+
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-16">
+
+<div class="brief failed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Set reverse tariff schedule</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-16" class="collapse collapsable-details  in ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-17">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-17" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.018</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.004</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.007</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.OslpMockServerHooks.resetServer()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-18">
+
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-18" class="inner-level collapse collapsable-details  in ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld oslp device</span>
+
+  <span class="lead-duration duration">0.015</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>RelayType</td>
+                  <td>TARIFF_REVERSED</td>
+              </tr>
+              <tr>
+                  <td>Protocol</td>
+                  <td>OSLP ELSTER</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">the device returns a set reverse tariff schedule response &quot;<span class="argument">OK</span>&quot; over &quot;<span class="argument">OSLP ELSTER</span>&quot;</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request</span>
+
+  <span class="lead-duration duration">0.118</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>ABSOLUTEDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td>2013-03-01</td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>1,true</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule async response contains</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">a set reverse tariff schedule &quot;<span class="argument">OSLP ELSTER</span>&quot; message is sent to device &quot;<span class="argument">TEST1024000000001</span>&quot;</span>
+
+  <span class="lead-duration duration">1.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>WeekDay</td>
+                  <td>ABSOLUTEDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td>2013-03-01</td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>1,false</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And failed">
+  <span class="keyword indention">And</span>
+  <span class="name">the platform buffers a set reverse tariff schedule response message for device &quot;<span class="argument">TEST1024000000001</span>&quot;</span>
+
+  <span class="lead-duration duration">30.494</span>
+
+</div>
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-19">
+          <a>org.opentest4j.AssertionFailedError:</a>
+      </div>
+      <div id="msg-19" class="collapse collapsable-details  in ">
+        <pre>org.opentest4j.AssertionFailedError: Timeout after [30] seconds.
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.Assertions.fail(Assertions.java:138)
+	at org.opensmartgridplatform.cucumber.core.Wait.untilAndReturn(Wait.java:53)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.tariffswitching.schedulemanagement.SetTariffScheduleSteps.thePlatformBuffersASetTariffScheduleResponseMessageForDevice(SetTariffScheduleSteps.java:236)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.tariffswitching.schedulemanagement.SetReverseTariffScheduleSteps.thePlatformBuffersASetReverseTariffScheduleResponseMessageForDevice(SetReverseTariffScheduleSteps.java:62)
+	at ✽.the platform buffers a set reverse tariff schedule response message for device &quot;TEST1024000000001&quot;(classpath:features/publiclighting/osgp-adapter-ws-tariffswitching/ScheduleManagement/SetReverseTariffSchedule.feature:33)
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>Result</td>
+                  <td>OK</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-20">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-20" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+       <a href="report-tag_3516993108.html">@OslpMockServer</a>
+</div>
+
+
+  <span class="lead-duration duration">31.542</span>
+
+
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-21">
+
+<div class="brief failed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Set reverse tariff schedule</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-21" class="collapse collapsable-details  in ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-22">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-22" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.021</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.004</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.008</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.OslpMockServerHooks.resetServer()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-23">
+
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-23" class="inner-level collapse collapsable-details  in ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld oslp device</span>
+
+  <span class="lead-duration duration">0.011</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>RelayType</td>
+                  <td>TARIFF_REVERSED</td>
+              </tr>
+              <tr>
+                  <td>Protocol</td>
+                  <td>OSLP ELSTER</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">the device returns a set reverse tariff schedule response &quot;<span class="argument">OK</span>&quot; over &quot;<span class="argument">OSLP ELSTER</span>&quot;</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request</span>
+
+  <span class="lead-duration duration">0.094</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>MONDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>1,true</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule async response contains</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">a set reverse tariff schedule &quot;<span class="argument">OSLP ELSTER</span>&quot; message is sent to device &quot;<span class="argument">TEST1024000000001</span>&quot;</span>
+
+  <span class="lead-duration duration">1.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>WeekDay</td>
+                  <td>MONDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>1,false</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And failed">
+  <span class="keyword indention">And</span>
+  <span class="name">the platform buffers a set reverse tariff schedule response message for device &quot;<span class="argument">TEST1024000000001</span>&quot;</span>
+
+  <span class="lead-duration duration">30.434</span>
+
+</div>
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-24">
+          <a>org.opentest4j.AssertionFailedError:</a>
+      </div>
+      <div id="msg-24" class="collapse collapsable-details  in ">
+        <pre>org.opentest4j.AssertionFailedError: Timeout after [30] seconds.
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.Assertions.fail(Assertions.java:138)
+	at org.opensmartgridplatform.cucumber.core.Wait.untilAndReturn(Wait.java:53)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.tariffswitching.schedulemanagement.SetTariffScheduleSteps.thePlatformBuffersASetTariffScheduleResponseMessageForDevice(SetTariffScheduleSteps.java:236)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.tariffswitching.schedulemanagement.SetReverseTariffScheduleSteps.thePlatformBuffersASetReverseTariffScheduleResponseMessageForDevice(SetReverseTariffScheduleSteps.java:62)
+	at ✽.the platform buffers a set reverse tariff schedule response message for device &quot;TEST1024000000001&quot;(classpath:features/publiclighting/osgp-adapter-ws-tariffswitching/ScheduleManagement/SetReverseTariffSchedule.feature:33)
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>Result</td>
+                  <td>OK</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-25">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-25" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+       <a href="report-tag_3516993108.html">@OslpMockServer</a>
+</div>
+
+
+  <span class="lead-duration duration">31.554</span>
+
+
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-26">
+
+<div class="brief failed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Set reverse tariff schedule</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-26" class="collapse collapsable-details  in ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-27">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-27" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.023</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.004</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.007</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.OslpMockServerHooks.resetServer()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-28">
+
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-28" class="inner-level collapse collapsable-details  in ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld oslp device</span>
+
+  <span class="lead-duration duration">0.010</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>RelayType</td>
+                  <td>TARIFF_REVERSED</td>
+              </tr>
+              <tr>
+                  <td>Protocol</td>
+                  <td>OSLP ELSTER</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">the device returns a set reverse tariff schedule response &quot;<span class="argument">OK</span>&quot; over &quot;<span class="argument">OSLP ELSTER</span>&quot;</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request</span>
+
+  <span class="lead-duration duration">0.099</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>ABSOLUTEDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td>2016-01-01</td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td>2016-12-31</td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>0,true</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule async response contains</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">a set reverse tariff schedule &quot;<span class="argument">OSLP ELSTER</span>&quot; message is sent to device &quot;<span class="argument">TEST1024000000001</span>&quot;</span>
+
+  <span class="lead-duration duration">1.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>WeekDay</td>
+                  <td>ABSOLUTEDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td>2016-01-01</td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td>2016-12-31</td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>0,false</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And failed">
+  <span class="keyword indention">And</span>
+  <span class="name">the platform buffers a set reverse tariff schedule response message for device &quot;<span class="argument">TEST1024000000001</span>&quot;</span>
+
+  <span class="lead-duration duration">30.441</span>
+
+</div>
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-29">
+          <a>org.opentest4j.AssertionFailedError:</a>
+      </div>
+      <div id="msg-29" class="collapse collapsable-details  in ">
+        <pre>org.opentest4j.AssertionFailedError: Timeout after [30] seconds.
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.Assertions.fail(Assertions.java:138)
+	at org.opensmartgridplatform.cucumber.core.Wait.untilAndReturn(Wait.java:53)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.tariffswitching.schedulemanagement.SetTariffScheduleSteps.thePlatformBuffersASetTariffScheduleResponseMessageForDevice(SetTariffScheduleSteps.java:236)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.tariffswitching.schedulemanagement.SetReverseTariffScheduleSteps.thePlatformBuffersASetReverseTariffScheduleResponseMessageForDevice(SetReverseTariffScheduleSteps.java:62)
+	at ✽.the platform buffers a set reverse tariff schedule response message for device &quot;TEST1024000000001&quot;(classpath:features/publiclighting/osgp-adapter-ws-tariffswitching/ScheduleManagement/SetReverseTariffSchedule.feature:33)
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>Result</td>
+                  <td>OK</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-30">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-30" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+       <a href="report-tag_3516993108.html">@OslpMockServer</a>
+</div>
+
+
+  <span class="lead-duration duration">1.156</span>
+
+
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-31">
+
+<div class="brief failed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Failed set reverse tariff schedule</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-31" class="collapse collapsable-details  in ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-32">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-32" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.022</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.005</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.010</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.OslpMockServerHooks.resetServer()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-33">
+
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-33" class="inner-level collapse collapsable-details  in ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld oslp device</span>
+
+  <span class="lead-duration duration">0.016</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>RelayType</td>
+                  <td>TARIFF_REVERSED</td>
+              </tr>
+              <tr>
+                  <td>Protocol</td>
+                  <td>OSLP ELSTER</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">the device returns a set reverse tariff schedule response &quot;<span class="argument">FAILURE</span>&quot; over &quot;<span class="argument">OSLP ELSTER</span>&quot;</span>
+
+  <span class="lead-duration duration">0.001</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request</span>
+
+  <span class="lead-duration duration">0.112</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>MONDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>0,true</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule async response contains</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">a set reverse tariff schedule &quot;<span class="argument">OSLP ELSTER</span>&quot; message is sent to device &quot;<span class="argument">TEST1024000000001</span>&quot;</span>
+
+  <span class="lead-duration duration">1.001</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>WeekDay</td>
+                  <td>MONDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>0,false</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And failed">
+  <span class="keyword indention">And</span>
+  <span class="name">the platform buffers a set reverse tariff schedule response message for device &quot;<span class="argument">TEST1024000000001</span>&quot; that contains a soap fault</span>
+
+  <span class="lead-duration duration">0.024</span>
+
+</div>
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-34">
+          <a>org.assertj.core.error.AssertJMultipleFailuresError:</a>
+      </div>
+      <div id="msg-34" class="collapse collapsable-details  in ">
+        <pre>org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (1 failure)
+-- failure 1 --
+[Message] 
+Expecting:
+ &lt;&quot;CorrelationUid is unknown.&quot;&gt;
+to be equal to:
+ &lt;&quot;Device reports failure&quot;&gt;
+but was not.
+at GenericResponseSteps.assertFaultDetailMap(GenericResponseSteps.java:114)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at org.opensmartgridplatform.cucumber.platform.glue.steps.ws.GenericResponseSteps.assertFaultDetailMap(GenericResponseSteps.java:116)
+	at org.opensmartgridplatform.cucumber.platform.glue.steps.ws.GenericResponseSteps.verifySoapFault(GenericResponseSteps.java:42)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.tariffswitching.schedulemanagement.SetTariffScheduleSteps.thePlatformBuffersASetTariffScheduleResponseMessageForDeviceContainsSoapFault(SetTariffScheduleSteps.java:273)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.tariffswitching.schedulemanagement.SetReverseTariffScheduleSteps.thePlatformBuffersASetReverseTariffScheduleResponseMessageForDeviceContainsSoapFault(SetReverseTariffScheduleSteps.java:72)
+	at ✽.the platform buffers a set reverse tariff schedule response message for device &quot;TEST1024000000001&quot; that contains a soap fault(classpath:features/publiclighting/osgp-adapter-ws-tariffswitching/ScheduleManagement/SetReverseTariffSchedule.feature:68)
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>Message</td>
+                  <td>Device reports failure</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-35">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-35" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+       <a href="report-tag_3516993108.html">@OslpMockServer</a>
+</div>
+
+
+  <span class="lead-duration duration">1.121</span>
+
+
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-36">
+
+<div class="brief failed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Rejected set reverse tariff schedule</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-36" class="collapse collapsable-details  in ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-37">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-37" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.019</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.004</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.008</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.OslpMockServerHooks.resetServer()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-38">
+
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-38" class="inner-level collapse collapsable-details  in ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld oslp device</span>
+
+  <span class="lead-duration duration">0.012</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>RelayType</td>
+                  <td>TARIFF_REVERSED</td>
+              </tr>
+              <tr>
+                  <td>Protocol</td>
+                  <td>OSLP ELSTER</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">the device returns a set reverse tariff schedule response &quot;<span class="argument">REJECTED</span>&quot; over &quot;<span class="argument">OSLP ELSTER</span>&quot;</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request</span>
+
+  <span class="lead-duration duration">0.088</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>MONDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>0,true</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule async response contains</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">a set tariff schedule &quot;<span class="argument">OSLP ELSTER</span>&quot; message is sent to device &quot;<span class="argument">TEST1024000000001</span>&quot;</span>
+
+  <span class="lead-duration duration">1.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>WeekDay</td>
+                  <td>MONDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>0,false</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And failed">
+  <span class="keyword indention">And</span>
+  <span class="name">the platform buffers a set reverse tariff schedule response message for device &quot;<span class="argument">TEST1024000000001</span>&quot; that contains a soap fault</span>
+
+  <span class="lead-duration duration">0.018</span>
+
+</div>
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-39">
+          <a>org.assertj.core.error.AssertJMultipleFailuresError:</a>
+      </div>
+      <div id="msg-39" class="collapse collapsable-details  in ">
+        <pre>org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (1 failure)
+-- failure 1 --
+[Message] 
+Expecting:
+ &lt;&quot;CorrelationUid is unknown.&quot;&gt;
+to be equal to:
+ &lt;&quot;Device reports rejected&quot;&gt;
+but was not.
+at GenericResponseSteps.assertFaultDetailMap(GenericResponseSteps.java:114)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at org.opensmartgridplatform.cucumber.platform.glue.steps.ws.GenericResponseSteps.assertFaultDetailMap(GenericResponseSteps.java:116)
+	at org.opensmartgridplatform.cucumber.platform.glue.steps.ws.GenericResponseSteps.verifySoapFault(GenericResponseSteps.java:42)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.tariffswitching.schedulemanagement.SetTariffScheduleSteps.thePlatformBuffersASetTariffScheduleResponseMessageForDeviceContainsSoapFault(SetTariffScheduleSteps.java:273)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.tariffswitching.schedulemanagement.SetReverseTariffScheduleSteps.thePlatformBuffersASetReverseTariffScheduleResponseMessageForDeviceContainsSoapFault(SetReverseTariffScheduleSteps.java:72)
+	at ✽.the platform buffers a set reverse tariff schedule response message for device &quot;TEST1024000000001&quot; that contains a soap fault(classpath:features/publiclighting/osgp-adapter-ws-tariffswitching/ScheduleManagement/SetReverseTariffSchedule.feature:98)
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>Message</td>
+                  <td>Device reports rejected</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-40">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-40" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+</div>
+
+
+  <span class="lead-duration duration">0.035</span>
+
+
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-41">
+
+<div class="brief passed">
+  <span class="keyword indention">Scenario</span>
+  <span class="name">Set reverse tariff schedule with invalid schedule</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-41" class="collapse collapsable-details ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-42">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-42" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.022</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.004</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.010</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-43">
+
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-43" class="inner-level collapse collapsable-details ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld oslp device</span>
+
+  <span class="lead-duration duration">0.012</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>RelayType</td>
+                  <td>TARIFF_REVERSED</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request</span>
+
+  <span class="lead-duration duration">0.022</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>ABSOLUTEDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>0,true</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule response contains soap fault</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>FaultCode</td>
+                  <td>SOAP-ENV:Server</td>
+              </tr>
+              <tr>
+                  <td>FaultString</td>
+                  <td>VALIDATION_ERROR</td>
+              </tr>
+              <tr>
+                  <td>InnerMessage</td>
+                  <td>Validation Exception, violations: startDay may not be null when weekDay is set to ABSOLUTEDAY;</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-44">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-44" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+</div>
+
+
+  <span class="lead-duration duration">0.038</span>
+
+
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-45">
+
+<div class="brief passed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Set reverse tariff schedule for inactive or unregistered device (device lifecycle state)</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-45" class="collapse collapsable-details ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-46">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-46" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.015</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.005</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.007</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-47">
+
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-47" class="inner-level collapse collapsable-details ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld device</span>
+
+  <span class="lead-duration duration">0.009</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>DeviceLifecycleStatus</td>
+                  <td>NEW_IN_INVENTORY</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request</span>
+
+  <span class="lead-duration duration">0.028</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>MONDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>0,true</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule response contains soap fault</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>FaultCode</td>
+                  <td>SOAP-ENV:Server</td>
+              </tr>
+              <tr>
+                  <td>FaultString</td>
+                  <td>INACTIVE_DEVICE</td>
+              </tr>
+              <tr>
+                  <td>InnerMessage</td>
+                  <td>Device TEST1024000000001 is not active in the platform</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-48">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-48" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+</div>
+
+
+  <span class="lead-duration duration">0.032</span>
+
+
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-49">
+
+<div class="brief passed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Set reverse tariff schedule for inactive or unregistered device (device lifecycle state)</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-49" class="collapse collapsable-details ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-50">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-50" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.015</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.004</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.005</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-51">
+
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-51" class="inner-level collapse collapsable-details ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld device</span>
+
+  <span class="lead-duration duration">0.009</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>DeviceLifecycleStatus</td>
+                  <td>READY_FOR_USE</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request</span>
+
+  <span class="lead-duration duration">0.021</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>MONDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>0,true</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule response contains soap fault</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>FaultCode</td>
+                  <td>SOAP-ENV:Server</td>
+              </tr>
+              <tr>
+                  <td>FaultString</td>
+                  <td>INACTIVE_DEVICE</td>
+              </tr>
+              <tr>
+                  <td>InnerMessage</td>
+                  <td>Device TEST1024000000001 is not active in the platform</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-52">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-52" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+</div>
+
+
+  <span class="lead-duration duration">0.029</span>
+
+
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-53">
+
+<div class="brief passed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Set reverse tariff schedule for inactive or unregistered device (device lifecycle state)</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-53" class="collapse collapsable-details ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-54">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-54" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.017</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.005</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.004</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-55">
+
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-55" class="inner-level collapse collapsable-details ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld device</span>
+
+  <span class="lead-duration duration">0.007</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>DeviceLifecycleStatus</td>
+                  <td>REGISTERED</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request</span>
+
+  <span class="lead-duration duration">0.021</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>MONDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>0,true</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule response contains soap fault</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>FaultCode</td>
+                  <td>SOAP-ENV:Server</td>
+              </tr>
+              <tr>
+                  <td>FaultString</td>
+                  <td>INACTIVE_DEVICE</td>
+              </tr>
+              <tr>
+                  <td>InnerMessage</td>
+                  <td>Device TEST1024000000001 is not active in the platform</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-56">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-56" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+</div>
+
+
+  <span class="lead-duration duration">0.029</span>
+
+
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-57">
+
+<div class="brief passed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Set reverse tariff schedule for inactive or unregistered device (device lifecycle state)</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-57" class="collapse collapsable-details ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-58">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-58" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.015</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.003</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.004</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-59">
+
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-59" class="inner-level collapse collapsable-details ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld device</span>
+
+  <span class="lead-duration duration">0.009</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>DeviceLifecycleStatus</td>
+                  <td>RETURNED_TO_INVENTORY</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request</span>
+
+  <span class="lead-duration duration">0.019</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>MONDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>0,true</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule response contains soap fault</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>FaultCode</td>
+                  <td>SOAP-ENV:Server</td>
+              </tr>
+              <tr>
+                  <td>FaultString</td>
+                  <td>INACTIVE_DEVICE</td>
+              </tr>
+              <tr>
+                  <td>InnerMessage</td>
+                  <td>Device TEST1024000000001 is not active in the platform</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-60">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-60" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+</div>
+
+
+  <span class="lead-duration duration">0.027</span>
+
+
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-61">
+
+<div class="brief passed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Set reverse tariff schedule for inactive or unregistered device (device lifecycle state)</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-61" class="collapse collapsable-details ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-62">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-62" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.015</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.003</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.004</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-63">
+
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-63" class="inner-level collapse collapsable-details ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld device</span>
+
+  <span class="lead-duration duration">0.008</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>DeviceLifecycleStatus</td>
+                  <td>UNDER_TEST</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request</span>
+
+  <span class="lead-duration duration">0.018</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>MONDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>0,true</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule response contains soap fault</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>FaultCode</td>
+                  <td>SOAP-ENV:Server</td>
+              </tr>
+              <tr>
+                  <td>FaultString</td>
+                  <td>INACTIVE_DEVICE</td>
+              </tr>
+              <tr>
+                  <td>InnerMessage</td>
+                  <td>Device TEST1024000000001 is not active in the platform</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-64">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-64" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+</div>
+
+
+  <span class="lead-duration duration">0.035</span>
+
+
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-65">
+
+<div class="brief passed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Set reverse tariff schedule for inactive or unregistered device (device lifecycle state)</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-65" class="collapse collapsable-details ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-66">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-66" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.015</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.003</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.005</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-67">
+
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-67" class="inner-level collapse collapsable-details ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld device</span>
+
+  <span class="lead-duration duration">0.008</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>DeviceLifecycleStatus</td>
+                  <td>DESTROYED</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request</span>
+
+  <span class="lead-duration duration">0.025</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>MONDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>0,true</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule response contains soap fault</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>FaultCode</td>
+                  <td>SOAP-ENV:Server</td>
+              </tr>
+              <tr>
+                  <td>FaultString</td>
+                  <td>INACTIVE_DEVICE</td>
+              </tr>
+              <tr>
+                  <td>InnerMessage</td>
+                  <td>Device TEST1024000000001 is not active in the platform</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-68">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-68" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+</div>
+
+
+  <span class="lead-duration duration">0.030</span>
+
+
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-69">
+
+<div class="brief passed">
+  <span class="keyword indention">Scenario</span>
+  <span class="name">Set reverse tariff schedule for inactive or unregistered device (is activated false)</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-69" class="collapse collapsable-details ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-70">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-70" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.016</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.004</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.007</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-71">
+
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-71" class="inner-level collapse collapsable-details ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld device</span>
+
+  <span class="lead-duration duration">0.008</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>Activated</td>
+                  <td>false</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request</span>
+
+  <span class="lead-duration duration">0.020</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>MONDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>0,true</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule response contains soap fault</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>FaultCode</td>
+                  <td>SOAP-ENV:Server</td>
+              </tr>
+              <tr>
+                  <td>FaultString</td>
+                  <td>INACTIVE_DEVICE</td>
+              </tr>
+              <tr>
+                  <td>InnerMessage</td>
+                  <td>Device TEST1024000000001 is not active in the platform</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-72">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-72" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+</div>
+
+
+  <span class="lead-duration duration">0.027</span>
+
+
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-73">
+
+<div class="brief passed">
+  <span class="keyword indention">Scenario</span>
+  <span class="name">Set reverse tariff schedule for unregistered device (public key missing)</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-73" class="collapse collapsable-details ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-74">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-74" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.013</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.003</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.005</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-75">
+
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-75" class="inner-level collapse collapsable-details ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld device</span>
+
+  <span class="lead-duration duration">0.008</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>PublicKeyPresent</td>
+                  <td>false</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request</span>
+
+  <span class="lead-duration duration">0.018</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>MONDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>0,true</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule response contains soap fault</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>FaultCode</td>
+                  <td>SOAP-ENV:Server</td>
+              </tr>
+              <tr>
+                  <td>FaultString</td>
+                  <td>UNREGISTERED_DEVICE</td>
+              </tr>
+              <tr>
+                  <td>InnerMessage</td>
+                  <td>Device TEST1024000000001 is not registered</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-76">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-76" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+       <a href="report-tag_3516993108.html">@OslpMockServer</a>
+</div>
+
+
+  <span class="lead-duration duration">1.168</span>
+
+
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-77">
+
+<div class="brief passed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Set reverse tariff schedule with 50 schedules # Success</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-77" class="collapse collapsable-details ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-78">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-78" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.014</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.003</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.004</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.OslpMockServerHooks.resetServer()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-79">
+
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-79" class="inner-level collapse collapsable-details ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld oslp device</span>
+
+  <span class="lead-duration duration">0.010</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>RelayType</td>
+                  <td>TARIFF_REVERSED</td>
+              </tr>
+              <tr>
+                  <td>Protocol</td>
+                  <td>OSLP ELSTER</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">the device returns a set reverse tariff schedule response &quot;<span class="argument">OK</span>&quot; over &quot;<span class="argument">OSLP ELSTER</span>&quot;</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request for <span class="argument">50</span> schedules</span>
+
+  <span class="lead-duration duration">0.120</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>ABSOLUTEDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td>2016-01-01</td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td>2016-12-31</td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>0,true</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule async response contains</span>
+
+  <span class="lead-duration duration">0.001</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">a set reverse tariff schedule &quot;<span class="argument">OSLP ELSTER</span>&quot; message is sent to device &quot;<span class="argument">TEST1024000000001</span>&quot;</span>
+
+  <span class="lead-duration duration">1.001</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>WeekDay</td>
+                  <td>ABSOLUTEDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td>2016-01-01</td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td>2016-12-31</td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>0,false</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">the platform buffers a set reverse tariff schedule response message for device &quot;<span class="argument">TEST1024000000001</span>&quot; that contains a soap fault</span>
+
+  <span class="lead-duration duration">0.033</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>FaultCode</td>
+                  <td>SOAP-ENV:Server</td>
+              </tr>
+              <tr>
+                  <td>FaultString</td>
+                  <td>CorrelationUid is unknown.</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-80">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-80" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_404307188.html">@PublicLighting</a>
+       <a href="report-tag_78875858.html">@Platform</a>
+       <a href="report-tag_2563679971.html">@TariffSwitchingScheduleManagement</a>
+</div>
+
+
+  <span class="lead-duration duration">0.032</span>
+
+
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-81">
+
+<div class="brief passed">
+  <span class="keyword indention">Scenario</span>
+  <span class="name">Set reverse tariff schedule with 51 schedules # Fail</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-81" class="collapse collapsable-details ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-82">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-82" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.018</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.004</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.009</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.protocol.iec60870.glue.hooks.ScenarioHooks.beforeScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-83">
+
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-83" class="inner-level collapse collapsable-details ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">an ssld device</span>
+
+  <span class="lead-duration duration">0.010</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>RelayType</td>
+                  <td>TARIFF_REVERSED</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">receiving a set reverse tariff schedule request for <span class="argument">51</span> schedules</span>
+
+  <span class="lead-duration duration">0.021</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>DeviceIdentification</td>
+                  <td>TEST1024000000001</td>
+              </tr>
+              <tr>
+                  <td>WeekDay</td>
+                  <td>ABSOLUTEDAY</td>
+              </tr>
+              <tr>
+                  <td>StartDay</td>
+                  <td>2016-01-01</td>
+              </tr>
+              <tr>
+                  <td>EndDay</td>
+                  <td>2016-12-31</td>
+              </tr>
+              <tr>
+                  <td>Time</td>
+                  <td>18:00:00.000</td>
+              </tr>
+              <tr>
+                  <td>TariffValues</td>
+                  <td>0,true</td>
+              </tr>
+              <tr>
+                  <td>ScheduledTime</td>
+                  <td>2016-12-15</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">the set reverse tariff schedule response contains soap fault</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+          <table class="step-arguments">
+              <tr>
+                  <td>FaultCode</td>
+                  <td>SOAP-ENV:Client</td>
+              </tr>
+              <tr>
+                  <td>FaultString</td>
+                  <td>Validation error</td>
+              </tr>
+              <tr>
+                  <td>ValidationErrors</td>
+                  <td>cvc-complex-type.2.4.e: 'ns2:Schedules' can occur a maximum of '50' times in the current sequence. This limit was exceeded. At this point one of '{&quot;http://www.opensmartgridplatform.org/schemas/tariffswitching/schedulemanagement/2014/10&quot;:Page, &quot;http://www.opensmartgridplatform.org/schemas/tariffswitching/schedulemanagement/2014/10&quot;:scheduled_time}' is expected.</td>
+              </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-84">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-84" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.publiclighting.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">org.opensmartgridplatform.cucumber.platform.common.glue.hooks.ScenarioHooks.afterScenario()</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 col-md-offset-10">
+      <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
+      <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
+    </div>
+  </div>
+</div>
+
+<br/>
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

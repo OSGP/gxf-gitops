@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="1" hostname="osgp-cucumber-tests-platform-publiclighting-7x89j" name="Rejected set reverse tariff schedule(TariffSwitchingScheduleManagement Set Reverse Tariff Schedule)" skipped="0" tests="1" time="1.162" timestamp="2025-04-04T13:30:57">
+  <properties />
+  <testcase classname="org.opensmartgridplatform.cucumber.execution.DescriptionAsTest" name="Rejected set reverse tariff schedule(TariffSwitchingScheduleManagement Set Reverse Tariff Schedule)" time="1.162">
+    <error message="&#xa;Multiple Failures (1 failure)&#xa;-- failure 1 --&#xa;[Message] &#xa;Expecting:&#xa; &lt;&quot;CorrelationUid is unknown.&quot;&gt;&#xa;to be equal to:&#xa; &lt;&quot;Device reports rejected&quot;&gt;&#xa;but was not.&#xa;at GenericResponseSteps.assertFaultDetailMap(GenericResponseSteps.java:114)" type="org.assertj.core.error.AssertJMultipleFailuresError">org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (1 failure)
+-- failure 1 --
+[Message] 
+Expecting:
+ &lt;&quot;CorrelationUid is unknown.&quot;&gt;
+to be equal to:
+ &lt;&quot;Device reports rejected&quot;&gt;
+but was not.
+at GenericResponseSteps.assertFaultDetailMap(GenericResponseSteps.java:114)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at org.opensmartgridplatform.cucumber.platform.glue.steps.ws.GenericResponseSteps.assertFaultDetailMap(GenericResponseSteps.java:116)
+	at org.opensmartgridplatform.cucumber.platform.glue.steps.ws.GenericResponseSteps.verifySoapFault(GenericResponseSteps.java:42)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.tariffswitching.schedulemanagement.SetTariffScheduleSteps.thePlatformBuffersASetTariffScheduleResponseMessageForDeviceContainsSoapFault(SetTariffScheduleSteps.java:273)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.tariffswitching.schedulemanagement.SetReverseTariffScheduleSteps.thePlatformBuffersASetReverseTariffScheduleResponseMessageForDeviceContainsSoapFault(SetReverseTariffScheduleSteps.java:72)
+	at ✽.the platform buffers a set reverse tariff schedule response message for device &quot;TEST1024000000001&quot; that contains a soap fault(classpath:features/publiclighting/osgp-adapter-ws-tariffswitching/ScheduleManagement/SetReverseTariffSchedule.feature:98)
+</error>
+  </testcase>
+  <system-out><![CDATA[[2025-04-04 13:30:57.789] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@batchDeleteAll:131 - Starting batchDeleteAll()
+[2025-04-04 13:30:57.799] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@normalDeleteAll:154 - Starting normalDeleteAll()
+[2025-04-04 13:30:57.835] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@mockSetScheduleResponse:611 - Mocking response for device dGVzdDEyMzQ1Njc4 of message type: SET_TARIFF_SCHEDULE
+[2025-04-04 13:30:57.924] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.g.s.w.t.s.SetTariffScheduleSteps@theSetTariffScheduleAsyncResponseContains:212 - Got CorrelationUid: [test-org|||TEST1024000000001|||20250404133057853|||c92fa810-5f14-41f0-8a07-edd19cea4183]
+[2025-04-04 13:30:57.925] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:187 - Device dGVzdDEyMzQ1Njc4 is waiting for request of message type: SET_TARIFF_SCHEDULE, receivedResponses: 0
+[2025-04-04 13:30:57.925] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 1 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: SET_TARIFF_SCHEDULE
+[2025-04-04 13:30:58.262] [osgp-cucumber-tests-platform-publiclighting-7x89j] [disposableNioEventLoopGroup-6-29] INFO o.o.c.p.p.m.o.MockOslpChannelHandler@handleRequest:403 - Device dGVzdDEyMzQ1Njc4 received [setScheduleRequest {
+  schedules {
+    weekday: MONDAY
+    actionTime: ABSOLUTETIME
+    time: "180000"
+    value {
+      index: "\000"
+      on: true
+    }
+  }
+  scheduleType: TARIFF
+}
+], sequence number [[0, 0]]
+[2025-04-04 13:30:58.262] [osgp-cucumber-tests-platform-publiclighting-7x89j] [disposableNioEventLoopGroup-6-29] INFO o.o.c.p.p.m.o.MockOslpChannelHandler@handleRequest:425 - Device dGVzdDEyMzQ1Njc4 mocked response: [setScheduleResponse {
+  status: REJECTED
+}
+]
+[2025-04-04 13:30:58.925] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:214 - Device dGVzdDEyMzQ1Njc4 received a request of message type: SET_TARIFF_SCHEDULE
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

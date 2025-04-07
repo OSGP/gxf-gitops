@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="osgp-cucumber-tests-platform-publiclighting-7x89j" name="Rejected get configuration of a device(CoreConfigurationManagement GetConfiguration)" skipped="0" tests="1" time="1.201" timestamp="2025-04-04T12:07:55">
+  <properties />
+  <system-out><![CDATA[[2025-04-04 12:07:55.700] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@batchDeleteAll:131 - Starting batchDeleteAll()
+[2025-04-04 12:07:55.715] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@normalDeleteAll:154 - Starting normalDeleteAll()
+[2025-04-04 12:07:55.776] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@mockGetConfigurationResponse:411 - Mocking response for device dGVzdDEyMzQ1Njc4 of message type: GET_CONFIGURATION
+[2025-04-04 12:07:55.874] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.c.g.s.w.c.c.GetConfigurationSteps@theGetConfigurationResponseContains:100 - Got CorrelationUid: [test-org|||TEST1024000000001|||20250404120755801|||49978508-8add-49a5-8ee1-839341f5cfed]
+[2025-04-04 12:07:55.875] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:187 - Device dGVzdDEyMzQ1Njc4 is waiting for request of message type: GET_CONFIGURATION, receivedResponses: 0
+[2025-04-04 12:07:55.875] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 1 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: GET_CONFIGURATION
+[2025-04-04 12:07:56.276] [osgp-cucumber-tests-platform-publiclighting-7x89j] [disposableNioEventLoopGroup-6-2] INFO o.o.c.p.p.m.o.MockOslpChannelHandler@handleRequest:403 - Device dGVzdDEyMzQ1Njc4 received [getConfigurationRequest {
+}
+], sequence number [[0, 0]]
+[2025-04-04 12:07:56.276] [osgp-cucumber-tests-platform-publiclighting-7x89j] [disposableNioEventLoopGroup-6-2] INFO o.o.c.p.p.m.o.MockOslpChannelHandler@handleRequest:425 - Device dGVzdDEyMzQ1Njc4 mocked response: [getConfigurationResponse {
+  status: REJECTED
+  lightType: RELAY
+  shortTermHistoryIntervalMinutes: 0
+  preferredLinkType: ETHERNET
+  longTermHistoryInterval: 0
+  osgpPortNumber: 12122
+}
+]
+[2025-04-04 12:07:56.875] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:214 - Device dGVzdDEyMzQ1Njc4 received a request of message type: GET_CONFIGURATION
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+  <testcase classname="org.opensmartgridplatform.cucumber.execution.DescriptionAsTest" name="Rejected get configuration of a device(CoreConfigurationManagement GetConfiguration)" time="1.201" />
+</testsuite>

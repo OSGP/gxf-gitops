@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="1" hostname="osgp-cucumber-tests-platform-publiclighting-7x89j" name="Stop an ssld oslp Device(CoreDeviceInstallation Device Stopping)" skipped="0" tests="1" time="31.288" timestamp="2025-04-04T12:21:52">
+  <properties />
+  <testcase classname="org.opensmartgridplatform.cucumber.execution.DescriptionAsTest" name="Stop an ssld oslp Device(CoreDeviceInstallation Device Stopping)" time="31.288">
+    <error message="Timeout after [30] seconds." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Timeout after [30] seconds.
+	at org.opensmartgridplatform.cucumber.core.Wait.until(Wait.java:105)
+	at org.opensmartgridplatform.cucumber.core.Wait.until(Wait.java:92)
+	at org.opensmartgridplatform.cucumber.core.Wait.until(Wait.java:88)
+	at org.opensmartgridplatform.cucumber.platform.common.glue.steps.ws.core.deviceinstallation.StopDeviceSteps.thePlatformBuffersAStopDeviceResponseMessageForDevice(StopDeviceSteps.java:96)
+	at ✽.the platform buffers a stop device response message for device &quot;TEST1024000000001&quot;(classpath:features/publiclighting/osgp-adapter-ws-core/DeviceInstallation/StopDevice.feature:22)
+</error>
+  </testcase>
+  <system-out><![CDATA[[2025-04-04 12:21:52.406] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@batchDeleteAll:131 - Starting batchDeleteAll()
+[2025-04-04 12:21:52.417] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@normalDeleteAll:154 - Starting normalDeleteAll()
+[2025-04-04 12:21:52.453] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@mockStopDeviceResponse:492 - Mocking response for device dGVzdDEyMzQ1Njc4 of message type: STOP_SELF_TEST
+[2025-04-04 12:21:52.564] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.c.g.s.w.c.d.StopDeviceSteps@theStopDeviceAsyncResponseContains:73 - Got CorrelationUid: [test-org|||TEST1024000000001|||20250404122152482|||e13e7503-5762-4f53-857d-bb1a7c3654ad]
+[2025-04-04 12:21:52.565] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:187 - Device dGVzdDEyMzQ1Njc4 is waiting for request of message type: STOP_SELF_TEST, receivedResponses: 0
+[2025-04-04 12:21:52.565] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 1 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: STOP_SELF_TEST
+[2025-04-04 12:21:52.935] [osgp-cucumber-tests-platform-publiclighting-7x89j] [disposableNioEventLoopGroup-6-31] INFO o.o.c.p.p.m.o.MockOslpChannelHandler@handleRequest:403 - Device dGVzdDEyMzQ1Njc4 received [stopSelfTestRequest {
+}
+], sequence number [[0, 0]]
+[2025-04-04 12:21:52.935] [osgp-cucumber-tests-platform-publiclighting-7x89j] [disposableNioEventLoopGroup-6-31] INFO o.o.c.p.p.m.o.MockOslpChannelHandler@handleRequest:425 - Device dGVzdDEyMzQ1Njc4 mocked response: [stopSelfTestResponse {
+  status: OK
+  selfTestResult: ""
+}
+]
+[2025-04-04 12:21:53.565] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:214 - Device dGVzdDEyMzQ1Njc4 received a request of message type: STOP_SELF_TEST
+[2025-04-04 12:21:53.584] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:21:53.584] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (0 seconds) ...
+[2025-04-04 12:21:54.101] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:21:54.101] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (0 seconds) ...
+[2025-04-04 12:21:54.619] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:21:54.619] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (1 seconds) ...
+[2025-04-04 12:21:55.136] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:21:55.136] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (1 seconds) ...
+[2025-04-04 12:21:55.654] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:21:55.654] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (2 seconds) ...
+[2025-04-04 12:21:56.172] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:21:56.172] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (2 seconds) ...
+[2025-04-04 12:21:56.690] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:21:56.690] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (3 seconds) ...
+[2025-04-04 12:21:57.216] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:21:57.216] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (3 seconds) ...
+[2025-04-04 12:21:57.733] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:21:57.733] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (4 seconds) ...
+[2025-04-04 12:21:58.252] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:21:58.252] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (4 seconds) ...
+[2025-04-04 12:21:58.769] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:21:58.769] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (5 seconds) ...
+[2025-04-04 12:21:59.286] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:21:59.286] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (5 seconds) ...
+[2025-04-04 12:21:59.804] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:21:59.804] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (6 seconds) ...
+[2025-04-04 12:22:00.320] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:00.320] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (6 seconds) ...
+[2025-04-04 12:22:00.836] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:00.837] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (7 seconds) ...
+[2025-04-04 12:22:01.354] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:01.354] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (7 seconds) ...
+[2025-04-04 12:22:01.870] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:01.870] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (8 seconds) ...
+[2025-04-04 12:22:02.390] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:02.390] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (8 seconds) ...
+[2025-04-04 12:22:02.907] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:02.907] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (9 seconds) ...
+[2025-04-04 12:22:03.423] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:03.423] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (9 seconds) ...
+[2025-04-04 12:22:03.940] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:03.940] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (10 seconds) ...
+[2025-04-04 12:22:04.456] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:04.456] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (10 seconds) ...
+[2025-04-04 12:22:04.973] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:04.973] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (11 seconds) ...
+[2025-04-04 12:22:05.490] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:05.490] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (11 seconds) ...
+[2025-04-04 12:22:06.008] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:06.008] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (12 seconds) ...
+[2025-04-04 12:22:06.528] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:06.528] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (12 seconds) ...
+[2025-04-04 12:22:07.048] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:07.049] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (13 seconds) ...
+[2025-04-04 12:22:07.580] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:07.581] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (14 seconds) ...
+[2025-04-04 12:22:08.097] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:08.097] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (14 seconds) ...
+[2025-04-04 12:22:08.616] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:08.616] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (15 seconds) ...
+[2025-04-04 12:22:09.134] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:09.134] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (15 seconds) ...
+[2025-04-04 12:22:09.652] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:09.652] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (16 seconds) ...
+[2025-04-04 12:22:10.182] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:10.182] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (16 seconds) ...
+[2025-04-04 12:22:10.700] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:10.700] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (17 seconds) ...
+[2025-04-04 12:22:11.222] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:11.222] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (17 seconds) ...
+[2025-04-04 12:22:11.739] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:11.739] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (18 seconds) ...
+[2025-04-04 12:22:12.259] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:12.259] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (18 seconds) ...
+[2025-04-04 12:22:12.782] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:12.782] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (19 seconds) ...
+[2025-04-04 12:22:13.304] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:13.304] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (19 seconds) ...
+[2025-04-04 12:22:13.824] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:13.824] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (20 seconds) ...
+[2025-04-04 12:22:14.344] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:14.344] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (20 seconds) ...
+[2025-04-04 12:22:14.866] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:14.866] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (21 seconds) ...
+[2025-04-04 12:22:15.388] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:15.388] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (21 seconds) ...
+[2025-04-04 12:22:15.904] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:15.904] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (22 seconds) ...
+[2025-04-04 12:22:16.422] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:16.423] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (22 seconds) ...
+[2025-04-04 12:22:16.942] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:16.942] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (23 seconds) ...
+[2025-04-04 12:22:17.459] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:17.459] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (23 seconds) ...
+[2025-04-04 12:22:17.991] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:17.991] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (24 seconds) ...
+[2025-04-04 12:22:18.510] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:18.510] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (24 seconds) ...
+[2025-04-04 12:22:19.035] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:19.035] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (25 seconds) ...
+[2025-04-04 12:22:19.565] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:19.565] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (25 seconds) ...
+[2025-04-04 12:22:20.081] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:20.081] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (26 seconds) ...
+[2025-04-04 12:22:20.602] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:20.602] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (27 seconds) ...
+[2025-04-04 12:22:21.118] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:21.118] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (27 seconds) ...
+[2025-04-04 12:22:21.637] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:21.638] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (28 seconds) ...
+[2025-04-04 12:22:22.154] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:22.154] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (28 seconds) ...
+[2025-04-04 12:22:22.670] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:22.670] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (29 seconds) ...
+[2025-04-04 12:22:23.186] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting:
+ <NOT_FOUND>
+to be equal to:
+ <OK>
+but was not.
+[2025-04-04 12:22:23.186] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (29 seconds) ...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

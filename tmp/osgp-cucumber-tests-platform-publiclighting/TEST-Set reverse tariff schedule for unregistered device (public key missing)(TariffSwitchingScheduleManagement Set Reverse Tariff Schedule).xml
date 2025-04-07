@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="osgp-cucumber-tests-platform-publiclighting-7x89j" name="Set reverse tariff schedule for unregistered device (public key missing)(TariffSwitchingScheduleManagement Set Reverse Tariff Schedule)" skipped="0" tests="1" time="0.055" timestamp="2025-04-04T13:30:59">
+  <properties />
+  <system-out><![CDATA[[2025-04-04 13:30:59.475] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@batchDeleteAll:131 - Starting batchDeleteAll()
+[2025-04-04 13:30:59.482] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@normalDeleteAll:154 - Starting normalDeleteAll()
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+  <testcase classname="org.opensmartgridplatform.cucumber.execution.DescriptionAsTest" name="Set reverse tariff schedule for unregistered device (public key missing)(TariffSwitchingScheduleManagement Set Reverse Tariff Schedule)" time="0.055" />
+</testsuite>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="1" hostname="osgp-cucumber-tests-platform-publiclighting-7x89j" name="Invalid sequence number ranges platform initiates communication(BasicOsgpFunctions Protocol Sequence Number)" skipped="0" tests="1" time="1.267" timestamp="2025-04-04T11:59:37">
+  <properties />
+  <testcase classname="org.opensmartgridplatform.cucumber.execution.DescriptionAsTest" name="Invalid sequence number ranges platform initiates communication(BasicOsgpFunctions Protocol Sequence Number)" time="1.267">
+    <error message="class org.opensmartgridplatform.adapter.ws.schema.publiclighting.adhocmanagement.GetStatusAsyncResponse cannot be cast to class org.springframework.ws.soap.client.SoapFaultClientException (org.opensmartgridplatform.adapter.ws.schema.publiclighting.adhocmanagement.GetStatusAsyncResponse and org.springframework.ws.soap.client.SoapFaultClientException are in unnamed module of loader &apos;app&apos;)" type="java.lang.ClassCastException">java.lang.ClassCastException: class org.opensmartgridplatform.adapter.ws.schema.publiclighting.adhocmanagement.GetStatusAsyncResponse cannot be cast to class org.springframework.ws.soap.client.SoapFaultClientException (org.opensmartgridplatform.adapter.ws.schema.publiclighting.adhocmanagement.GetStatusAsyncResponse and org.springframework.ws.soap.client.SoapFaultClientException are in unnamed module of loader &apos;app&apos;)
+	at org.opensmartgridplatform.cucumber.platform.glue.steps.ws.GenericResponseSteps.verifySoapFault(GenericResponseSteps.java:35)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.ws.publiclighting.adhocmanagement.GetStatusSteps.thePlatformBuffersAGetStatusResponseMessageForDeviceWhichContainsSoapFault(GetStatusSteps.java:326)
+	at ✽.the platform buffers a get status response message for device &quot;TEST1024000000001&quot; which contains soap fault(classpath:features/publiclighting/basic-osgp-functions/ProtocolSequenceNumber.feature:64)
+</error>
+  </testcase>
+  <system-out><![CDATA[[2025-04-04 11:59:37.447] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@batchDeleteAll:131 - Starting batchDeleteAll()
+[2025-04-04 11:59:37.458] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@normalDeleteAll:154 - Starting normalDeleteAll()
+[2025-04-04 11:59:37.495] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@mockGetStatusResponse:528 - Mocking response for device dGVzdDEyMzQ1Njc4 of message type: GET_STATUS
+[2025-04-04 11:59:37.593] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.g.s.w.p.a.GetStatusSteps@theGetStatusAsyncResponseContains:144 - Got CorrelationUid: [test-org|||TEST1024000000001|||20250404115937512|||3e246878-fbee-4d1b-9aae-29f86647403e]
+[2025-04-04 11:59:37.594] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:187 - Device dGVzdDEyMzQ1Njc4 is waiting for request of message type: GET_STATUS, receivedResponses: 0
+[2025-04-04 11:59:37.594] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 1 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: GET_STATUS
+[2025-04-04 11:59:37.986] [osgp-cucumber-tests-platform-publiclighting-7x89j] [disposableNioEventLoopGroup-6-17] INFO o.o.c.p.p.m.o.MockOslpChannelHandler@handleRequest:403 - Device dGVzdDEyMzQ1Njc4 received [getStatusRequest {
+}
+], sequence number [[0, 0]]
+[2025-04-04 11:59:37.987] [osgp-cucumber-tests-platform-publiclighting-7x89j] [disposableNioEventLoopGroup-6-17] INFO o.o.c.p.p.m.o.MockOslpChannelHandler@handleRequest:425 - Device dGVzdDEyMzQ1Njc4 mocked response: [getStatusResponse {
+  status: OK
+  value {
+    index: "\001"
+    on: true
+    dimValue: "d"
+  }
+  preferredLinktype: LINK_NOT_SET
+  actualLinktype: LINK_NOT_SET
+  lightType: LT_NOT_SET
+  eventNotificationMask: 0
+}
+]
+[2025-04-04 11:59:38.594] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:214 - Device dGVzdDEyMzQ1Njc4 received a request of message type: GET_STATUS
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

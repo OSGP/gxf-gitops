@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="osgp-cucumber-tests-platform-publiclighting-7x89j" name="Clean obsolete response data(PublicLighting Housekeeping - Response Data Cleanup Job)" skipped="0" tests="1" time="23.089" timestamp="2025-04-04T13:09:37">
+  <properties />
+  <system-out><![CDATA[[2025-04-04 13:09:37.663] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@batchDeleteAll:131 - Starting batchDeleteAll()
+[2025-04-04 13:09:37.674] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@normalDeleteAll:154 - Starting normalDeleteAll()
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+  <testcase classname="org.opensmartgridplatform.cucumber.execution.DescriptionAsTest" name="Clean obsolete response data(PublicLighting Housekeeping - Response Data Cleanup Job)" time="23.089" />
+</testsuite>

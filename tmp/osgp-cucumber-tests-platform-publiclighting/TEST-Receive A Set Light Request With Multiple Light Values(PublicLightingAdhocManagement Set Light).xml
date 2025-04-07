@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="1" hostname="osgp-cucumber-tests-platform-publiclighting-7x89j" name="Receive A Set Light Request With Multiple Light Values(PublicLightingAdhocManagement Set Light)" skipped="0" tests="1" time="32.188" timestamp="2025-04-04T12:49:20">
+  <properties />
+  <testcase classname="org.opensmartgridplatform.cucumber.execution.DescriptionAsTest" name="Receive A Set Light Request With Multiple Light Values(PublicLightingAdhocManagement Set Light)" time="32.188">
+    <error message="Polling for a request failed, no request found" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Polling for a request failed, no request found
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.mocks.oslpdevice.MockOslpServer.waitForRequest(MockOslpServer.java:210)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.glue.steps.mocks.OslpDeviceSteps.aResumeScheduleOslpMessageIsSentToDevice(OslpDeviceSteps.java:192)
+	at ✽.a resume schedule &quot;OSLP ELSTER&quot; message is sent to device &quot;TEST1024000000001&quot;(classpath:features/publiclighting/osgp-adapter-ws-publiclighting/AdHocManagement/SetLight.feature:99)
+</error>
+  </testcase>
+  <system-out><![CDATA[[2025-04-04 12:49:20.366] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@batchDeleteAll:131 - Starting batchDeleteAll()
+[2025-04-04 12:49:20.380] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@normalDeleteAll:154 - Starting normalDeleteAll()
+[2025-04-04 12:49:20.425] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@mockSetLightResponse:455 - Mocking response for device dGVzdDEyMzQ1Njc4 of message type: SET_LIGHT
+[2025-04-04 12:49:20.426] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@mockResumeScheduleResponse:537 - Mocking response for device dGVzdDEyMzQ1Njc4 of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:20.534] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.g.s.w.p.a.SetLightSteps@theSetLightResponseContains:172 - Got CorrelationUid: [test-org|||TEST1024000000001|||20250404124920468|||08e7d482-1546-4869-bea2-616b3bb0c119]
+[2025-04-04 12:49:20.535] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:187 - Device dGVzdDEyMzQ1Njc4 is waiting for request of message type: SET_LIGHT, receivedResponses: 0
+[2025-04-04 12:49:20.535] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 1 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: SET_LIGHT
+[2025-04-04 12:49:21.006] [osgp-cucumber-tests-platform-publiclighting-7x89j] [disposableNioEventLoopGroup-6-16] INFO o.o.c.p.p.m.o.MockOslpChannelHandler@handleRequest:403 - Device dGVzdDEyMzQ1Njc4 received [setLightRequest {
+  values {
+    index: "\002"
+    on: true
+    dimValue: "d"
+  }
+  values {
+    index: "\003"
+    on: true
+    dimValue: "d"
+  }
+  values {
+    index: "\004"
+    on: true
+    dimValue: "d"
+  }
+}
+], sequence number [[0, 0]]
+[2025-04-04 12:49:21.007] [osgp-cucumber-tests-platform-publiclighting-7x89j] [disposableNioEventLoopGroup-6-16] INFO o.o.c.p.p.m.o.MockOslpChannelHandler@handleRequest:425 - Device dGVzdDEyMzQ1Njc4 mocked response: [setLightResponse {
+  status: OK
+}
+]
+[2025-04-04 12:49:21.536] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:214 - Device dGVzdDEyMzQ1Njc4 received a request of message type: SET_LIGHT
+[2025-04-04 12:49:21.536] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:187 - Device dGVzdDEyMzQ1Njc4 is waiting for request of message type: RESUME_SCHEDULE, receivedResponses: 0
+[2025-04-04 12:49:21.536] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 1 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:22.536] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 2 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:23.537] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 3 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:24.537] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 4 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:25.537] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 5 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:26.538] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 6 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:27.538] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 7 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:28.538] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 8 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:29.539] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 9 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:30.539] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 10 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:31.539] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 11 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:32.540] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 12 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:33.541] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 13 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:34.542] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 14 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:35.542] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 15 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:36.543] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 16 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:37.543] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 17 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:38.543] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 18 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:39.544] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 19 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:40.544] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 20 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:41.545] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 21 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:42.011] [osgp-cucumber-tests-platform-publiclighting-7x89j] [pool-118-thread-1] WARN o.o.c.p.p.m.o.MockOslpChannelHandler@get:510 - Failed to receive response from device dGVzdDEyMzQ1Njc4 within timelimit 20000 ms
+[2025-04-04 12:49:42.011] [osgp-cucumber-tests-platform-publiclighting-7x89j] [pool-118-thread-1] ERROR o.o.c.p.p.m.o.MockOslpChannelHandler@send:367 - send exception
+java.io.IOException: Failed to receive response within timelimit 20000 ms
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.mocks.oslpdevice.MockOslpChannelHandler$Callback.get(MockOslpChannelHandler.java:514)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.mocks.oslpdevice.MockOslpChannelHandler.send(MockOslpChannelHandler.java:353)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.mocks.oslpdevice.MockOslpChannelHandler.sendNotifications(MockOslpChannelHandler.java:281)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.mocks.oslpdevice.MockOslpChannelHandler.lambda$channelRead0$0(MockOslpChannelHandler.java:231)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-04-04 12:49:42.011] [osgp-cucumber-tests-platform-publiclighting-7x89j] [pool-118-thread-1] INFO o.o.c.p.p.m.o.MockOslpChannelHandler@lambda$channelRead0$0:234 - Unable to send notifications
+java.io.IOException: Failed to receive response within timelimit 20000 ms
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.mocks.oslpdevice.MockOslpChannelHandler$Callback.get(MockOslpChannelHandler.java:514)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.mocks.oslpdevice.MockOslpChannelHandler.send(MockOslpChannelHandler.java:353)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.mocks.oslpdevice.MockOslpChannelHandler.sendNotifications(MockOslpChannelHandler.java:281)
+	at org.opensmartgridplatform.cucumber.platform.publiclighting.mocks.oslpdevice.MockOslpChannelHandler.lambda$channelRead0$0(MockOslpChannelHandler.java:231)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-04-04 12:49:42.545] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 22 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:43.545] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 23 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:44.546] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 24 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:45.546] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 25 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:46.546] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 26 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:47.546] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 27 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:48.547] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 28 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:49.547] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 29 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:50.547] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 30 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+[2025-04-04 12:49:51.548] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 31 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: RESUME_SCHEDULE
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="osgp-cucumber-tests-platform-publiclighting-7x89j" name="Switch public lighting upon receiving a light measurement event(Light Measurement using IEC-60870 device)" skipped="0" tests="1" time="56.667" timestamp="2025-04-04T12:00:06">
+  <properties />
+  <system-out><![CDATA[[2025-04-04 12:00:06.352] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@batchDeleteAll:131 - Starting batchDeleteAll()
+[2025-04-04 12:00:06.368] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@normalDeleteAll:154 - Starting normalDeleteAll()
+[2025-04-04 12:00:06.477] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@mockSetTransitionResponse:559 - Mocking response for device dGVzdDEyMzQ1Njc4 of message type: SET_TRANSITION
+[2025-04-04 12:00:06.478] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting actual not to be empty
+[2025-04-04 12:00:06.479] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (0 seconds) ...
+[2025-04-04 12:00:11.481] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting actual not to be empty
+[2025-04-04 12:00:11.481] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (5 seconds) ...
+[2025-04-04 12:00:16.483] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting actual not to be empty
+[2025-04-04 12:00:16.483] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (10 seconds) ...
+[2025-04-04 12:00:21.485] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting actual not to be empty
+[2025-04-04 12:00:21.485] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (15 seconds) ...
+[2025-04-04 12:00:26.487] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting actual not to be empty
+[2025-04-04 12:00:26.488] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (20 seconds) ...
+[2025-04-04 12:00:31.492] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting actual not to be empty
+[2025-04-04 12:00:31.492] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (25 seconds) ...
+[2025-04-04 12:00:36.495] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting actual not to be empty
+[2025-04-04 12:00:36.495] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (30 seconds) ...
+[2025-04-04 12:00:41.497] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting actual not to be empty
+[2025-04-04 12:00:41.497] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (35 seconds) ...
+[2025-04-04 12:00:46.499] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting actual not to be empty
+[2025-04-04 12:00:46.499] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (40 seconds) ...
+[2025-04-04 12:00:51.501] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting actual not to be empty
+[2025-04-04 12:00:51.501] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (45 seconds) ...
+[2025-04-04 12:00:56.503] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting actual not to be empty
+[2025-04-04 12:00:56.504] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (50 seconds) ...
+[2025-04-04 12:01:00.178] [osgp-cucumber-tests-platform-publiclighting-7x89j] [aSduListener] INFO o.o.s.p.i.s.h.Iec60870InterrogationCommandAsduHandler@handleAsdu:34 - Received interrogation command. Sending confirmation for ASDU: ASDU Type: 100, C_IC_NA_1, Interrogation command
+Cause of transmission: ACTIVATION, test: false, negative con: false
+Originator address: 0, Common address: 1
+IOA: 0
+Qualifier of interrogation: 20
+[2025-04-04 12:01:00.178] [osgp-cucumber-tests-platform-publiclighting-7x89j] [aSduListener] INFO o.o.s.p.i.s.h.Iec60870InterrogationCommandAsduHandler@handleAsdu:38 - Processing interrogation command. Sending response ASDU: ASDU Type: 1, M_SP_NA_1, Single-point information without time tag
+Cause of transmission: INTERROGATED_BY_STATION, test: false, negative con: false
+Originator address: 0, Common address: 1
+IOA: 1
+Single Point, is on: true, blocked: false, substituted: false, not topical: false, invalid: false
+IOA: 2
+Single Point, is on: false, blocked: false, substituted: false, not topical: false, invalid: false
+IOA: 3
+Single Point, is on: true, blocked: false, substituted: false, not topical: false, invalid: false
+IOA: 4
+Single Point, is on: false, blocked: false, substituted: false, not topical: false, invalid: false.
+[2025-04-04 12:01:00.179] [osgp-cucumber-tests-platform-publiclighting-7x89j] [aSduListener] INFO o.o.s.p.i.s.h.Iec60870InterrogationCommandAsduHandler@handleAsdu:42 - Finished processing interrogation command. Sending termination ASDU: ASDU Type: 100, C_IC_NA_1, Interrogation command
+Cause of transmission: ACTIVATION_TERMINATION, test: false, negative con: false
+Originator address: 0, Common address: 1
+IOA: 0
+Qualifier of interrogation: 20
+[2025-04-04 12:01:01.506] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.iec60870.Iec60870Server@updateInformationObject:136 - Sending information update event for IOA 2.
+[2025-04-04 12:01:01.506] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.i.Iec60870ServerEventListener@sendEvent:117 - Sending event ASDU Type: 30, M_SP_TB_1, Single-point information with time tag CP56Time2a
+Cause of transmission: SPONTANEOUS, test: false, negative con: false
+Originator address: 0, Common address: 0
+IOA: 2
+Information Element Set 1:
+Single Point, is on: true, blocked: false, substituted: false, not topical: false, invalid: false
+Information Element Set 2:
+Time56: 04-04-25 12:01:01:506
+[2025-04-04 12:01:01.508] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] ERROR o.o.cucumber.core.Wait@handleAssertionError:145 - Assertion error: 
+Expecting actual not to be empty
+[2025-04-04 12:01:01.508] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.cucumber.core.Wait@until:126 - ... polling in Wait.until (0 seconds) ...
+[2025-04-04 12:01:02.013] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:187 - Device dGVzdDEyMzQ1Njc4 is waiting for request of message type: SET_TRANSITION, receivedResponses: 0
+[2025-04-04 12:01:02.013] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:199 - Sleeping 1s 1 - Device dGVzdDEyMzQ1Njc4 is waiting for a request of message type: SET_TRANSITION
+[2025-04-04 12:01:02.116] [osgp-cucumber-tests-platform-publiclighting-7x89j] [disposableNioEventLoopGroup-6-19] INFO o.o.c.p.p.m.o.MockOslpChannelHandler@handleRequest:403 - Device dGVzdDEyMzQ1Njc4 received [setTransitionRequest {
+  transitionType: DAY_NIGHT
+}
+], sequence number [[0, 0]]
+[2025-04-04 12:01:02.117] [osgp-cucumber-tests-platform-publiclighting-7x89j] [disposableNioEventLoopGroup-6-19] INFO o.o.c.p.p.m.o.MockOslpChannelHandler@handleRequest:425 - Device dGVzdDEyMzQ1Njc4 mocked response: [setTransitionResponse {
+  status: OK
+}
+]
+[2025-04-04 12:01:03.013] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.p.p.m.o.MockOslpServer@waitForRequest:214 - Device dGVzdDEyMzQ1Njc4 received a request of message type: SET_TRANSITION
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+  <testcase classname="org.opensmartgridplatform.cucumber.execution.DescriptionAsTest" name="Switch public lighting upon receiving a light measurement event(Light Measurement using IEC-60870 device)" time="56.667" />
+</testsuite>
