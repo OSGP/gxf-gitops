@@ -40,4 +40,5 @@ containers:
     dependsOn:
       - osgp-core
   - name: osgp-protocol-adapter-oslp
+    memory: 768Mi
   - name: osgp-signing-server

@@ -6,7 +6,9 @@ jobs:
       - osgp-adapter-ws-publiclighting
       - osgp-adapter-ws-tariffswitching
     ports:
-      - name: notification
+      - name: core
+      - port: 8188
+      - name: publiclighting
         port: 8190
       - name: oslp
         port: 12122
