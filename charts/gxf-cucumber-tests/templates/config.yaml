@@ -25,7 +25,7 @@ data:
     db.hostname=postgres
 
     # OSLP
-q    oslp.security.signkey.path=/etc/ssl/certs/oslp/oslp_sim_ecdsa_private.der
+    oslp.security.signkey.path=/etc/ssl/certs/oslp/oslp_sim_ecdsa_private.der
     oslp.security.verifykey.path=/etc/ssl/certs/oslp/oslp_test_ecdsa_public.der
 
     # Cucumber
