@@ -40,6 +40,7 @@ data:
 
     # OSLP
     signing.server.security.signkey.path=/etc/ssl/certs/oslp/oslp_test_ecdsa_private.der
+    test.device.ips={'TEST1024010101010':'osgp-cucumber-tests-platform-publiclighting'}
 
   server.xml: |
 {{ .Files.Get "config/tomcat/server.xml" | indent 4 }}
