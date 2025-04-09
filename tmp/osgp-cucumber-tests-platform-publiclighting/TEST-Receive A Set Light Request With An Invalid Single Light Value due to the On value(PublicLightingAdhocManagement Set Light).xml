@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="osgp-cucumber-tests-platform-publiclighting-7x89j" name="Receive A Set Light Request With An Invalid Single Light Value due to the On value(PublicLightingAdhocManagement Set Light)" skipped="0" tests="1" time="0.064" timestamp="2025-04-04T12:48:48">
-  <properties />
-  <system-out><![CDATA[[2025-04-04 12:48:48.144] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@batchDeleteAll:131 - Starting batchDeleteAll()
-[2025-04-04 12:48:48.152] [osgp-cucumber-tests-platform-publiclighting-7x89j] [main] INFO o.o.c.platform.database.CoreDatabase@normalDeleteAll:154 - Starting normalDeleteAll()
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-  <testcase classname="org.opensmartgridplatform.cucumber.execution.DescriptionAsTest" name="Receive A Set Light Request With An Invalid Single Light Value due to the On value(PublicLightingAdhocManagement Set Light)" time="0.064" />
-</testsuite>
