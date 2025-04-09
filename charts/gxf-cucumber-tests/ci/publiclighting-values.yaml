@@ -5,6 +5,7 @@ jobs:
       - osgp-adapter-ws-admin
       - osgp-adapter-ws-publiclighting
       - osgp-adapter-ws-tariffswitching
+      - osgp-protocol-adapter-oslp
     ports:
       - name: core
         port: 8188

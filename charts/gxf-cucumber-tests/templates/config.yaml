@@ -39,7 +39,7 @@ data:
 
     server=httpd
     domain=:443
-    platform=osgp-protocol-adapter-oslpqq
+    platform=osgp-protocol-adapter-oslp
 
     response.url.notification.address={{ $name }}
     device.networkaddress={{ $name }}
