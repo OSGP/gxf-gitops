@@ -25,7 +25,7 @@ data:
     db.hostname=postgres
 
     # OSLP
-    oslp.security.signkey.path=/etc/ssl/certs/oslp/oslp_test_ecdsa_private.der
+q    oslp.security.signkey.path=/etc/ssl/certs/oslp/oslp_sim_ecdsa_private.der
     oslp.security.verifykey.path=/etc/ssl/certs/oslp/oslp_test_ecdsa_public.der
 
     # Cucumber
@@ -39,6 +39,7 @@ data:
 
     server=httpd
     domain=:443
+    platform=osgp-protocol-adapter-oslpqq
 
     response.url.notification.address={{ $name }}
     device.networkaddress={{ $name }}

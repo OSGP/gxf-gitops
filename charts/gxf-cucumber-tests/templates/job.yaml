@@ -81,7 +81,8 @@ spec:
             - name: activemq-secrets
               mountPath: /etc/ssl/certs/jms/gxf-platform/
             - name: oslp-signing-keys
-              mountPath: /etc/ssl/certs/oslp
+              mountPath: /etc/ssl/certs/oslp/oslp_test_ecdsa_public.der
+              subPath: oslp_test_ecdsa_public.der
             - name: report-volume
               mountPath: /target/output
             - name: organisations-certs-volume

@@ -41,4 +41,7 @@ containers:
       - osgp-core
   - name: osgp-protocol-adapter-oslp
     memory: 768Mi
+    extraPorts:
+      - name: oslp
+        port: 12122
   - name: osgp-signing-server
