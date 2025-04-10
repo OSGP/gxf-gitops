@@ -25,7 +25,7 @@ data:
     db.hostname=postgres
 
     # OSLP
-    oslp.security.signkey.path=/etc/ssl/certs/oslp/oslp_test_ecdsa_private.der
+    oslp.security.signkey.path=/etc/ssl/certs/oslp/oslp_sim_ecdsa_private.der
     oslp.security.verifykey.path=/etc/ssl/certs/oslp/oslp_test_ecdsa_public.der
 
     # Cucumber
@@ -33,12 +33,13 @@ data:
     web.service.truststore.location=/etc/ssl/certs/organizations/trust.jks
     web.service.keystore.password=${ORGANISATION_KEYSTORE_PASSWORD}
     web.service.truststore.password=${ORGANISATION_TRUSTSTORE_PASSWORD}
-    web.service.core.notification.address=osgp-cucumber-tests-platform-common
-    web.service.publiclighting.notification.address=osgp-cucumber-tests-platform-publiclighting
-    web.service.smartmetering.notification.address=osgp-cucumber-tests-platform-smartmetering
+    web.service.core.notification.address={{ $name }}
+    web.service.publiclighting.notification.address={{ $name }}
+    web.service.smartmetering.notification.address={{ $name }}
 
     server=httpd
     domain=:443
+    platform=osgp-protocol-adapter-oslp
 
     response.url.notification.address={{ $name }}
     device.networkaddress={{ $name }}

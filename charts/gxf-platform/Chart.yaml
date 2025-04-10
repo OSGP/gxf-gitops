@@ -1,7 +1,7 @@
 apiVersion: v2
 description: GXF platform Helm chart
 name: gxf-platform
-version: 0.0.2
+version: 0.0.3
 maintainers:
   - name: developers
     email: gxf@lists.lfenergy.org
