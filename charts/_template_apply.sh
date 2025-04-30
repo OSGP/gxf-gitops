@@ -46,4 +46,4 @@ fi
 
 echo Performing $verb of $helmName from $workingDir with tag $imageTag and values file $valuesFile
 
-helm $verb $helmName "$workingDir" -f "$workingDir/$valuesFile" --set "imageTag=${imageTag}"
+helm --debug $verb $helmName "$workingDir" -f "$workingDir/$valuesFile" --set "imageTag=${imageTag}"
