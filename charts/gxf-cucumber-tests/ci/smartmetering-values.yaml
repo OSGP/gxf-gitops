@@ -1,0 +1,7 @@
+jobs:
+  - name: osgp-cucumber-tests-platform-smartmetering
+    dependsOn:
+      - osgp-adapter-ws-core
+      - osgp-adapter-ws-admin
+      - osgp-adapter-ws-smartmetering
+      - osgp-protocol-adapter-dlms
