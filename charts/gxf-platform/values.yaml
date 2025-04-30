@@ -1,4 +1,4 @@
-imageTag: pr-1523
+imageTag: pr-1551
 containers:
   - name: osgp-core
     memory: 768Mi
