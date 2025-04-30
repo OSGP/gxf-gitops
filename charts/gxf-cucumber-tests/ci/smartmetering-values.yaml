@@ -5,3 +5,4 @@ jobs:
       - osgp-adapter-ws-admin
       - osgp-adapter-ws-smartmetering
       - osgp-protocol-adapter-dlms
+    ports:
