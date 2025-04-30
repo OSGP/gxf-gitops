@@ -45,7 +45,6 @@ containers:
     extraPorts:
       - name: oslp
         port: 12122
-  - name: dlms-device-simulator-starter
   - name: osgp-simulator-dlms-triggered
   - name: osgp-secret-management
   - name: osgp-signing-server
