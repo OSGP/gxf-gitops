@@ -6,3 +6,25 @@ jobs:
       - osgp-adapter-ws-smartmetering
       - osgp-protocol-adapter-dlms
     ports:
+      - name: dsmr422
+        port: 1024
+      - name: dsmr-security0
+        port: 1025
+      - name: dsmr-security1
+        port: 1026
+      - name: smr5
+        port: 1027
+      - name: smr51
+        port: 1028
+      - name: smr52
+        port: 1029
+      - name: smr55
+        port: 1030
+      - name: dsmr4-5
+        port: 1031
+      - name: smr4-3
+        port: 4059
+      - name: dsmr2
+        port: 8000
+      - name: dsmr4-5
+        port: 9598
