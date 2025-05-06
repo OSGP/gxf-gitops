@@ -32,8 +32,6 @@ containers:
     dependsOn:
       - osgp-core
   - name: osgp-adapter-ws-smartmetering
-    dependsOn:
-      - osp-core
   - name: osgp-adapter-ws-tariffswitching
     memory: 600Mi
     dependsOn:
