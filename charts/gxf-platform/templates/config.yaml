@@ -13,6 +13,7 @@ data:
     db.host=postgres
     db.host.domain_logging=postgres
     db.host.core=postgres
+    db.host.dlms=postgres
     db.host.oslp=postgres
     db.host.iec61850=postgres
     db.api.host.iec61850=postgres
