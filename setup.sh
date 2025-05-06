@@ -28,4 +28,4 @@ fi
 
 kubectl cluster-info
 
-./generate-secrets.sh
+bash generate-secrets.sh
