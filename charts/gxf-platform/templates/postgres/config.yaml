@@ -27,6 +27,8 @@ data:
     GRANT ALL PRIVILEGES ON database osgp_adapter_ws_smartmetering TO osp_admin;
     CREATE DATABASE osgp_adapter_ws_tariffswitching;
     GRANT ALL PRIVILEGES ON database osgp_adapter_ws_tariffswitching TO osp_admin;
+    CREATE DATABASE osgp_adapter_protocol_dlms;
+    GRANT ALL PRIVILEGES ON database osgp_adapter_protocol_dlms TO osp_admin;
     CREATE DATABASE osgp_adapter_protocol_iec60870;
     GRANT ALL PRIVILEGES ON database osgp_adapter_protocol_iec60870 TO osp_admin;
     CREATE DATABASE osgp_adapter_protocol_iec61850;
@@ -35,3 +37,5 @@ data:
     GRANT ALL PRIVILEGES ON database osgp_adapter_protocol_oslp TO osp_admin;
     CREATE DATABASE osp_devicesimulator_web;
     GRANT ALL PRIVILEGES ON database osp_devicesimulator_web TO osp_admin;
+    CREATE DATABASE osgp_throttling;
+    GRANT ALL PRIVILEGES ON database osgp_throttling TO osp_admin;
