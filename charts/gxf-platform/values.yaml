@@ -1,10 +1,4 @@
 imageTag: pr-1551
-redis:
-  master:
-    enableServiceLinks: false
-  replica:
-    enableServiceLinks: false
-
 containers:
   - name: osgp-core
     memory: 768Mi
