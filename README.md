@@ -14,7 +14,6 @@ for Mac:
 - Install Helm: `brew install helm`
 
 ### Setup local cluster
-Be careful to use bash to execute setup.sh:
 `bash setup.sh`
 
 To also install dev tools (kubernetes dashboard):
