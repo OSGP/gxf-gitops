@@ -32,6 +32,8 @@ containers:
     dependsOn:
       - osgp-core
   - name: osgp-adapter-ws-smartmetering
+    dependsOn:
+      - redis
   - name: osgp-adapter-ws-tariffswitching
     memory: 600Mi
     dependsOn:
@@ -74,3 +76,4 @@ containers:
   - name: osgp-secret-management
   - name: osgp-signing-server
   - name: osgp-throttling-service
+  - name: redis
