@@ -12,6 +12,30 @@ mkdir -p $pvpath
 if [[ -n "$installDevTools" ]]; then
   createRegistry="--registry-create test-registry"
 fi
+
+# Check necesary tools
+error=0
+if ! command -v docker 2>&1 >/dev/null
+then
+    echo "Docker could not be found, please install"
+    error=1
+fi
+if ! command -v keytool 2>&1 >/dev/null
+then
+    echo "Keytool could not be found, please install openjdk8"
+    error=1
+fi
+if ! command -v kubectl 2>&1 >/dev/null
+then
+    echo "Kubectl could not be found, please install"
+    error=1
+fi
+
+if [ $error -gt 0 ]; then
+    echo "Some dependencies unmet, check README for installation instructions."
+    exit 1
+fi
+
 # Create k3s cluster and registry with k3d
 k3d cluster create test \
   $createRegistry \

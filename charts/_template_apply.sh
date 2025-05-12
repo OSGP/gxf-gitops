@@ -6,6 +6,12 @@ helmName=""
 imageTag="latest"
 valuesFile="values.yaml"
 
+if ! command -v helm 2>&1 >/dev/null
+then
+    echo "Helm could not be found, please install"
+    exit 1
+fi
+
 # Parse command-line arguments
 while [[ $# -gt 0 ]]; do
   case "$1" in
