@@ -7,7 +7,7 @@ locally. It is using K3D to start up a kubernetes cluster.
 - Enough ram: at least 32GB
 
 # How to set up the GXF platform or cucumber tests locally
-- Run the `setup.sh` script. 
+- Run the `setup.sh` script, this will download, install and then use `k3d` to create a local  cluster named `test`. 
   - When you add an argument to this setup script it will create a local K3D image-registry and will install the dev chart.
     This dev chart will install a kubernetes dashboard and PgWeb instance on the just created kubernetes cluster
   - This `setup.sh` script will also create the necessary secrets needed to deploy the GXF containers
