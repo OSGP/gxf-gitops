@@ -3,7 +3,8 @@ Gitops repo for GXF platform and cucumber tests. This repo can also be used to r
 locally. It is using K3D to start up a kubernetes cluster. 
 
 # Requirements to run the GXF platform locally
-
+- Unix file system: Linux, Mac or WSL
+- Enough ram: at least 32GB
 
 # How to set up the GXF platform or cucumber tests locally
 - Run the `setup.sh` script. 
