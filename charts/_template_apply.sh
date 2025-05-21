@@ -4,7 +4,7 @@
 workingDir=""
 helmName=""
 imageTag="latest"
-valuesFile="values.yaml"
+valuesFile=""
 
 if ! command -v helm 2>&1 >/dev/null
 then
@@ -37,6 +37,16 @@ while [[ $# -gt 0 ]]; do
       ;;
   esac
 done
+
+if [ -z "${valuesFile}" ]; then
+  echo "No values file given."
+  exit 1
+fi
+
+if ! [ -f "$workingDir/$valuesFile" ]; then
+  echo "Could not find given values file: $valuesFile"
+  exit 1
+fi
 
 if [[ $(kubectl config current-context) != "k3d-test" ]]; then
   echo You are not in the k3d-test context, refusing to install helm scripts

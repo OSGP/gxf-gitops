@@ -1,0 +1,76 @@
+imageTag: pr-1551
+containers:
+  - name: osgp-core
+    memory: 768Mi
+    dependsOn:
+      - osgp-logging
+  - name: osgp-logging
+  - name: osgp-adapter-domain-admin
+    memory: 512Mi
+    dependsOn:
+      - osgp-core
+  - name: osgp-adapter-domain-core
+    memory: 512Mi
+    dependsOn:
+      - osgp-core
+  - name: osgp-adapter-domain-publiclighting
+    memory: 512Mi
+    dependsOn:
+      - osgp-core
+  - name: osgp-adapter-domain-tariffswitching
+    memory: 512Mi
+  - name: osgp-adapter-ws-admin
+    memory: 512Mi
+    dependsOn:
+      - osgp-core
+  - name: osgp-adapter-ws-core
+    memory: 600Mi
+    dependsOn:
+      - osgp-core
+  - name: osgp-adapter-ws-publiclighting
+    memory: 600Mi
+    dependsOn:
+      - osgp-core
+  - name: osgp-adapter-ws-smartmetering
+  - name: osgp-adapter-ws-tariffswitching
+    memory: 600Mi
+    dependsOn:
+      - osgp-core
+  - name: osgp-protocol-adapter-dlms
+    extraPorts:
+      - name: dsmr2
+        port: 8000
+      - name: dsmr4-5
+        port: 9598
+  - name: osgp-protocol-adapter-iec60870
+  - name: osgp-protocol-adapter-iec61850
+    dependsOn:
+      - osgp-core
+  - name: osgp-protocol-adapter-oslp
+    memory: 768Mi
+    extraPorts:
+      - name: oslp
+        port: 12122
+  - name: osgp-simulator-dlms-triggered
+    extraPorts:
+      - name: dsmr422
+        port: 1024
+      - name: dsmr-security0
+        port: 1025
+      - name: dsmr-security1
+        port: 1026
+      - name: smr5
+        port: 1027
+      - name: smr51
+        port: 1028
+      - name: smr52
+        port: 1029
+      - name: smr55
+        port: 1030
+      - name: dsmr4-5
+        port: 1031
+      - name: smr4-3
+        port: 4059
+  - name: osgp-secret-management
+  - name: osgp-signing-server
+  - name: osgp-throttling-service
