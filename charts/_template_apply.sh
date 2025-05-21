@@ -4,7 +4,7 @@
 workingDir=""
 helmName=""
 imageTag="latest"
-valuesFile="values.yml"
+valuesFile="values.yaml"
 
 if ! command -v helm 2>&1 >/dev/null
 then
@@ -39,7 +39,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [ -z "${valuesFile}" ]; then
-  echo "No values file given."
+  echo "No values file given while applying template."
   exit 1
 fi
 
