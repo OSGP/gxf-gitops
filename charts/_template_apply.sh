@@ -4,7 +4,7 @@
 workingDir=""
 helmName=""
 imageTag="latest"
-valuesFile=""
+valuesFile="values.yml"
 
 if ! command -v helm 2>&1 >/dev/null
 then
