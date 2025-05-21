@@ -18,6 +18,7 @@ data:
     db.host.iec61850=postgres
     db.api.host.iec61850=postgres
     db.api.host.oslp=postgres
+    spring.datasource.url=jdbc:postgresql://postgres:5432/osgp_throttling
 
     # Activemq settings
     jms.default.broker.url=failover:(ssl://activemq:61617)
@@ -42,6 +43,9 @@ data:
     # OSLP
     signing.server.security.signkey.path=/etc/ssl/certs/oslp/oslp_test_ecdsa_private.der
     test.device.ips={'TEST1024010101010':'osgp-cucumber-tests-platform-publiclighting'}
+
+    # REDIS
+    redis.host=redis
 
   server.xml: |
 {{ .Files.Get "config/tomcat/server.xml" | indent 4 }}
