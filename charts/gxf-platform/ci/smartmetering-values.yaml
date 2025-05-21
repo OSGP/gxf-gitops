@@ -13,10 +13,6 @@ containers:
     memory: 512Mi
     dependsOn:
       - osgp-core
-  - name: osgp-adapter-domain-publiclighting
-    memory: 512Mi
-    dependsOn:
-      - osgp-core
   - name: osgp-adapter-domain-tariffswitching
     memory: 512Mi
   - name: osgp-adapter-ws-admin
@@ -24,10 +20,6 @@ containers:
     dependsOn:
       - osgp-core
   - name: osgp-adapter-ws-core
-    memory: 600Mi
-    dependsOn:
-      - osgp-core
-  - name: osgp-adapter-ws-publiclighting
     memory: 600Mi
     dependsOn:
       - osgp-core
