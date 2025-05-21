@@ -22,10 +22,6 @@ containers:
     memory: 600Mi
     dependsOn:
       - osgp-core
-  - name: osgp-adapter-ws-publiclighting
-    memory: 600Mi
-    dependsOn:
-      - osgp-core
   - name: osgp-adapter-ws-tariffswitching
     memory: 600Mi
     dependsOn:
