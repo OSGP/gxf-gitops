@@ -1,1 +1,43 @@
 # Empty, needed for chart testing
+containers:
+  - name: osgp-core
+    memory: 768Mi
+    dependsOn:
+      - osgp-logging
+  - name: osgp-logging
+    memory: 768Mi
+  - name: osgp-adapter-domain-admin
+    memory: 768Mi
+    dependsOn:
+      - osgp-core
+  - name: osgp-adapter-domain-core
+    memory: 768Mi
+    dependsOn:
+      - osgp-core
+  - name: osgp-adapter-domain-tariffswitching
+    memory: 768Mi
+  - name: osgp-adapter-ws-admin
+    memory: 768Mi
+    dependsOn:
+      - osgp-core
+  - name: osgp-adapter-ws-core
+    memory: 768Mi
+    dependsOn:
+      - osgp-core
+  - name: osgp-adapter-ws-tariffswitching
+    memory: 768Mi
+    dependsOn:
+      - osgp-core
+  - name: osgp-protocol-adapter-iec60870
+    memory: 768Mi
+  - name: osgp-protocol-adapter-iec61850
+    memory: 768Mi
+    dependsOn:
+      - osgp-core
+  - name: osgp-protocol-adapter-oslp
+    memory: 768Mi
+    extraPorts:
+      - name: oslp
+        port: 12122
+  - name: osgp-signing-server
+    memory: 768Mi

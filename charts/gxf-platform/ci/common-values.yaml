@@ -1,38 +1,42 @@
 containers:
   - name: osgp-core
-    memory: 768Mi
+    memory: 800Mi
     dependsOn:
       - osgp-logging
   - name: osgp-logging
+    memory: 800Mi
   - name: osgp-adapter-domain-admin
-    memory: 512Mi
+    memory: 800Mi
     dependsOn:
       - osgp-core
   - name: osgp-adapter-domain-core
-    memory: 512Mi
+    memory: 800Mi
     dependsOn:
       - osgp-core
   - name: osgp-adapter-domain-tariffswitching
-    memory: 512Mi
+    memory: 800Mi
   - name: osgp-adapter-ws-admin
-    memory: 512Mi
+    memory: 800Mi
     dependsOn:
       - osgp-core
   - name: osgp-adapter-ws-core
-    memory: 600Mi
+    memory: 800Mi
     dependsOn:
       - osgp-core
   - name: osgp-adapter-ws-tariffswitching
-    memory: 600Mi
+    memory: 800Mi
     dependsOn:
       - osgp-core
   - name: osgp-protocol-adapter-iec60870
+    memory: 800Mi
   - name: osgp-protocol-adapter-iec61850
+    memory: 800Mi
     dependsOn:
       - osgp-core
   - name: osgp-protocol-adapter-oslp
-    memory: 768Mi
+    memory: 800Mi
     extraPorts:
       - name: oslp
         port: 12122
   - name: osgp-signing-server
+    memory: 800Mi
