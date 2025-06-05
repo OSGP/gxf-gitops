@@ -28,6 +28,12 @@ for Linux:
 To also install dev tools (kubernetes dashboard):
 `bash setup.sh 1`
 
+#### Setup GXF platform
+./charts/gxf-platform/template-apply.sh --imageTag $imagetag --valuesFile ci/$domain-values.yaml
+
+#### Setup GXF cucumber jobs
+./charts/gxf-cucumber-tests/template-apply.sh --imageTag $imagetag --valuesFile ci/$domain-values.yaml
+
 ### Destroy local cluster
 `k3d cluster delete test`
 
