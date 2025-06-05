@@ -39,7 +39,7 @@ spec:
             {{- end }}
       containers:
         - name: {{ $name }}
-          image: {{ $container.imageRepository | default $.Values.imageRepository | default "ghcr.io/osgp/" }}{{ $name }}:{{ $container.imageTag | default $.Values.imageTag | default "latest" }}
+          image: {{ $container.imageRepository | default $.Values.imageRepository | default "ghcr.io/osgp/" }}{{ $container.name }}:{{ $container.imageTag | default $.Values.imageTag | default "latest" }}
           imagePullPolicy: {{ $container.imagePullPolicy | default $.Values.imagePullPolicy | default "Always" }}
           env:
             - name: JAVA_OPTS
@@ -92,21 +92,12 @@ spec:
             - name: gxf-platform-config
               mountPath: /etc/osp/global.properties
               subPath: global.properties
-
-            {{- $propFileExact := printf "%s.properties" $name }}
-            {{- if hasKey $.Values.config $propFileExact }}
             - name: gxf-platform-config
-              mountPath: /etc/osp/{{ $propFileExact }}
-              subPath: {{ $propFileExact }}
-            {{- end }}
-
-            {{- $propFileTrimmed := printf "%s.properties" (trimPrefix "osgp-" $name) }}
-            {{- if hasKey $.Values.config $propFileTrimmed }}
+              mountPath: /etc/osp/{{ $name }}.properties
+              subPath: global.properties
             - name: gxf-platform-config
-              mountPath: /etc/osp/{{ $propFileTrimmed }}
-              subPath: {{ $propFileTrimmed }}
-            {{- end }}
-
+              mountPath: /etc/osp/{{ $name | trimPrefix "osgp-" }}.properties
+              subPath: global.properties
             - name: activemq-secrets
               mountPath: /etc/ssl/certs/jms/gxf-platform/
             - name: oslp-signing-keys
