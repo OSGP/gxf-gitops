@@ -3,11 +3,35 @@ kind: ConfigMap
 metadata:
   name: gxf-platform-config
 data:
+  external-interface.properties: |
+    flyway.enabled=true
+    db.host=postgresql
+    db.name=he_external_interface
+    db.max_pool_size=20
+
+    db.host.quartz=postgresql-quartz-db-pooler
+    db.name.quartz=quartz
+
+  osgp-throttling-service.properties: |
+    spring.datasource.url=jdbc:postgresql://postgres:5432/osgp_throttling
+
+      scheduling.task.reinitialize.state.cron.expression=2 0/5 * * * ?
+      cleanup.permits.time-to-live=PT5M
+
+  jasper-interface.properties: |-
+    # Database host for sending sms wakeup notifications to listening protocol adapters
+    db.host=osgp-postgres
+
+
+  osgp-adapter-protocol-dlms.properties: |-
+    db.host.dlms=postgres
+    db.max_pool_size=50
+
   global.properties: |
     # Metrics
-    metrics.prometheus.enabled=true
-    metrics.prometheus.port=9404
-    metrics.prometheus.path=/metrics
+    # metrics.prometheus.enabled=true
+    # metrics.prometheus.port=9404
+    # metrics.prometheus.path=/metrics
 
     # Postgres
     db.host=postgres
@@ -43,8 +67,6 @@ data:
     signing.server.security.signkey.path=/etc/ssl/certs/oslp/oslp_test_ecdsa_private.der
     test.device.ips={'TEST1024010101010':'osgp-cucumber-tests-platform-publiclighting'}
 
-    # REDIS
-    redis.host=redis
 
   server.xml: |
 {{ .Files.Get "config/tomcat/server.xml" | indent 4 }}

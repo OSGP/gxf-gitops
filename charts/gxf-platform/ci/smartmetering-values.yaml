@@ -4,46 +4,65 @@ containers:
     memory: 768Mi
     dependsOn:
       - osgp-logging
+
   - name: osgp-logging
+    memory: 768Mi
+
   - name: osgp-adapter-domain-admin
-    memory: 512Mi
+    memory: 1Gi
     dependsOn:
       - osgp-core
+
   - name: osgp-adapter-domain-core
-    memory: 512Mi
+    memory: 1Gi
     dependsOn:
       - osgp-core
-  - name: osgp-adapter-domain-tariffswitching
-    memory: 512Mi
+
+  # - name: osgp-adapter-domain-tariffswitching
+  #   memory: 1Gi
+
   - name: osgp-adapter-ws-admin
-    memory: 512Mi
+    memory: 1Gi
     dependsOn:
       - osgp-core
+
   - name: osgp-adapter-ws-core
-    memory: 600Mi
+    memory: 1Gi
     dependsOn:
       - osgp-core
+
   - name: osgp-adapter-ws-smartmetering
-  - name: osgp-adapter-ws-tariffswitching
-    memory: 600Mi
-    dependsOn:
-      - osgp-core
+    memory: 1Gi
+
+  # - name: osgp-adapter-ws-tariffswitching
+  #   memory: 600Mi
+  #   dependsOn:
+  #     - osgp-core
+
   - name: osgp-protocol-adapter-dlms
+    memory: 768Mi
     extraPorts:
       - name: dsmr2
         port: 8000
       - name: dsmr4-5
         port: 9598
-  - name: osgp-protocol-adapter-iec60870
-  - name: osgp-protocol-adapter-iec61850
-    dependsOn:
-      - osgp-core
-  - name: osgp-protocol-adapter-oslp
-    memory: 768Mi
-    extraPorts:
-      - name: oslp
-        port: 12122
+
+  # - name: osgp-protocol-adapter-iec60870
+  #   memory: 1Gi
+
+  # - name: osgp-protocol-adapter-iec61850
+  #   memory: 1Gi
+  #   dependsOn:
+  #     - osgp-core
+
+  # - name: osgp-protocol-adapter-oslp
+  #   memory: 768Mi
+  #   extraPorts:
+  #     - name: oslp
+  #       port: 12122
+
   - name: osgp-simulator-dlms-triggered
+    memory: 768Mi
     extraPorts:
       - name: dsmr422
         port: 1024
@@ -63,6 +82,17 @@ containers:
         port: 1031
       - name: smr4-3
         port: 4059
-  - name: osgp-secret-management
-  - name: osgp-signing-server
+
+  # - name: osgp-secret-management
+  #   memory: 1Gi
+
+  # - name: osgp-signing-server
+  #   memory: 1Gi
+
   - name: osgp-throttling-service
+    memory: 1Gi
+    env:
+      - name: REDIS_HOST
+        value: redis
+      - name: REDIS_PORT
+        value: "6379"

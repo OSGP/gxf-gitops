@@ -68,6 +68,12 @@ spec:
                 secretKeyRef:
                   name: organisations-ws-client-certs
                   key: keystore-password
+            {{- with $job.env }}
+            {{- range . }}
+            - name: {{ .name }}
+              value: {{ .value | quote }}
+            {{- end }}
+            {{- end }}
           volumeMounts:
             - name: {{ $name }}-config
               mountPath: /etc/osp/test/global-cucumber.properties

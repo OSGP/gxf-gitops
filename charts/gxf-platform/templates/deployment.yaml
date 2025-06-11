@@ -19,24 +19,26 @@ spec:
       name: {{ $name }}
       labels:
         app: {{ $name }}
-      annotations:
-        prometheus.io/port: '9404'
-        prometheus.io/scrape: 'true'
+      # annotations:
+      #   prometheus.io/port: '9404'
+      #   prometheus.io/scrape: 'true'
     spec:
       serviceAccountName: initcontainer-admin-sa
-      initContainers:
-        - name: wait-for-dependencies
-          image: bitnami/kubectl:latest
-          command:
-            - kubectl
-            - rollout
-            - status
-            - deployment
-            - postgres
-            - activemq
-            {{- if $container.dependsOn }}
-              {{- $container.dependsOn | toYaml | nindent 12 }}
-            {{- end }}
+      # initContainers:
+      #   - name: wait-for-dependencies
+      #     image: bitnami/kubectl:latest
+      #     command:
+      #       - kubectl
+      #       - rollout
+      #       - status
+      #       - deployment
+      #       - postgres
+      #       - activemq
+      #       {{- if $container.dependsOn }}
+      #         {{- range $dep := $container.dependsOn }}
+      #           - {{ $dep }}
+      #         {{- end }}
+      #       {{- end }}
       containers:
         - name: {{ $name }}
           image: {{ $container.imageRepository | default $.Values.imageRepository | default "ghcr.io/osgp/" }}{{ $container.name }}:{{ $container.imageTag | default $.Values.imageTag | default "latest" }}
@@ -64,6 +66,12 @@ spec:
                 secretKeyRef:
                   name: organisations-ws-client-certs
                   key: keystore-password
+            {{- with $container.env }}
+            {{- range . }}
+            - name: {{ .name }}
+              value: {{ .value | quote }}
+            {{- end }}
+            {{- end }}
           ports:
             - containerPort: 8080
               name: http
@@ -76,13 +84,13 @@ spec:
               name: {{ $extraPort.name }}
               protocol: TCP
             {{- end }}
-          readinessProbe:
-            failureThreshold: 6
-            periodSeconds: 5
-            timeoutSeconds: 5
-            httpGet:
-              port: {{ $container.readinessPort | default "9404" }}
-              path: {{ $container.readinessPath | default "/metrics" }}
+          # readinessProbe:
+          #   failureThreshold: 6
+          #   periodSeconds: 5
+          #   timeoutSeconds: 5
+          #   httpGet:
+          #     port: {{ $container.readinessPort | default "9404" }}
+          #     path: {{ $container.readinessPath | default "/metrics" }}
           resources:
             requests:
               memory: {{ $container.memory | default "400Mi" }}
@@ -94,10 +102,10 @@ spec:
               subPath: global.properties
             - name: gxf-platform-config
               mountPath: /etc/osp/{{ $name }}.properties
-              subPath: global.properties
+              subPath: {{ $name }}.properties
             - name: gxf-platform-config
               mountPath: /etc/osp/{{ $name | trimPrefix "osgp-" }}.properties
-              subPath: global.properties
+              subPath: {{ $name }}.properties
             - name: activemq-secrets
               mountPath: /etc/ssl/certs/jms/gxf-platform/
             - name: oslp-signing-keys
