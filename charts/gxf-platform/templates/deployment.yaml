@@ -26,7 +26,7 @@ spec:
       serviceAccountName: initcontainer-admin-sa
       initContainers:
         - name: wait-for-dependencies
-          image: bitnami/kubectl:latest
+          image: rancher/kubectl:v1.32.9
           command:
             - kubectl
             - rollout
