@@ -24,7 +24,7 @@ spec:
             - name: report-volume
               mountPath: /target/output/
         - name: wait-for-dependencies
-          image: rancher/kubectl:latest
+          image: rancher/kubectl:v1.32.9
           command:
             - kubectl
             - rollout
