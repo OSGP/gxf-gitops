@@ -23,6 +23,17 @@ spec:
               mountPath: /usr/bin/
             - name: report-volume
               mountPath: /target/output/
+        - name: wait-for-dependencies
+          image: rancher/kubectl:latest
+          command:
+            - kubectl
+            - rollout
+            - status
+            - deployment
+            - postgres
+            {{- if $job.dependsOn }}
+              {{- $job.dependsOn | toYaml | nindent 12 }}
+            {{- end }}
       containers:
         - name: {{ $name }}
           image:

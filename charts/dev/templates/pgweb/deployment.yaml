@@ -14,6 +14,16 @@ spec:
       labels:
         app: pgweb
     spec:
+      serviceAccountName: initcontainer-admin-sa
+      initContainers:
+        - name: wait-for-dependencies
+          image: rancher/kubectl:latest
+          command:
+            - kubectl
+            - rollout
+            - status
+            - deployment
+            - postgres
       containers:
         - image: sosedoff/pgweb
           name: pgweb
