@@ -4,6 +4,8 @@ containers:
     dependsOn:
       - osgp-logging
   - name: osgp-logging
+    dependsOn:
+      - activemq
   - name: osgp-adapter-domain-admin
     memory: 512Mi
     dependsOn:
@@ -18,20 +20,22 @@ containers:
       - osgp-core
   - name: osgp-adapter-domain-tariffswitching
     memory: 512Mi
+    dependsOn:
+      - osgp-core
   - name: osgp-adapter-ws-admin
     memory: 512Mi
     dependsOn:
       - osgp-core
   - name: osgp-adapter-ws-core
-    memory: 600Mi
+    memory: 512Mi
     dependsOn:
       - osgp-core
   - name: osgp-adapter-ws-publiclighting
-    memory: 600Mi
+    memory: 512Mi
     dependsOn:
       - osgp-core
   - name: osgp-adapter-ws-tariffswitching
-    memory: 600Mi
+    memory: 512Mi
     dependsOn:
       - osgp-core
   - name: osgp-protocol-adapter-iec60870
@@ -43,4 +47,8 @@ containers:
     extraPorts:
       - name: oslp
         port: 12122
+    dependsOn:
+      - osgp-core
   - name: osgp-signing-server
+    dependsOn:
+      - activemq
