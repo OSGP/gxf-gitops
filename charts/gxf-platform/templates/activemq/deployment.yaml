@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: activemq
-          image: apache/activemq-artemis
+          image: apache/artemis
           imagePullPolicy: IfNotPresent
           ports:
             - name: activemq
