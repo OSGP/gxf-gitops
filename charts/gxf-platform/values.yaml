@@ -37,10 +37,10 @@ containers:
     memory: 512Mi
     dependsOn:
       - osgp-core
-  - name: osgp-protocol-adapter-iec60870
-  - name: osgp-protocol-adapter-iec61850
-    dependsOn:
-      - osgp-core
+#  - name: osgp-protocol-adapter-iec60870
+#  - name: osgp-protocol-adapter-iec61850
+#    dependsOn:
+#      - osgp-core
   - name: osgp-protocol-adapter-oslp
     memory: 768Mi
     extraPorts:
