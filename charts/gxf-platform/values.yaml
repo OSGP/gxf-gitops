@@ -6,6 +6,7 @@ containers:
   - name: osgp-logging
     dependsOn:
       - activemq
+      - postgres
   - name: osgp-adapter-domain-admin
     memory: 512Mi
     dependsOn:
