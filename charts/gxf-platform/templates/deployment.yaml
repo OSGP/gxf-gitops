@@ -85,9 +85,9 @@ spec:
               path: {{ $container.readinessPath | default "/metrics" }}
           resources:
             requests:
-              memory: {{ $container.memory | default "400Mi" }}
+              memory: {{ $container.memory | default "384Mi" }}
             limits:
-              memory: {{ $container.memory | default "400Mi" }}
+              memory: {{ $container.memory | default "384Mi" }}
           volumeMounts:
             - name: gxf-platform-config
               mountPath: /etc/osp/global.properties
@@ -100,13 +100,17 @@ spec:
               subPath: global.properties
             - name: activemq-secrets
               mountPath: /etc/ssl/certs/jms/gxf-platform/
+            {{- if contains "signing "$name }}
             - name: oslp-signing-keys
               mountPath: /etc/ssl/certs/oslp
+            {{- end }}
             - name: gxf-platform-config
               mountPath: /usr/local/tomcat/conf/server.xml
               subPath: server.xml
+            {{- if contains "adapter-ws" $name }}
             - name: organisations-certs-volume
               mountPath: /etc/ssl/certs/organizations/
+            {{- end }}
             - name: firmwares
               mountPath: /etc/osp/firmwarefiles
       volumes:
@@ -116,9 +120,12 @@ spec:
         - name: activemq-secrets
           secret:
             secretName: activemq-jms-client-certs
+        {{- if contains "signing" $name }}
         - name: oslp-signing-keys
           secret:
             secretName: oslp-signing-keys
+        {{- end }}
+        {{- if contains "adapter-ws" $name }}
         - name: organisations-certs-volume
           projected:
             sources:
@@ -130,6 +137,7 @@ spec:
                   name: test-org-cert
               - secret:
                   name: unknown-organization-cert
+        {{- end }}
         - name: firmwares
           emptyDir: {}
 ---
