@@ -100,7 +100,7 @@ spec:
               subPath: global.properties
             - name: activemq-secrets
               mountPath: /etc/ssl/certs/jms/gxf-platform/
-            {{- if contains "signing "$name }}
+            {{- if contains "signing" $name }}
             - name: oslp-signing-keys
               mountPath: /etc/ssl/certs/oslp
             {{- end }}
