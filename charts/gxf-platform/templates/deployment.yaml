@@ -43,7 +43,7 @@ spec:
           imagePullPolicy: {{ $container.imagePullPolicy | default $.Values.imagePullPolicy | default "Always" }}
           env:
             - name: JAVA_OPTS
-              value: "-XX:MaxRAMPercentage=80.0 -XX:InitialRAMPercentage=80.0"
+              value: "-XX:MaxRAMPercentage=70.0 -XX:InitialRAMPercentage=50.0"
             - name: ACTIVEMQ_JMS_CLIENT_KEYSTORE_PASSWORD
               valueFrom:
                 secretKeyRef:
