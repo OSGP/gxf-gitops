@@ -1,3 +1,11 @@
+[![status: retired](https://opensource.twitter.dev/status/retired.svg)](https://opensource.twitter.dev/status/#retired)
+
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)](https://bitbucket.org/lbesson/ansi-colors)
+
+Repositories in the OSGP org have all been retired and are no longer actively developed or maintained as GXF has moved within LF Energy to the Emeritus status.
+
+---------
+
 # GXF gitops
 Gitops repo for GXF platform and cucumber tests. This repo can also be used to run the platform and/or cucumber tests 
 locally. It is using K3D to start up a kubernetes cluster. 
